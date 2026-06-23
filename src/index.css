@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0A0C12;
+    color: #EAD9BE;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #06080D;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(201, 148, 58, 0.35);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 148, 58, 0.6);
+  }
+
+  ::selection {
+    background: rgba(201, 148, 58, 0.25);
+    color: #DEC991;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-brand-gold text-brand-dark font-semibold
+           px-7 py-3.5 text-sm tracking-widest uppercase
+           transition-all duration-200
+           hover:bg-brand-gold-light hover:shadow-lg hover:shadow-brand-gold/25
+           active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           border border-brand-gold text-brand-gold font-semibold
+           px-7 py-3.5 text-sm tracking-widest uppercase
+           transition-all duration-200
+           hover:bg-brand-gold/10 hover:text-brand-gold-light
+           active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           text-brand-parchment-dim font-medium
+           px-4 py-2 text-sm tracking-wide
+           transition-colors duration-200
+           hover:text-brand-gold underline underline-offset-4;
+  }
+
+  .section-title {
+    @apply font-cinzel text-3xl md:text-4xl lg:text-5xl font-bold text-brand-parchment leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-brand-text-muted text-base md:text-lg leading-relaxed;
+  }
+
+  .card-fantasy {
+    @apply bg-brand-card border border-brand-border
+           transition-all duration-300
+           hover:border-brand-gold/40 hover:-translate-y-1
+           hover:shadow-xl hover:shadow-black/40;
+  }
+}
+
+/* Ornamental section divider */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 0.5rem;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to var(--dir, right), transparent, rgba(201, 148, 58, 0.55));
+}
+
+.ornament-divider::after {
+  --dir: left;
+}
+
+/* Dragon scale background texture for hero */
+.bg-dragon-texture {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(13, 26, 40, 0.8) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(30, 15, 5, 0.6) 0%, transparent 40%);
+}
+
+/* Parchment card variant */
+.card-parchment {
+  background: linear-gradient(135deg, #1A1408 0%, #111620 100%);
+  border: 1px solid rgba(201, 148, 58, 0.2);
+}
+
+.card-parchment:hover {
+  border-color: rgba(201, 148, 58, 0.5);
+  box-shadow: 0 0 24px rgba(201, 148, 58, 0.08);
+}
+
+/* Step connector line */
+.step-connector {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(201, 148, 58, 0.4), rgba(201, 148, 58, 0.1));
+}
