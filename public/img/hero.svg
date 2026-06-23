@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <radialGradient id="bg" cx="60%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1a1005"/>
+      <stop offset="100%" stop-color="#06080D"/>
+    </radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C9943A" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#C9943A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4a7c59" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#4a7c59" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="25"/></filter>
+    <filter id="softglow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="url(#bg)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="620" cy="280" rx="320" ry="260" fill="url(#glow1)" filter="url(#blur1)"/>
+  <ellipse cx="200" cy="450" rx="200" ry="160" fill="url(#glow2)" filter="url(#blur2)"/>
+
+  <!-- Window / light source top right -->
+  <rect x="640" y="20" width="180" height="220" rx="8" fill="none" stroke="#C9943A" stroke-opacity="0.15" stroke-width="1"/>
+  <rect x="650" y="30" width="160" height="200" rx="4" fill="#1a1206" opacity="0.6"/>
+  <!-- window light rays -->
+  <line x1="730" y1="230" x2="680" y2="380" stroke="#E8B84B" stroke-opacity="0.06" stroke-width="40"/>
+  <line x1="730" y1="230" x2="750" y2="400" stroke="#E8B84B" stroke-opacity="0.04" stroke-width="30"/>
+
+  <!-- Shelves / workshop background -->
+  <rect x="600" y="60" width="260" height="8" rx="2" fill="#2a1f0a" opacity="0.7"/>
+  <rect x="600" y="140" width="260" height="8" rx="2" fill="#2a1f0a" opacity="0.7"/>
+  <!-- Bottles on shelf -->
+  <rect x="620" y="100" width="14" height="36" rx="3" fill="#8B1A1A" opacity="0.8"/>
+  <rect x="642" y="105" width="12" height="30" rx="3" fill="#1a3a6a" opacity="0.8"/>
+  <rect x="662" y="98" width="16" height="38" rx="3" fill="#2d6a2d" opacity="0.8"/>
+  <rect x="686" y="103" width="10" height="33" rx="3" fill="#C9943A" opacity="0.7"/>
+  <rect x="704" y="96" width="14" height="40" rx="3" fill="#4a1a6a" opacity="0.8"/>
+  <!-- Figurines on lower shelf -->
+  <!-- Figurine 1: knight -->
+  <ellipse cx="636" cy="136" rx="7" ry="3" fill="#3a3020" opacity="0.6"/>
+  <rect x="630" y="110" width="12" height="24" rx="2" fill="#5a4a2a" opacity="0.8"/>
+  <ellipse cx="636" cy="108" rx="6" ry="7" fill="#4a3a1a" opacity="0.8"/>
+  <rect x="632" y="100" width="8" height="10" rx="1" fill="#6a5a2a" opacity="0.7"/>
+  <!-- Figurine 2: mage -->
+  <ellipse cx="666" cy="136" rx="6" ry="3" fill="#3a3020" opacity="0.6"/>
+  <rect x="660" y="114" width="12" height="20" rx="2" fill="#3a2a5a" opacity="0.8"/>
+  <ellipse cx="666" cy="112" rx="5" ry="6" fill="#2a1a4a" opacity="0.8"/>
+  <!-- Figurine 3: dragon small -->
+  <path d="M694 136 C694 130 690 124 694 118 C698 112 704 118 706 124 C708 130 706 136 694 136Z" fill="#1a4a1a" opacity="0.8"/>
+  <!-- Brushes in jar -->
+  <ellipse cx="740" cy="136" rx="8" ry="4" fill="#2a1a0a" opacity="0.7"/>
+  <rect x="732" y="110" width="16" height="26" rx="3" fill="#3a2a1a" opacity="0.7"/>
+  <line x1="736" y1="110" x2="734" y2="88" stroke="#8B6914" stroke-width="2" opacity="0.8"/>
+  <line x1="740" y1="110" x2="740" y2="86" stroke="#a08020" stroke-width="2" opacity="0.8"/>
+  <line x1="744" y1="110" x2="746" y2="89" stroke="#6a5010" stroke-width="2" opacity="0.8"/>
+  <ellipse cx="734" cy="88" rx="3" ry="6" fill="#C9943A" opacity="0.6"/>
+  <ellipse cx="740" cy="86" rx="3" ry="6" fill="#8B4513" opacity="0.6"/>
+  <ellipse cx="746" cy="89" rx="3" ry="6" fill="#C9943A" opacity="0.5"/>
+
+  <!-- Workbench / table -->
+  <rect x="280" y="380" width="620" height="18" rx="3" fill="#2a1f0a"/>
+  <rect x="280" y="390" width="620" height="10" rx="2" fill="#1a1205" opacity="0.8"/>
+  <!-- Table legs -->
+  <rect x="310" y="398" width="14" height="80" rx="2" fill="#2a1f0a"/>
+  <rect x="840" y="398" width="14" height="80" rx="2" fill="#2a1f0a"/>
+
+  <!-- Lamp above table -->
+  <line x1="600" y1="0" x2="600" y2="200" stroke="#3a2a10" stroke-width="3"/>
+  <path d="M560 200 L640 200 L620 240 L580 240 Z" fill="#3a2a10"/>
+  <!-- Lamp light cone -->
+  <path d="M570 240 L380 378 L820 378 L830 240 Z" fill="#E8B84B" fill-opacity="0.04"/>
+  <ellipse cx="600" cy="240" rx="50" ry="8" fill="#E8B84B" fill-opacity="0.15"/>
+
+  <!-- Paints on table -->
+  <!-- Paint palette -->
+  <ellipse cx="760" cy="372" rx="55" ry="28" fill="#2a1f0a"/>
+  <ellipse cx="760" cy="370" rx="52" ry="26" fill="#1a1405"/>
+  <circle cx="738" cy="360" r="7" fill="#8B1A1A" opacity="0.9"/>
+  <circle cx="755" cy="358" r="7" fill="#1a3a6a" opacity="0.9"/>
+  <circle cx="772" cy="358" r="7" fill="#2d6a2d" opacity="0.9"/>
+  <circle cx="786" cy="362" r="7" fill="#C9943A" opacity="0.9"/>
+  <circle cx="779" cy="374" r="7" fill="#4a1a6a" opacity="0.9"/>
+  <circle cx="762" cy="378" r="7" fill="#8B1A1A" opacity="0.6"/>
+  <!-- Paint tubes -->
+  <rect x="820" y="358" width="30" height="12" rx="4" fill="#8B1A1A" opacity="0.8"/>
+  <rect x="820" y="355" width="8" height="6" rx="1" fill="#5a0a0a" opacity="0.9"/>
+  <rect x="820" y="374" width="30" height="12" rx="4" fill="#2d6a2d" opacity="0.8"/>
+  <rect x="820" y="371" width="8" height="6" rx="1" fill="#1a4a1a" opacity="0.9"/>
+
+  <!-- MAIN FIGURINE on table (large, being painted) -->
+  <!-- Base -->
+  <ellipse cx="520" cy="376" rx="36" ry="10" fill="#3a2a10"/>
+  <!-- Body armor -->
+  <path d="M498 340 C498 320 504 305 520 300 C536 305 542 320 542 340 L540 376 L500 376 Z" fill="#4a3820" opacity="0.95"/>
+  <!-- Chest highlight (being painted) -->
+  <path d="M508 330 C508 318 514 312 520 310 C526 312 532 318 532 330 L530 360 L510 360 Z" fill="#6a5430" opacity="0.8"/>
+  <!-- Gold trim on armor -->
+  <path d="M500 345 L540 345" stroke="#C9943A" stroke-width="2" opacity="0.7"/>
+  <path d="M502 355 L538 355" stroke="#C9943A" stroke-width="1.5" opacity="0.5"/>
+  <!-- Cape -->
+  <path d="M498 320 C490 330 484 355 488 376 L500 376 L502 340 Z" fill="#8B1A1A" opacity="0.85"/>
+  <path d="M542 320 C550 330 556 355 552 376 L540 376 L538 340 Z" fill="#8B1A1A" opacity="0.85"/>
+  <!-- Head/helmet -->
+  <ellipse cx="520" cy="294" rx="16" ry="18" fill="#5a4820"/>
+  <!-- Helmet visor -->
+  <rect x="510" y="290" width="20" height="8" rx="2" fill="#2a2010" opacity="0.9"/>
+  <line x1="510" y1="294" x2="530" y2="294" stroke="#C9943A" stroke-opacity="0.4" stroke-width="1"/>
+  <!-- Sword -->
+  <rect x="543" y="270" width="6" height="90" rx="2" fill="#8a8070" opacity="0.85"/>
+  <rect x="538" y="305" width="16" height="5" rx="1" fill="#C9943A" opacity="0.8"/>
+  <!-- WET PAINT EFFECT - glinting spot -->
+  <circle cx="516" cy="335" r="3" fill="#E8D5A3" opacity="0.6" filter="url(#softglow)"/>
+  <circle cx="528" cy="328" r="2" fill="#E8D5A3" opacity="0.4"/>
+
+  <!-- CHILD / PERSON painting (silhouette, right of center) -->
+  <!-- Stool -->
+  <ellipse cx="430" cy="376" rx="22" ry="6" fill="#2a1f0a"/>
+  <rect x="412" y="376" width="6" height="30" rx="2" fill="#2a1f0a"/>
+  <rect x="442" y="376" width="6" height="30" rx="2" fill="#2a1f0a"/>
+  <!-- Body -->
+  <rect x="408" y="290" width="44" height="88" rx="8" fill="#1e2a3a" opacity="0.9"/>
+  <!-- Head -->
+  <ellipse cx="430" cy="276" rx="18" ry="20" fill="#2a1a0a" opacity="0.9"/>
+  <!-- Hair -->
+  <path d="M412 268 C412 252 418 248 430 248 C442 248 448 252 448 268" fill="#1a0e06" opacity="0.95"/>
+  <!-- Arm reaching forward -->
+  <path d="M452 320 C468 318 480 322 490 338" stroke="#2a1a0a" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <!-- Hand -->
+  <ellipse cx="492" cy="340" rx="9" ry="7" fill="#2a1a0a" opacity="0.85"/>
+  <!-- Brush in hand -->
+  <line x1="498" y1="336" x2="516" y2="325" stroke="#8B6914" stroke-width="3"/>
+  <ellipse cx="516" cy="324" rx="4" ry="8" fill="#C9943A" opacity="0.7" transform="rotate(-30 516 324)"/>
+  <!-- Brush tip glow (paint) -->
+  <circle cx="518" cy="320" r="4" fill="#E8B84B" opacity="0.35" filter="url(#blur2)"/>
+
+  <!-- DRAGON companion (smaller, perched left) -->
+  <!-- Dragon body -->
+  <path d="M160 300 C150 280 155 260 170 255 C185 250 200 258 205 275 C210 290 205 310 190 320 C180 325 165 320 160 300 Z" fill="#1a4a2a" opacity="0.9"/>
+  <!-- Dragon wings -->
+  <path d="M190 275 C210 255 240 245 255 260 C245 272 220 278 205 278 Z" fill="#1a3a20" opacity="0.75"/>
+  <path d="M160 278 C140 258 110 250 98 265 C108 276 136 280 150 278 Z" fill="#1a3a20" opacity="0.75"/>
+  <!-- Wing membrane veins -->
+  <line x1="205" y1="278" x2="245" y2="258" stroke="#2a5a30" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="205" y1="278" x2="240" y2="265" stroke="#2a5a30" stroke-opacity="0.4" stroke-width="1"/>
+  <!-- Dragon head -->
+  <path d="M155 256 C150 244 158 236 170 234 C182 232 192 240 190 252 C188 262 178 266 170 264 C162 264 156 262 155 256 Z" fill="#246030" opacity="0.9"/>
+  <!-- Dragon eye -->
+  <ellipse cx="175" cy="248" rx="5" ry="4" fill="#E8B84B" opacity="0.9"/>
+  <ellipse cx="175" cy="248" rx="2" ry="3" fill="#0a0a0a"/>
+  <!-- Eye glow -->
+  <circle cx="175" cy="248" r="7" fill="#E8B84B" opacity="0.15" filter="url(#blur2)"/>
+  <!-- Dragon tail -->
+  <path d="M170 316 C175 330 168 345 160 350 C155 340 158 325 165 318 Z" fill="#1a4a2a" opacity="0.8"/>
+  <!-- Dragon claws on table edge -->
+  <path d="M162 316 C158 320 154 322 152 318" stroke="#3a6a3a" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Scattered paint drops / splatter on table -->
+  <circle cx="460" cy="370" r="3" fill="#8B1A1A" opacity="0.6"/>
+  <circle cx="475" cy="365" r="2" fill="#C9943A" opacity="0.7"/>
+  <circle cx="488" cy="372" r="2" fill="#1a3a6a" opacity="0.5"/>
+  <circle cx="556" cy="368" r="2" fill="#2d6a2d" opacity="0.6"/>
+  <circle cx="565" cy="374" r="3" fill="#8B1A1A" opacity="0.4"/>
+
+  <!-- Small figurine parts / bits on table -->
+  <ellipse cx="600" cy="371" rx="10" ry="4" fill="#3a2a10" opacity="0.7"/>
+  <rect x="594" y="355" width="12" height="16" rx="2" fill="#5a3a1a" opacity="0.75"/>
+
+  <!-- Warm light pool on table surface -->
+  <ellipse cx="520" cy="378" rx="140" ry="20" fill="#E8B84B" fill-opacity="0.06" filter="url(#blur2)"/>
+
+  <!-- Floating dust / magic particles -->
+  <circle cx="490" cy="260" r="1.5" fill="#E8B84B" opacity="0.5"/>
+  <circle cx="560" cy="240" r="1" fill="#E8B84B" opacity="0.4"/>
+  <circle cx="610" cy="280" r="1.5" fill="#E8B84B" opacity="0.3"/>
+  <circle cx="440" cy="300" r="1" fill="#E8B84B" opacity="0.4"/>
+  <circle cx="350" cy="340" r="1.5" fill="#C9943A" opacity="0.3"/>
+
+  <!-- Label -->
+  <text x="450" y="560" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#C9943A" fill-opacity="0.4" letter-spacing="3">HERO — 900 × 600 px</text>
+</svg>

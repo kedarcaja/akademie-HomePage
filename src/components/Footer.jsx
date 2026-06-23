@@ -53,8 +53,8 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-full border border-brand-gold/40 flex items-center justify-center text-lg">
-                🐉
+              <div className="w-9 h-9 rounded-full border border-brand-gold/40 overflow-hidden">
+                <img src="/img/dragon-emblem.png" alt="Dračí akademie" className="w-full h-full object-cover" />
               </div>
               <span className="font-cinzel text-brand-gold font-bold text-base tracking-widest uppercase">
                 Dračí akademie

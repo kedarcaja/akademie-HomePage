@@ -14,19 +14,13 @@ export default function ForParents() {
 
           {/* Image placeholder — left */}
           <div
-            className="relative rounded-sm overflow-hidden border border-brand-border h-80 lg:h-auto lg:min-h-[420px] flex items-center justify-center order-2 lg:order-1"
-            style={{ background: 'linear-gradient(135deg, #1A1408 0%, #0D1520 100%)' }}
-            role="img"
-            aria-label="Fotografie: rodič a dítě tvoří společně u pracovního stolu, štětce a figurky v teplém světle dílny"
+            className="relative rounded-sm overflow-hidden border border-brand-border h-80 lg:h-auto lg:min-h-[420px] order-2 lg:order-1"
           >
-            <div className="text-center space-y-3 p-8">
-              <div className="text-5xl opacity-50">👨‍👧</div>
-              <p className="text-brand-text-dim text-xs leading-relaxed max-w-[220px] text-center italic">
-                Fotografie: rodič a dítě u pracovního stolu — štětce, figurky, teplé světlo dílny
-              </p>
-              <p className="text-brand-gold/30 text-[10px] tracking-widest uppercase">Nahradit fotografií</p>
-            </div>
-
+            <img
+              src="/img/pro-rodice.jpg"
+              alt="Rodič a dítě tvoří společně figurky u pracovního stolu"
+              className="w-full h-full object-cover"
+            />
             {/* Corner ornaments */}
             <div className="absolute top-3 left-3 w-8 h-8 border-t-2 border-l-2 border-brand-gold/30" />
             <div className="absolute top-3 right-3 w-8 h-8 border-t-2 border-r-2 border-brand-gold/30" />

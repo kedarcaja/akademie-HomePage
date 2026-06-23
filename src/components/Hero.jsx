@@ -21,22 +21,14 @@ export default function Hero() {
           }}
         />
 
-        {/* Illustration placeholder — nahraďte obrázkem v systeme.io */}
-        <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 lg:w-1/2 flex items-center justify-center">
-          <div className="w-full h-full bg-gradient-to-l from-brand-card/80 via-brand-card/40 to-transparent flex items-center justify-center">
-            <div className="text-center space-y-3 p-8 max-w-sm mr-8 hidden md:block">
-              <div
-                className="w-full aspect-[4/3] border border-brand-gold/20 flex flex-col items-center justify-center gap-3 bg-brand-card/60 backdrop-blur-sm"
-                role="img"
-                aria-label="Místo pro ilustraci: dítě malující fantasy figurku u osvětleného pracovního stolu, s malým přátelským drakem jako průvodcem"
-              >
-                <div className="text-6xl opacity-60">🐉</div>
-                <p className="text-brand-text-muted text-xs leading-relaxed max-w-[220px] text-center">
-                  <em>Ilustrace: dítě a drak u pracovního stolu s figurkami a štětci — teplé světlo dílny</em>
-                </p>
-                <p className="text-brand-gold/40 text-[10px] tracking-widest uppercase">Nahradit obrázkem</p>
-              </div>
-            </div>
+        {/* Hero image */}
+        <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 lg:w-1/2">
+          <div className="w-full h-full bg-gradient-to-l from-transparent via-brand-darker/40 to-brand-darker">
+            <img
+              src="/img/hero.jpg"
+              alt="Dítě malující fantasy figurku u pracovního stolu s drakem"
+              className="w-full h-full object-cover opacity-85"
+            />
           </div>
         </div>
       </div>

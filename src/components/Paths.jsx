@@ -10,7 +10,7 @@ const paths = [
     gradient: 'from-green-950/80 to-brand-card',
     borderColor: 'border-green-800/30 hover:border-green-600/60',
     accentColor: 'text-green-400',
-    bgImage: null,
+    bgImage: '/img/cesta-prvni-figurky.svg',
   },
   {
     id: 'draci-trenink',
@@ -23,7 +23,7 @@ const paths = [
     gradient: 'from-blue-950/90 to-brand-darker',
     borderColor: 'border-brand-gold/50 hover:border-brand-gold',
     accentColor: 'text-brand-gold',
-    bgImage: null,
+    bgImage: '/img/draci-trenink.svg',
   },
   {
     id: 'akademie-barev',
@@ -36,7 +36,7 @@ const paths = [
     gradient: 'from-amber-950/80 to-brand-card',
     borderColor: 'border-amber-800/30 hover:border-amber-600/60',
     accentColor: 'text-amber-400',
-    bgImage: null,
+    bgImage: '/img/akademie-barev.svg',
   },
   {
     id: 'projektova-dilna',
@@ -49,7 +49,7 @@ const paths = [
     gradient: 'from-stone-900/80 to-brand-card',
     borderColor: 'border-stone-700/30 hover:border-stone-500/60',
     accentColor: 'text-stone-400',
-    bgImage: null,
+    bgImage: '/img/projektova-dilna.svg',
   },
 ]
 
@@ -71,10 +71,10 @@ export default function Paths() {
 
         {/* Path cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {paths.map(({ id, icon, title, subtitle, text, cta, featured, gradient, borderColor, accentColor }) => (
+          {paths.map(({ id, icon, title, subtitle, text, cta, featured, gradient, borderColor, accentColor, bgImage }) => (
             <div
               key={id}
-              className={`relative flex flex-col border rounded-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50 ${borderColor} ${
+              className={`group relative flex flex-col border rounded-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50 ${borderColor} ${
                 featured ? 'ring-1 ring-brand-gold/40' : ''
               }`}
               style={{ background: `linear-gradient(160deg, var(--tw-gradient-from, #111620), #111620)` }}
@@ -89,12 +89,13 @@ export default function Paths() {
                 </div>
               )}
 
-              {/* Image placeholder */}
-              <div className="relative z-10 h-36 flex items-center justify-center border-b border-white/5">
-                <div className="text-5xl opacity-60">{icon}</div>
-                <p className="absolute bottom-2 left-0 right-0 text-center text-[9px] text-brand-text-dim tracking-widest uppercase">
-                  Nahradit ilustrací cesty
-                </p>
+              {/* Path image */}
+              <div className="relative z-10 h-36 overflow-hidden border-b border-white/5">
+                <img
+                  src={bgImage}
+                  alt={title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
 
               {/* Content */}
