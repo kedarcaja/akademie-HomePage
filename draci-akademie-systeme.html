@@ -1,572 +1,471 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dračí akademie – kreativně-vzdělávací prostor od Valiente Projectu. Malování figurek, tvoření rukama, kreativita mimo obrazovky.">
-<title>Dračí akademie | Valiente Project</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
 /* =====================
    RESET & ROOT
    ===================== */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
+#da-root,#da-root *,#da-root *::before,#da-root *::after{box-sizing:border-box;margin:0;padding:0}
+#da-root{
   --dark:#0A0C12;--darker:#06080D;--card:#111620;--card-alt:#0D1520;
-  --border:#1E2A3A;--gold:#C9943A;--gold-l:#E8B84B;--gold-d:#7A5A20;
+  --border:#1E2A3A;--gold:#C9943A;--gold-l:#E8B84B;
   --parch:#DEC991;--parch-d:#A89060;--red:#7D2128;
   --text:#EAD9BE;--muted:#7A8BA3;--dim:#3A4558;
-  --f-serif:'Cinzel',Georgia,serif;--f-sans:'Inter',system-ui,sans-serif;
+  --ff-serif:'Cinzel',Georgia,serif;--ff-sans:'Inter',system-ui,sans-serif;
+  background:var(--dark);color:var(--text);
+  font-family:var(--ff-sans);-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;line-height:1.6
 }
-html{scroll-behavior:smooth}
-body{background:var(--dark);color:var(--text);font-family:var(--f-sans);
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
-a{text-decoration:none;color:inherit}
-::selection{background:rgba(201,148,58,.25);color:var(--parch)}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--darker)}
-::-webkit-scrollbar-thumb{background:rgba(201,148,58,.4);border-radius:9999px}
-::-webkit-scrollbar-thumb:hover{background:rgba(201,148,58,.65)}
+#da-root a{text-decoration:none;color:inherit}
+#da-root ::selection{background:rgba(201,148,58,.25);color:var(--parch)}
+#da-root ::-webkit-scrollbar{width:5px}
+#da-root ::-webkit-scrollbar-track{background:var(--darker)}
+#da-root ::-webkit-scrollbar-thumb{background:rgba(201,148,58,.4);border-radius:9999px}
 
 /* =====================
-   LAYOUT HELPERS
+   LAYOUT
    ===================== */
-.wrap{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-.section-pad{padding:6rem 0}
-.section-pad-sm{padding:4rem 0}
-.text-center{text-align:center}
+#da-root .wrap{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+#da-root .sp{padding:6rem 0}
+#da-root .tc{text-align:center}
 
 /* =====================
    TYPOGRAPHY
    ===================== */
-.section-title{
-  font-family:var(--f-serif);
-  font-size:clamp(1.75rem,4vw,2.75rem);
-  font-weight:700;color:var(--parch);line-height:1.2
-}
-.section-sub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:600px}
-.sec-head{text-align:center;margin-bottom:3.5rem}
-.sec-head .section-title{margin-bottom:.875rem}
-.sec-head .section-sub{margin:0 auto}
+#da-root .st{font-family:var(--ff-serif);font-size:clamp(1.75rem,4vw,2.75rem);font-weight:700;color:var(--parch);line-height:1.2}
+#da-root .ss{color:var(--muted);font-size:1rem;line-height:1.7;max-width:600px}
+#da-root .sh{text-align:center;margin-bottom:3.5rem}
+#da-root .sh .st{margin-bottom:.875rem}
+#da-root .sh .ss{margin:0 auto}
 
-/* ornament line */
-.orn{display:flex;align-items:center;gap:.875rem;justify-content:center;max-width:280px;margin:0 auto .625rem}
-.orn::before,.orn::after{content:'';flex:1;height:1px}
-.orn::before{background:linear-gradient(to right,transparent,rgba(201,148,58,.55))}
-.orn::after{background:linear-gradient(to left,transparent,rgba(201,148,58,.55))}
-.orn span{color:var(--gold);font-size:.875rem;flex-shrink:0}
+/* ornament */
+#da-root .orn{display:flex;align-items:center;gap:.875rem;justify-content:center;max-width:280px;margin:0 auto .625rem}
+#da-root .orn::before,#da-root .orn::after{content:'';flex:1;height:1px}
+#da-root .orn::before{background:linear-gradient(to right,transparent,rgba(201,148,58,.55))}
+#da-root .orn::after{background:linear-gradient(to left,transparent,rgba(201,148,58,.55))}
+#da-root .orn span{color:var(--gold);font-size:.875rem;flex-shrink:0}
 
 /* eyebrow */
-.eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
-.eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);flex-shrink:0}
-.eyebrow-txt{color:var(--gold);font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .eb{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eb::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);flex-shrink:0}
+#da-root .ebt{color:var(--gold);font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
 
 /* =====================
    BUTTONS
    ===================== */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-  font-family:var(--f-sans);font-weight:600;font-size:.8rem;
-  letter-spacing:.1em;text-transform:uppercase;
-  padding:.875rem 1.75rem;cursor:pointer;border:none;
-  transition:all .2s ease;text-decoration:none
-}
-.btn:active{transform:scale(.97)}
-.btn-primary{background:var(--gold);color:var(--darker);box-shadow:0 4px 20px rgba(201,148,58,.2)}
-.btn-primary:hover{background:var(--gold-l);box-shadow:0 6px 28px rgba(201,148,58,.35)}
-.btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
-.btn-outline:hover{background:rgba(201,148,58,.1);color:var(--gold-l)}
-.btn-sm{padding:.5rem 1rem;font-size:.7rem}
+#da-root .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--ff-sans);font-weight:600;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.875rem 1.75rem;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+#da-root .btn:active{transform:scale(.97)}
+#da-root .bp{background:var(--gold);color:var(--darker);box-shadow:0 4px 20px rgba(201,148,58,.2)}
+#da-root .bp:hover{background:var(--gold-l);box-shadow:0 6px 28px rgba(201,148,58,.35)}
+#da-root .bo{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+#da-root .bo:hover{background:rgba(201,148,58,.1);color:var(--gold-l)}
+#da-root .bsm{padding:.5rem 1rem;font-size:.7rem}
 
 /* =====================
    CARDS
    ===================== */
-.card{
-  background:var(--card);border:1px solid var(--border);
-  transition:transform .3s,border-color .3s,box-shadow .3s
-}
-.card:hover{transform:translateY(-4px);border-color:rgba(201,148,58,.4);box-shadow:0 20px 40px rgba(0,0,0,.4)}
-.card-parch{
-  background:linear-gradient(135deg,#1A1408 0%,#111620 100%);
-  border:1px solid rgba(201,148,58,.2);
-  transition:transform .3s,border-color .3s,box-shadow .3s
-}
-.card-parch:hover{transform:translateY(-4px);border-color:rgba(201,148,58,.5);box-shadow:0 0 24px rgba(201,148,58,.08),0 20px 40px rgba(0,0,0,.4)}
-.card-title{font-family:var(--f-serif);font-size:1.0625rem;font-weight:700;color:var(--parch);letter-spacing:.06em;margin-bottom:.625rem}
-.card-txt{font-size:.875rem;color:var(--muted);line-height:1.7}
+#da-root .card{background:var(--card);border:1px solid var(--border);transition:transform .3s,border-color .3s,box-shadow .3s}
+#da-root .card:hover{transform:translateY(-4px);border-color:rgba(201,148,58,.4);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+#da-root .cardp{background:linear-gradient(135deg,#1A1408 0%,#111620 100%);border:1px solid rgba(201,148,58,.2);transition:transform .3s,border-color .3s,box-shadow .3s}
+#da-root .cardp:hover{transform:translateY(-4px);border-color:rgba(201,148,58,.5);box-shadow:0 0 24px rgba(201,148,58,.08),0 20px 40px rgba(0,0,0,.4)}
+#da-root .ct{font-family:var(--ff-serif);font-size:1.0625rem;font-weight:700;color:var(--parch);letter-spacing:.06em;margin-bottom:.625rem}
+#da-root .cd{font-size:.875rem;color:var(--muted);line-height:1.7}
 
 /* =====================
-   GRID
+   GRIDS
    ===================== */
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+#da-root .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+#da-root .g2{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 
 /* =====================
-   HEADER
+   HEADER (sticky)
    ===================== */
-.site-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s}
-.site-header.scrolled{
-  background:rgba(6,8,13,.96);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 4px 30px rgba(0,0,0,.5)
-}
-.h-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
-.logo-icon{
-  width:36px;height:36px;border-radius:50%;
-  border:2px solid rgba(201,148,58,.7);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.125rem;transition:all .2s
-}
-.logo:hover .logo-icon{border-color:var(--gold);background:rgba(201,148,58,.1)}
-.logo-txt{font-family:var(--f-serif);color:var(--gold);font-weight:700;font-size:1rem;letter-spacing:.12em;text-transform:uppercase}
-.main-nav{display:flex;align-items:center;gap:1.75rem}
-.main-nav a{color:var(--muted);font-size:.875rem;font-weight:500;letter-spacing:.04em;transition:color .2s;position:relative}
-.main-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
-.main-nav a:hover{color:var(--gold)}
-.main-nav a:hover::after{width:100%}
-.h-right{display:flex;align-items:center;gap:.75rem}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem}
-.hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:9999px;transition:all .3s}
-.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mob-menu{display:none;background:rgba(6,8,13,.98);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:1rem 1.5rem 1.5rem}
-.mob-menu.open{display:block}
-.mob-menu a{display:block;padding:.875rem .75rem;color:var(--muted);font-weight:500;transition:color .2s,background .2s;border-radius:2px}
-.mob-menu a:hover{color:var(--gold);background:rgba(201,148,58,.05)}
-.mob-cta{margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border)}
+#da-root .hdr{position:sticky;top:0;z-index:100;transition:all .3s;background:transparent}
+#da-root .hdr.scrolled{background:rgba(6,8,13,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 4px 30px rgba(0,0,0,.5)}
+#da-root .hi{display:flex;align-items:center;justify-content:space-between;height:72px}
+#da-root .logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+#da-root .lic{width:36px;height:36px;border-radius:50%;border:2px solid rgba(201,148,58,.7);display:flex;align-items:center;justify-content:center;font-size:1.125rem;transition:all .2s}
+#da-root .logo:hover .lic{border-color:var(--gold);background:rgba(201,148,58,.1)}
+#da-root .ltx{font-family:var(--ff-serif);color:var(--gold);font-weight:700;font-size:1rem;letter-spacing:.12em;text-transform:uppercase}
+#da-root .nav{display:flex;align-items:center;gap:1.75rem}
+#da-root .nav a{color:var(--muted);font-size:.875rem;font-weight:500;letter-spacing:.04em;transition:color .2s;position:relative}
+#da-root .nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+#da-root .nav a:hover{color:var(--gold)}
+#da-root .nav a:hover::after{width:100%}
+#da-root .hr{display:flex;align-items:center;gap:.75rem}
+#da-root .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem}
+#da-root .hbg span{display:block;width:22px;height:2px;background:var(--gold);border-radius:9999px;transition:all .3s}
+#da-root .hbg.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+#da-root .hbg.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+#da-root .hbg.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+#da-root .mm{display:none;background:rgba(6,8,13,.98);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:1rem 1.5rem 1.5rem}
+#da-root .mm.open{display:block}
+#da-root .mm a{display:block;padding:.875rem .75rem;color:var(--muted);font-weight:500;transition:color .2s,background .2s;border-radius:2px}
+#da-root .mm a:hover{color:var(--gold);background:rgba(201,148,58,.05)}
+#da-root .mc{margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border)}
 
 /* =====================
    HERO
    ===================== */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--darker)}
-.hero-bg{position:absolute;inset:0;pointer-events:none}
-.h-grad-l{position:absolute;top:0;left:0;width:72%;height:100%;background:linear-gradient(to right,var(--darker) 40%,transparent);z-index:2}
-.h-grad-b{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,var(--dark),transparent);z-index:2}
-.h-glow1{position:absolute;top:25%;left:18%;width:380px;height:380px;border-radius:50%;background:rgba(201,148,58,.04);filter:blur(80px);z-index:1}
-.h-glow2{position:absolute;bottom:28%;right:18%;width:280px;height:280px;border-radius:50%;background:rgba(125,33,40,.07);filter:blur(80px);z-index:1}
-.h-grid{position:absolute;inset:0;opacity:.025;
-  background-image:linear-gradient(rgba(201,148,58,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,148,58,1) 1px,transparent 1px);
-  background-size:80px 80px;z-index:1}
-.h-illus{position:absolute;right:0;top:0;bottom:0;width:52%;display:flex;align-items:center;justify-content:center;z-index:1}
-.h-illus-box{
-  width:82%;max-width:460px;aspect-ratio:4/3;
-  background:rgba(17,22,32,.6);border:1px solid rgba(201,148,58,.15);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;
-  backdrop-filter:blur(4px)
-}
-.h-illus-box .ilabel{font-size:.5625rem;color:rgba(201,148,58,.3);letter-spacing:.2em;text-transform:uppercase}
-.h-content{position:relative;z-index:10;padding:8rem 0 5rem;max-width:560px}
-.hero-title{font-family:var(--f-serif);font-size:clamp(2.25rem,5vw,3.5rem);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:1.5rem}
-.hero-title .acc{color:var(--gold)}
-.hero-sub{font-size:1.0625rem;line-height:1.75;color:var(--text);margin-bottom:2.25rem;font-weight:300}
-.hero-sub strong{font-weight:400;color:var(--parch)}
-.hero-btns{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.75rem}
-.soc-proof{display:flex;align-items:center;gap:1rem}
-.av-stack{display:flex}
-.av-stack span{width:32px;height:32px;border-radius:50%;background:var(--card);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.875rem;margin-left:-8px}
-.av-stack span:first-child{margin-left:0}
-.sp-txt{font-size:.8125rem;color:var(--muted);line-height:1.5}
-.sp-txt strong{color:var(--parch);font-weight:500}
-.h-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(201,148,58,.35);font-size:.625rem;letter-spacing:.2em;text-transform:uppercase}
-.h-scroll::after{content:'';display:block;width:1px;height:2rem;background:linear-gradient(to bottom,rgba(201,148,58,.4),transparent)}
+#da-root .hero{min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--darker)}
+#da-root .hbg2{position:absolute;inset:0;pointer-events:none}
+#da-root .hgl{position:absolute;top:0;left:0;width:72%;height:100%;background:linear-gradient(to right,var(--darker) 40%,transparent);z-index:2}
+#da-root .hgb{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,var(--dark),transparent);z-index:2}
+#da-root .hg1{position:absolute;top:25%;left:18%;width:380px;height:380px;border-radius:50%;background:rgba(201,148,58,.04);filter:blur(80px);z-index:1}
+#da-root .hg2{position:absolute;bottom:28%;right:18%;width:280px;height:280px;border-radius:50%;background:rgba(125,33,40,.07);filter:blur(80px);z-index:1}
+#da-root .hgrid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(201,148,58,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,148,58,1) 1px,transparent 1px);background-size:80px 80px;z-index:1}
+#da-root .hill{position:absolute;right:0;top:0;bottom:0;width:52%;display:flex;align-items:center;justify-content:center;z-index:1}
+#da-root .hillb{width:82%;max-width:460px;aspect-ratio:4/3;background:rgba(17,22,32,.6);border:1px solid rgba(201,148,58,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;backdrop-filter:blur(4px)}
+#da-root .hcon{position:relative;z-index:10;padding:4rem 0;max-width:560px}
+#da-root .htit{font-family:var(--ff-serif);font-size:clamp(2.25rem,5vw,3.5rem);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:1.5rem}
+#da-root .htit .acc{color:var(--gold)}
+#da-root .hsub{font-size:1.0625rem;line-height:1.75;color:var(--text);margin-bottom:2.25rem;font-weight:300}
+#da-root .hsub strong{font-weight:400;color:var(--parch)}
+#da-root .hbtns{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.75rem}
+#da-root .sp2{display:flex;align-items:center;gap:1rem}
+#da-root .avs{display:flex}
+#da-root .avs span{width:32px;height:32px;border-radius:50%;background:var(--card);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.875rem;margin-left:-8px}
+#da-root .avs span:first-child{margin-left:0}
+#da-root .spt{font-size:.8125rem;color:var(--muted);line-height:1.5}
+#da-root .spt strong{color:var(--parch);font-weight:500}
 
 /* =====================
    ABOUT
    ===================== */
-.about-card{padding:2.25rem 1.75rem;text-align:center}
-.about-ico{width:60px;height:60px;border-radius:50%;border:1px solid rgba(201,148,58,.3);background:rgba(201,148,58,.06);display:flex;align-items:center;justify-content:center;font-size:1.625rem;margin:0 auto 1.125rem;transition:all .3s}
-.card-parch:hover .about-ico{border-color:rgba(201,148,58,.6);background:rgba(201,148,58,.1)}
+#da-root .ac{padding:2.25rem 1.75rem;text-align:center}
+#da-root .ai{width:60px;height:60px;border-radius:50%;border:1px solid rgba(201,148,58,.3);background:rgba(201,148,58,.06);display:flex;align-items:center;justify-content:center;font-size:1.625rem;margin:0 auto 1.125rem;transition:all .3s}
+#da-root .cardp:hover .ai{border-color:rgba(201,148,58,.6);background:rgba(201,148,58,.1)}
 
 /* =====================
    FOR WHO
    ===================== */
-.fw-card{padding:1.75rem}
-.fw-ico{font-size:1.875rem;display:block;margin-bottom:.875rem}
-.fw-green{background:var(--card);border:1px solid rgba(22,101,52,.3)}
-.fw-green:hover{border-color:rgba(22,101,52,.6)!important}
-.fw-blue{background:var(--card);border:1px solid rgba(30,64,175,.3)}
-.fw-blue:hover{border-color:rgba(30,64,175,.6)!important}
-.fw-amber{background:var(--card);border:1px solid rgba(180,83,9,.3)}
-.fw-amber:hover{border-color:rgba(180,83,9,.6)!important}
-.fw-purple{background:var(--card);border:1px solid rgba(109,40,217,.3)}
-.fw-purple:hover{border-color:rgba(109,40,217,.6)!important}
-.fw-green,.fw-blue,.fw-amber,.fw-purple{transition:transform .3s,border-color .3s,box-shadow .3s}
-.fw-green:hover,.fw-blue:hover,.fw-amber:hover,.fw-purple:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+#da-root .fwc{padding:1.75rem;transition:transform .3s,border-color .3s,box-shadow .3s}
+#da-root .fwc:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+#da-root .fwico{font-size:1.875rem;display:block;margin-bottom:.875rem}
+#da-root .fwg{background:var(--card);border:1px solid rgba(22,101,52,.3)}.da-root .fwg:hover{border-color:rgba(22,101,52,.6)}
+#da-root .fwb{background:var(--card);border:1px solid rgba(30,64,175,.3)}.da-root .fwb:hover{border-color:rgba(30,64,175,.6)}
+#da-root .fwa{background:var(--card);border:1px solid rgba(180,83,9,.3)}.da-root .fwa:hover{border-color:rgba(180,83,9,.6)}
+#da-root .fwp{background:var(--card);border:1px solid rgba(109,40,217,.3)}.da-root .fwp:hover{border-color:rgba(109,40,217,.6)}
 
 /* =====================
    PATHS
    ===================== */
-.path-card{position:relative;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s,box-shadow .3s}
-.path-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.5)}
-.path-feat-badge{position:relative;z-index:10;background:var(--gold);color:var(--darker);font-size:.5875rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-align:center;padding:.375rem 1rem}
-.path-img{position:relative;z-index:10;height:9rem;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(255,255,255,.05)}
-.path-img-ico{font-size:3rem;opacity:.6}
-.path-img-lbl{position:absolute;bottom:.5rem;left:0;right:0;text-align:center;font-size:.5rem;color:var(--dim);letter-spacing:.15em;text-transform:uppercase}
-.path-body{position:relative;z-index:10;padding:1.5rem;display:flex;flex-direction:column;flex:1}
-.path-sub{font-size:.625rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.375rem}
-.path-title{font-family:var(--f-serif);font-size:.9375rem;font-weight:700;color:var(--parch);line-height:1.3;margin-bottom:.625rem;letter-spacing:.04em}
-.path-txt{font-size:.8125rem;color:var(--muted);line-height:1.65;flex:1;margin-bottom:1.125rem}
-.path-btn{display:block;text-align:center;padding:.625rem 1rem;font-size:.6875rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;border:1px solid currentColor;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s}
-.pb-gold{background:var(--gold);color:var(--darker);border-color:var(--gold)}.pb-gold:hover{background:var(--gold-l);border-color:var(--gold-l)}
-.pb-green{color:#4ade80}.pb-green:hover{background:rgba(74,222,128,.08)}
-.pb-amber{color:#fbbf24}.pb-amber:hover{background:rgba(251,191,36,.08)}
-.pb-stone{color:#a8a29e}.pb-stone:hover{background:rgba(168,162,158,.08)}
-.bg-p-green{background:linear-gradient(160deg,rgba(5,46,22,.8) 0%,var(--card) 100%);border:1px solid rgba(22,101,52,.3)}
-.bg-p-blue{background:linear-gradient(160deg,rgba(23,37,84,.9) 0%,var(--darker) 100%);border:1px solid rgba(201,148,58,.45);box-shadow:0 0 0 1px rgba(201,148,58,.2)}
-.bg-p-amber{background:linear-gradient(160deg,rgba(120,53,15,.8) 0%,var(--card) 100%);border:1px solid rgba(180,83,9,.3)}
-.bg-p-stone{background:linear-gradient(160deg,rgba(68,64,60,.7) 0%,var(--card) 100%);border:1px solid rgba(87,83,78,.3)}
+#da-root .pc{position:relative;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s,box-shadow .3s}
+#da-root .pc:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.5)}
+#da-root .pfb{position:relative;z-index:10;background:var(--gold);color:var(--darker);font-size:.5875rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-align:center;padding:.375rem 1rem}
+#da-root .pimg{position:relative;z-index:10;height:9rem;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(255,255,255,.05)}
+#da-root .pico{font-size:3rem;opacity:.6}
+#da-root .plbl{position:absolute;bottom:.5rem;left:0;right:0;text-align:center;font-size:.5rem;color:var(--dim);letter-spacing:.15em;text-transform:uppercase}
+#da-root .pb{position:relative;z-index:10;padding:1.5rem;display:flex;flex-direction:column;flex:1}
+#da-root .psub{font-size:.625rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.375rem}
+#da-root .ptit{font-family:var(--ff-serif);font-size:.9375rem;font-weight:700;color:var(--parch);line-height:1.3;margin-bottom:.625rem;letter-spacing:.04em}
+#da-root .ptxt{font-size:.8125rem;color:var(--muted);line-height:1.65;flex:1;margin-bottom:1.125rem}
+#da-root .pbtn{display:block;text-align:center;padding:.625rem 1rem;font-size:.6875rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;border:1px solid currentColor;background:transparent;cursor:pointer;text-decoration:none;transition:all .2s}
+#da-root .pbg{background:var(--gold);color:var(--darker);border-color:var(--gold)}.da-root .pbg:hover{background:var(--gold-l)}
+#da-root .pbgr{color:#4ade80}.da-root .pbgr:hover{background:rgba(74,222,128,.08)}
+#da-root .pbam{color:#fbbf24}.da-root .pbam:hover{background:rgba(251,191,36,.08)}
+#da-root .pbst{color:#a8a29e}.da-root .pbst:hover{background:rgba(168,162,158,.08)}
+#da-root .bpg{background:linear-gradient(160deg,rgba(5,46,22,.8) 0%,var(--card) 100%);border:1px solid rgba(22,101,52,.3)}
+#da-root .bpb{background:linear-gradient(160deg,rgba(23,37,84,.9) 0%,var(--darker) 100%);border:1px solid rgba(201,148,58,.45);box-shadow:0 0 0 1px rgba(201,148,58,.2)}
+#da-root .bpa{background:linear-gradient(160deg,rgba(120,53,15,.8) 0%,var(--card) 100%);border:1px solid rgba(180,83,9,.3)}
+#da-root .bps{background:linear-gradient(160deg,rgba(68,64,60,.7) 0%,var(--card) 100%);border:1px solid rgba(87,83,78,.3)}
 
 /* =====================
    SKILLS
    ===================== */
-.ben-grid{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
-.ben{display:flex;align-items:flex-start;gap:.875rem;padding:1.125rem;background:linear-gradient(135deg,#1A1408 0%,#111620 100%);border:1px solid rgba(201,148,58,.18);transition:all .3s}
-.ben:hover{transform:translateY(-2px);border-color:rgba(201,148,58,.4);box-shadow:0 10px 20px rgba(0,0,0,.3)}
-.ben-ico{font-size:1.375rem;flex-shrink:0;margin-top:2px}
-.ben-t{font-family:var(--f-serif);font-size:.875rem;font-weight:600;color:var(--parch);margin-bottom:.25rem;letter-spacing:.04em}
-.ben-d{font-size:.8125rem;color:var(--muted);line-height:1.55}
-.ben-span{grid-column:span 2}
+#da-root .bng{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
+#da-root .bn{display:flex;align-items:flex-start;gap:.875rem;padding:1.125rem;background:linear-gradient(135deg,#1A1408 0%,#111620 100%);border:1px solid rgba(201,148,58,.18);transition:all .3s}
+#da-root .bn:hover{transform:translateY(-2px);border-color:rgba(201,148,58,.4);box-shadow:0 10px 20px rgba(0,0,0,.3)}
+#da-root .bnico{font-size:1.375rem;flex-shrink:0;margin-top:2px}
+#da-root .bnt{font-family:var(--ff-serif);font-size:.875rem;font-weight:600;color:var(--parch);margin-bottom:.25rem;letter-spacing:.04em}
+#da-root .bnd{font-size:.8125rem;color:var(--muted);line-height:1.55}
+#da-root .bnsp{grid-column:span 2}
 
 /* =====================
    HOW IT WORKS
    ===================== */
-.steps{display:grid;grid-template-columns:repeat(4,1fr)}
-.step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
-.step-conn{position:absolute;top:2.5rem;left:50%;width:100%;height:1px;background:linear-gradient(to right,rgba(201,148,58,.4),rgba(201,148,58,.1));z-index:0}
-.step-circ{position:relative;z-index:1;width:5rem;height:5rem;border-radius:50%;border:2px solid rgba(201,148,58,.4);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:all .3s;cursor:default}
-.step-circ:hover{border-color:var(--gold);background:rgba(201,148,58,.1)}
-.step-num{font-family:var(--f-serif);color:var(--gold);font-weight:700;font-size:1.25rem;line-height:1}
-.step-ico{font-size:.9375rem;line-height:1;margin-top:2px}
-.step-body{padding:0 .875rem 2rem}
-.step-ttl{font-family:var(--f-serif);font-size:.9375rem;font-weight:600;color:var(--parch);margin-bottom:.5rem;letter-spacing:.04em;line-height:1.3}
-.step-txt{font-size:.8125rem;color:var(--muted);line-height:1.65}
-.steps-cta{text-align:center;margin-top:2.75rem}
+#da-root .stps{display:grid;grid-template-columns:repeat(4,1fr)}
+#da-root .stp{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+#da-root .stpc{position:absolute;top:2.5rem;left:50%;width:100%;height:1px;background:linear-gradient(to right,rgba(201,148,58,.4),rgba(201,148,58,.1));z-index:0}
+#da-root .stpci{position:relative;z-index:1;width:5rem;height:5rem;border-radius:50%;border:2px solid rgba(201,148,58,.4);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:all .3s}
+#da-root .stpci:hover{border-color:var(--gold);background:rgba(201,148,58,.1)}
+#da-root .stpn{font-family:var(--ff-serif);color:var(--gold);font-weight:700;font-size:1.25rem;line-height:1}
+#da-root .stpio{font-size:.9375rem;line-height:1;margin-top:2px}
+#da-root .stpb{padding:0 .875rem 2rem}
+#da-root .stpt{font-family:var(--ff-serif);font-size:.9375rem;font-weight:600;color:var(--parch);margin-bottom:.5rem;letter-spacing:.04em;line-height:1.3}
+#da-root .stpd{font-size:.8125rem;color:var(--muted);line-height:1.65}
+#da-root .stpcta{text-align:center;margin-top:2.75rem}
 
 /* =====================
    FOR PARENTS
    ===================== */
-.par-illus{position:relative;background:linear-gradient(135deg,#1A1408 0%,#0D1520 100%);border:1px solid var(--border);min-height:420px;display:flex;align-items:center;justify-content:center}
-.corn{position:absolute;width:2rem;height:2rem}
-.corn.tl{top:.75rem;left:.75rem;border-top:2px solid rgba(201,148,58,.3);border-left:2px solid rgba(201,148,58,.3)}
-.corn.tr{top:.75rem;right:.75rem;border-top:2px solid rgba(201,148,58,.3);border-right:2px solid rgba(201,148,58,.3)}
-.corn.bl{bottom:.75rem;left:.75rem;border-bottom:2px solid rgba(201,148,58,.3);border-left:2px solid rgba(201,148,58,.3)}
-.corn.br{bottom:.75rem;right:.75rem;border-bottom:2px solid rgba(201,148,58,.3);border-right:2px solid rgba(201,148,58,.3)}
-.ill-in{text-align:center;padding:2rem}
-.par-body p{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}
-.par-body p:last-of-type{margin-bottom:2rem}
-.par-body strong{color:var(--parch);font-weight:400}
-.bdg-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-.bdg{display:flex;align-items:center;gap:.75rem;background:var(--card);border:1px solid var(--border);padding:.875rem 1rem;transition:border-color .2s}
-.bdg:hover{border-color:rgba(201,148,58,.3)}
-.bdg-ico{font-size:1.25rem;flex-shrink:0}
-.bdg-lbl{font-size:.875rem;font-weight:500;color:var(--text)}
+#da-root .pill{position:relative;background:linear-gradient(135deg,#1A1408 0%,#0D1520 100%);border:1px solid var(--border);min-height:420px;display:flex;align-items:center;justify-content:center}
+#da-root .co{position:absolute;width:2rem;height:2rem}
+#da-root .co.tl{top:.75rem;left:.75rem;border-top:2px solid rgba(201,148,58,.3);border-left:2px solid rgba(201,148,58,.3)}
+#da-root .co.tr{top:.75rem;right:.75rem;border-top:2px solid rgba(201,148,58,.3);border-right:2px solid rgba(201,148,58,.3)}
+#da-root .co.bl{bottom:.75rem;left:.75rem;border-bottom:2px solid rgba(201,148,58,.3);border-left:2px solid rgba(201,148,58,.3)}
+#da-root .co.br{bottom:.75rem;right:.75rem;border-bottom:2px solid rgba(201,148,58,.3);border-right:2px solid rgba(201,148,58,.3)}
+#da-root .parbody p{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}
+#da-root .parbody p:last-of-type{margin-bottom:2rem}
+#da-root .parbody strong{color:var(--parch);font-weight:400}
+#da-root .bdgg{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+#da-root .bdg{display:flex;align-items:center;gap:.75rem;background:var(--card);border:1px solid var(--border);padding:.875rem 1rem;transition:border-color .2s}
+#da-root .bdg:hover{border-color:rgba(201,148,58,.3)}
+#da-root .bdgico{font-size:1.25rem;flex-shrink:0}
+#da-root .bdglbl{font-size:.875rem;font-weight:500;color:var(--text)}
 
 /* =====================
    COMMUNITY
    ===================== */
-.milestones{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem}
-.ms{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:.75rem 1rem}
-.ms-ico{width:3.5rem;height:3.5rem;border-radius:50%;border:1px solid rgba(201,148,58,.3);background:var(--card);display:flex;align-items:center;justify-content:center;font-size:1.375rem;transition:all .3s}
-.ms:hover .ms-ico{border-color:rgba(201,148,58,.6);background:rgba(201,148,58,.08)}
-.ms-lbl{font-size:.75rem;color:var(--muted);font-weight:500;letter-spacing:.04em;white-space:nowrap}
-.ms-arr{color:rgba(201,148,58,.3);font-size:1.25rem;line-height:3.5rem}
-.comm-footer{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding-top:3.5rem;border-top:1px solid var(--border);text-align:center}
-.cf-title{font-family:var(--f-serif);color:var(--gold);font-weight:700;font-size:1rem;letter-spacing:.06em;margin-bottom:.25rem}
-.cf-txt{font-size:.875rem;color:var(--muted)}
+#da-root .mst{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem}
+#da-root .ms{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:.75rem 1rem}
+#da-root .msico{width:3.5rem;height:3.5rem;border-radius:50%;border:1px solid rgba(201,148,58,.3);background:var(--card);display:flex;align-items:center;justify-content:center;font-size:1.375rem;transition:all .3s}
+#da-root .ms:hover .msico{border-color:rgba(201,148,58,.6);background:rgba(201,148,58,.08)}
+#da-root .mslbl{font-size:.75rem;color:var(--muted);font-weight:500;white-space:nowrap}
+#da-root .msarr{color:rgba(201,148,58,.3);font-size:1.25rem;line-height:3.5rem}
+#da-root .cf{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding-top:3.5rem;border-top:1px solid var(--border);text-align:center}
+#da-root .cft{font-family:var(--ff-serif);color:var(--gold);font-weight:700;font-size:1rem;letter-spacing:.06em;margin-bottom:.25rem}
+#da-root .cfd{font-size:.875rem;color:var(--muted)}
 
 /* =====================
    FINAL CTA
    ===================== */
-.section-cta{position:relative;padding:7rem 0;overflow:hidden;background:linear-gradient(160deg,var(--darker) 0%,#0D1520 50%,var(--darker) 100%)}
-.cta-bg-g1{position:absolute;top:0;left:25%;width:400px;height:400px;border-radius:50%;background:rgba(201,148,58,.03);filter:blur(80px)}
-.cta-bg-g2{position:absolute;bottom:0;right:25%;width:320px;height:320px;border-radius:50%;background:rgba(125,33,40,.05);filter:blur(80px)}
-.cta-grid-bg{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(201,148,58,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,148,58,1) 1px,transparent 1px);background-size:60px 60px}
-.cta-corn{position:absolute;width:4rem;height:4rem}
-.cta-corn.tl{top:2rem;left:2rem;border-top:1px solid rgba(201,148,58,.2);border-left:1px solid rgba(201,148,58,.2)}
-.cta-corn.tr{top:2rem;right:2rem;border-top:1px solid rgba(201,148,58,.2);border-right:1px solid rgba(201,148,58,.2)}
-.cta-corn.bl{bottom:2rem;left:2rem;border-bottom:1px solid rgba(201,148,58,.2);border-left:1px solid rgba(201,148,58,.2)}
-.cta-corn.br{bottom:2rem;right:2rem;border-bottom:1px solid rgba(201,148,58,.2);border-right:1px solid rgba(201,148,58,.2)}
-.cta-in{position:relative;z-index:10;text-align:center;max-width:700px;margin:0 auto;padding:0 1.5rem}
-.cta-dragon{font-size:3.5rem;margin-bottom:1.5rem;opacity:.8}
-.cta-title{font-family:var(--f-serif);font-size:clamp(2.25rem,5vw,3.5rem);font-weight:700;color:var(--parch);line-height:1.2;margin-bottom:1.25rem}
-.cta-title .acc{color:var(--gold)}
-.cta-lead{font-size:1.125rem;color:var(--text);margin-bottom:.75rem}
-.cta-desc{font-size:1rem;color:var(--muted);margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
-.cta-note{margin-top:1.5rem;font-size:.75rem;color:var(--dim);letter-spacing:.08em}
+#da-root .scta{position:relative;padding:7rem 0;overflow:hidden;background:linear-gradient(160deg,var(--darker) 0%,#0D1520 50%,var(--darker) 100%)}
+#da-root .cg1{position:absolute;top:0;left:25%;width:400px;height:400px;border-radius:50%;background:rgba(201,148,58,.03);filter:blur(80px)}
+#da-root .cg2{position:absolute;bottom:0;right:25%;width:320px;height:320px;border-radius:50%;background:rgba(125,33,40,.05);filter:blur(80px)}
+#da-root .cgrid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(201,148,58,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,148,58,1) 1px,transparent 1px);background-size:60px 60px}
+#da-root .ccorn{position:absolute;width:4rem;height:4rem}
+#da-root .ccorn.tl{top:2rem;left:2rem;border-top:1px solid rgba(201,148,58,.2);border-left:1px solid rgba(201,148,58,.2)}
+#da-root .ccorn.tr{top:2rem;right:2rem;border-top:1px solid rgba(201,148,58,.2);border-right:1px solid rgba(201,148,58,.2)}
+#da-root .ccorn.bl{bottom:2rem;left:2rem;border-bottom:1px solid rgba(201,148,58,.2);border-left:1px solid rgba(201,148,58,.2)}
+#da-root .ccorn.br{bottom:2rem;right:2rem;border-bottom:1px solid rgba(201,148,58,.2);border-right:1px solid rgba(201,148,58,.2)}
+#da-root .cin{position:relative;z-index:10;text-align:center;max-width:700px;margin:0 auto;padding:0 1.5rem}
+#da-root .cttl{font-family:var(--ff-serif);font-size:clamp(2.25rem,5vw,3.5rem);font-weight:700;color:var(--parch);line-height:1.2;margin-bottom:1.25rem}
+#da-root .cttl .acc{color:var(--gold)}
 
 /* =====================
    FOOTER
    ===================== */
-.site-footer{background:var(--darker);border-top:1px solid var(--border)}
-.foot-main{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;padding:3.5rem 0}
-.f-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
-.f-logo-ico{width:36px;height:36px;border-radius:50%;border:1px solid rgba(201,148,58,.4);display:flex;align-items:center;justify-content:center;font-size:1.125rem}
-.f-logo-txt{font-family:var(--f-serif);color:var(--gold);font-weight:700;font-size:.9375rem;letter-spacing:.12em;text-transform:uppercase}
-.f-tagline{font-size:.875rem;color:var(--muted);line-height:1.65;max-width:260px;margin-bottom:1.25rem}
-.f-tagline em{color:var(--parch-d);font-style:normal}
-.soc-row{display:flex;align-items:center;gap:.625rem}
-.soc-a{width:32px;height:32px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s;border-radius:2px}
-.soc-a:hover{color:var(--gold);border-color:rgba(201,148,58,.4)}
-.soc-a svg{width:14px;height:14px;fill:currentColor}
-.f-col-ttl{font-family:var(--f-serif);font-size:.6875rem;font-weight:600;color:var(--parch-d);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem}
-.f-links{list-style:none}
-.f-links li{margin-bottom:.625rem}
-.f-links a{font-size:.875rem;color:var(--muted);transition:color .2s}
-.f-links a:hover{color:var(--gold)}
-.foot-bot{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;border-top:1px solid var(--border);flex-wrap:wrap;gap:.75rem}
-.f-copy{font-size:.75rem;color:var(--dim)}
-.f-legal{display:flex;align-items:center;gap:.875rem}
-.f-legal a{font-size:.75rem;color:var(--dim);transition:color .2s}
-.f-legal a:hover{color:var(--muted)}
-.f-legal span{color:var(--dim);font-size:.75rem}
+#da-root .ft{background:var(--darker);border-top:1px solid var(--border)}
+#da-root .ftm{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;padding:3.5rem 0}
+#da-root .flog{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+#da-root .flic{width:36px;height:36px;border-radius:50%;border:1px solid rgba(201,148,58,.4);display:flex;align-items:center;justify-content:center;font-size:1.125rem}
+#da-root .fltx{font-family:var(--ff-serif);color:var(--gold);font-weight:700;font-size:.9375rem;letter-spacing:.12em;text-transform:uppercase}
+#da-root .ftag{font-size:.875rem;color:var(--muted);line-height:1.65;max-width:260px;margin-bottom:1.25rem}
+#da-root .ftag em{color:var(--parch-d);font-style:normal}
+#da-root .socr{display:flex;align-items:center;gap:.625rem}
+#da-root .soca{width:32px;height:32px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s;border-radius:2px}
+#da-root .soca:hover{color:var(--gold);border-color:rgba(201,148,58,.4)}
+#da-root .soca svg{width:14px;height:14px;fill:currentColor}
+#da-root .fct{font-family:var(--ff-serif);font-size:.6875rem;font-weight:600;color:var(--parch-d);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem}
+#da-root .fl{list-style:none}
+#da-root .fl li{margin-bottom:.625rem}
+#da-root .fl a{font-size:.875rem;color:var(--muted);transition:color .2s}
+#da-root .fl a:hover{color:var(--gold)}
+#da-root .ftb{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;border-top:1px solid var(--border);flex-wrap:wrap;gap:.75rem}
+#da-root .fcp{font-size:.75rem;color:var(--dim)}
+#da-root .fleg{display:flex;align-items:center;gap:.875rem}
+#da-root .fleg a{font-size:.75rem;color:var(--dim);transition:color .2s}
+#da-root .fleg a:hover{color:var(--muted)}
+#da-root .fleg span{color:var(--dim);font-size:.75rem}
 
 /* =====================
    RESPONSIVE
    ===================== */
 @media(max-width:1024px){
-  .g4{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .step-conn{display:none}
-  .foot-main{grid-template-columns:1fr 1fr}
-  .f-brand{grid-column:span 2}
+  #da-root .g4{grid-template-columns:repeat(2,1fr)}
+  #da-root .stps{grid-template-columns:repeat(2,1fr)}
+  #da-root .stpc{display:none}
+  #da-root .ftm{grid-template-columns:1fr 1fr}
+  #da-root .fbrand{grid-column:span 2}
 }
 @media(max-width:768px){
-  .main-nav,.h-btn-desk{display:none}
-  .hamburger{display:flex}
-  .g3,.g4{grid-template-columns:1fr}
-  .g2{grid-template-columns:1fr;gap:2rem}
-  .h-illus{display:none}
-  .h-grad-l{width:100%;background:rgba(6,8,13,.65)}
-  .h-content{max-width:100%}
-  .hero-btns{flex-direction:column}
-  .hero-btns .btn{width:100%;justify-content:center}
-  .steps{grid-template-columns:1fr}
-  .ben-span{grid-column:span 1}
-  .milestones{flex-direction:column}
-  .ms-arr{display:none}
-  .comm-footer{grid-template-columns:1fr;gap:1.5rem}
-  .foot-main{grid-template-columns:1fr}
-  .f-brand{grid-column:span 1}
-  .foot-bot{flex-direction:column;text-align:center}
-  .bdg-grid{grid-template-columns:1fr}
-  .par-illus{min-height:240px}
+  #da-root .nav,#da-root .hbtndesk{display:none}
+  #da-root .hbg{display:flex}
+  #da-root .g3,#da-root .g4{grid-template-columns:1fr}
+  #da-root .g2{grid-template-columns:1fr;gap:2rem}
+  #da-root .hill{display:none}
+  #da-root .hgl{width:100%;background:rgba(6,8,13,.65)}
+  #da-root .hcon{max-width:100%}
+  #da-root .hbtns{flex-direction:column}
+  #da-root .hbtns .btn{width:100%;justify-content:center}
+  #da-root .stps{grid-template-columns:1fr}
+  #da-root .bnsp{grid-column:span 1}
+  #da-root .mst{flex-direction:column}
+  #da-root .msarr{display:none}
+  #da-root .cf{grid-template-columns:1fr;gap:1.5rem}
+  #da-root .ftm{grid-template-columns:1fr}
+  #da-root .fbrand{grid-column:span 1}
+  #da-root .ftb{flex-direction:column;text-align:center}
+  #da-root .bdgg{grid-template-columns:1fr}
+  #da-root .pill{min-height:240px}
 }
 @media(max-width:480px){
-  .section-pad{padding:4rem 0}
-  .h-content{padding:6rem 0 4rem}
+  #da-root .sp{padding:4rem 0}
+  #da-root .hcon{padding:3rem 0}
 }
 </style>
-</head>
-<body>
+
+<div id="da-root">
 
 <!-- ===================== HEADER ===================== -->
-<header class="site-header" id="site-header">
+<header class="hdr" id="da-header">
   <div class="wrap">
-    <div class="h-inner">
-      <a href="#domov" class="logo">
-        <div class="logo-icon">🐉</div>
-        <span class="logo-txt">Dračí akademie</span>
+    <div class="hi">
+      <a href="#da-domov" class="logo">
+        <div class="lic">🐉</div>
+        <span class="ltx">Dračí akademie</span>
       </a>
-      <nav class="main-nav" aria-label="Hlavní navigace">
-        <a href="#domov">Domů</a>
-        <a href="#o-akademii">O akademii</a>
-        <a href="#cesty">Cesty</a>
-        <a href="#pro-rodice">Pro rodiče</a>
-        <a href="#kontakt">Kontakt</a>
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a href="#da-domov">Domů</a>
+        <a href="#da-onas">O akademii</a>
+        <a href="#da-cesty">Cesty</a>
+        <a href="#da-rodice">Pro rodiče</a>
+        <a href="#da-kontakt">Kontakt</a>
       </nav>
-      <div class="h-right">
-        <a href="#cesty" class="btn btn-outline btn-sm h-btn-desk">Vstoupit</a>
-        <button class="hamburger" id="hamburger" aria-label="Otevřít menu" aria-expanded="false">
+      <div class="hr">
+        <a href="#da-cesty" class="btn bo bsm hbtndesk">Vstoupit</a>
+        <button class="hbg" id="da-hbg" aria-label="Otevřít menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </div>
-  <div class="mob-menu" id="mob-menu" aria-hidden="true">
-    <a href="#domov">Domů</a>
-    <a href="#o-akademii">O akademii</a>
-    <a href="#cesty">Cesty</a>
-    <a href="#pro-rodice">Pro rodiče</a>
-    <a href="#kontakt">Kontakt</a>
-    <div class="mob-cta">
-      <a href="#cesty" class="btn btn-primary" style="width:100%;justify-content:center">Vstoupit do akademie</a>
+  <div class="mm" id="da-mm" aria-hidden="true">
+    <a href="#da-domov">Domů</a>
+    <a href="#da-onas">O akademii</a>
+    <a href="#da-cesty">Cesty</a>
+    <a href="#da-rodice">Pro rodiče</a>
+    <a href="#da-kontakt">Kontakt</a>
+    <div class="mc">
+      <a href="#da-cesty" class="btn bp" style="width:100%;justify-content:center">Vstoupit do akademie</a>
     </div>
   </div>
 </header>
 
 <!-- ===================== HERO ===================== -->
-<section id="domov" class="hero">
-  <div class="hero-bg">
-    <div class="h-grad-l"></div>
-    <div class="h-grad-b"></div>
-    <div class="h-glow1"></div>
-    <div class="h-glow2"></div>
-    <div class="h-grid"></div>
-    <div class="h-illus">
-      <div class="h-illus-box">
+<section id="da-domov" class="hero">
+  <div class="hbg2">
+    <div class="hgl"></div><div class="hgb"></div>
+    <div class="hg1"></div><div class="hg2"></div>
+    <div class="hgrid"></div>
+    <div class="hill">
+      <div class="hillb">
         <span style="font-size:3.5rem;opacity:.5">🐉</span>
         <p style="font-size:.6875rem;color:var(--muted);font-style:italic;max-width:200px;text-align:center;line-height:1.55">Ilustrace: dítě a drak u pracovního stolu se štětci a figurkami</p>
-        <span class="ilabel">Nahradit obrázkem</span>
+        <span style="font-size:.5625rem;color:rgba(201,148,58,.3);letter-spacing:.2em;text-transform:uppercase">Nahradit obrázkem</span>
       </div>
     </div>
   </div>
   <div class="wrap" style="width:100%;position:relative;z-index:10">
-    <div class="h-content">
-      <div class="eyebrow"><span class="eyebrow-txt">Valiente Project</span></div>
-      <h1 class="hero-title">
+    <div class="hcon">
+      <div class="eb"><span class="ebt">Valiente Project</span></div>
+      <h1 class="htit">
         Místo, kde se<br>
         <span class="acc">z první figurky</span><br>
         stává dobrodružství.
       </h1>
-      <p class="hero-sub">
-        Učíme děti i dospělé tvořit rukama, malovat figurky,
-        soustředit se a <strong>nebát se chyb</strong>.
-      </p>
-      <div class="hero-btns">
-        <a href="#cesty" class="btn btn-primary">🐉 Vstoupit do akademie</a>
-        <a href="#jak-to-funguje" class="btn btn-outline">Jak to funguje ›</a>
+      <p class="hsub">Učíme děti i dospělé tvořit rukama, malovat figurky, soustředit se a <strong>nebát se chyb</strong>.</p>
+      <div class="hbtns">
+        <a href="#da-cesty" class="btn bp">🐉 Vstoupit do akademie</a>
+        <a href="#da-jak" class="btn bo">Jak to funguje ›</a>
       </div>
-      <div class="soc-proof">
-        <div class="av-stack">
-          <span>🧑</span><span>👧</span><span>🧒</span><span>👦</span>
-        </div>
-        <p class="sp-txt">Stovky tvůrců už<br><strong>začaly svoji cestu</strong></p>
+      <div class="sp2">
+        <div class="avs"><span>🧑</span><span>👧</span><span>🧒</span><span>👦</span></div>
+        <p class="spt">Stovky tvůrců už<br><strong>začaly svoji cestu</strong></p>
       </div>
     </div>
   </div>
-  <div class="h-scroll">Scroll</div>
 </section>
 
 <!-- ===================== ABOUT ===================== -->
-<section id="o-akademii" class="section-pad" style="background:var(--dark)">
+<section id="da-onas" class="sp" style="background:var(--dark)">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sh">
       <div class="orn"><span>◆</span></div>
-      <h2 class="section-title">Co je Dračí akademie?</h2>
-      <p class="section-sub" style="margin-top:.875rem">
-        Jsme kreativně-vzdělávací prostor od <strong style="color:var(--parch);font-weight:500">Valiente Projectu</strong>.
-        Spojujeme svět fantasy, řemesla a učení tak, aby z každého projektu
-        vznikl zážitek, na který budete pyšní.
-      </p>
+      <h2 class="st">Co je Dračí akademie?</h2>
+      <p class="ss" style="margin-top:.875rem">Jsme kreativně-vzdělávací prostor od <strong style="color:var(--parch);font-weight:500">Valiente Projectu</strong>. Spojujeme svět fantasy, řemesla a učení tak, aby z každého projektu vznikl zážitek, na který budete pyšní.</p>
     </div>
     <div class="g3">
-      <div class="card-parch about-card">
-        <div class="about-ico">🎨</div>
-        <h3 class="card-title">Malování figurek</h3>
-        <p class="card-txt">Naučíme tě techniky, které oživí každou figurku – krok za krokem, srozumitelně a s radostí.</p>
+      <div class="cardp ac">
+        <div class="ai">🎨</div>
+        <h3 class="ct">Malování figurek</h3>
+        <p class="cd">Naučíme tě techniky, které oživí každou figurku – krok za krokem, srozumitelně a s radostí.</p>
       </div>
-      <div class="card-parch about-card">
-        <div class="about-ico">✋</div>
-        <h3 class="card-title">Tvoření rukama</h3>
-        <p class="card-txt">Práce rukama rozvíjí zručnost, představivost a přináší pocit, že dokážeš víc, než si myslíš.</p>
+      <div class="cardp ac">
+        <div class="ai">✋</div>
+        <h3 class="ct">Tvoření rukama</h3>
+        <p class="cd">Práce rukama rozvíjí zručnost, představivost a přináší pocit, že dokážeš víc, než si myslíš.</p>
       </div>
-      <div class="card-parch about-card">
-        <div class="about-ico">🌱</div>
-        <h3 class="card-title">Růst a soustředění</h3>
-        <p class="card-txt">Dlouhodobé projekty učí trpělivost, soustředění a radost z vlastního pokroku.</p>
+      <div class="cardp ac">
+        <div class="ai">🌱</div>
+        <h3 class="ct">Růst a soustředění</h3>
+        <p class="cd">Dlouhodobé projekty učí trpělivost, soustředění a radost z vlastního pokroku.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== FOR WHO ===================== -->
-<section class="section-pad" style="background:var(--card-alt)">
+<section class="sp" style="background:var(--card-alt)">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sh">
       <div class="orn"><span>◆</span></div>
-      <h2 class="section-title">Pro koho je Dračí akademie?</h2>
+      <h2 class="st">Pro koho je Dračí akademie?</h2>
     </div>
     <div class="g4">
-      <div class="fw-card fw-green">
-        <span class="fw-ico">🧒</span>
-        <h3 class="card-title">Pro děti</h3>
-        <p class="card-txt">Rozvíjí tvořivost, zručnost a sebedůvěru zábavnou formou.</p>
-      </div>
-      <div class="fw-card fw-blue">
-        <span class="fw-ico">👨‍👧</span>
-        <h3 class="card-title">Pro rodiče</h3>
-        <p class="card-txt">Kvalitní smysluplný čas a podpora dovedností, které dávají smysl.</p>
-      </div>
-      <div class="fw-card fw-amber">
-        <span class="fw-ico">🎯</span>
-        <h3 class="card-title">Pro začátečníky</h3>
-        <p class="card-txt">Vše vysvětlíme od základů. Žádné předchozí zkušenosti nejsou potřeba.</p>
-      </div>
-      <div class="fw-card fw-purple">
-        <span class="fw-ico">⭐</span>
-        <h3 class="card-title">Pro pokročilé tvůrce</h3>
-        <p class="card-txt">Nové techniky, výzvy a projekty pro další posun tvého umu.</p>
-      </div>
+      <div class="fwc fwg"><span class="fwico">🧒</span><h3 class="ct">Pro děti</h3><p class="cd">Rozvíjí tvořivost, zručnost a sebedůvěru zábavnou formou.</p></div>
+      <div class="fwc fwb"><span class="fwico">👨‍👧</span><h3 class="ct">Pro rodiče</h3><p class="cd">Kvalitní smysluplný čas a podpora dovedností, které dávají smysl.</p></div>
+      <div class="fwc fwa"><span class="fwico">🎯</span><h3 class="ct">Pro začátečníky</h3><p class="cd">Vše vysvětlíme od základů. Žádné předchozí zkušenosti nejsou potřeba.</p></div>
+      <div class="fwc fwp"><span class="fwico">⭐</span><h3 class="ct">Pro pokročilé tvůrce</h3><p class="cd">Nové techniky, výzvy a projekty pro další posun tvého umu.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ===================== PATHS ===================== -->
-<section id="cesty" class="section-pad" style="background:var(--dark)">
+<section id="da-cesty" class="sp" style="background:var(--dark)">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sh">
       <div class="orn"><span>◆</span></div>
-      <h2 class="section-title">Vyber si svoji cestu</h2>
-      <p class="section-sub" style="margin-top:.875rem">Každá cesta vede jinam, ale všechny začínají u štětce a touhy tvořit.</p>
+      <h2 class="st">Vyber si svoji cestu</h2>
+      <p class="ss" style="margin-top:.875rem">Každá cesta vede jinam, ale všechny začínají u štětce a touhy tvořit.</p>
     </div>
     <div class="g4">
-      <!-- Card 1 -->
-      <div class="path-card bg-p-green">
-        <div class="path-img">
-          <span class="path-img-ico">⚔️</span>
-          <span class="path-img-lbl">Nahradit ilustrací</span>
-        </div>
-        <div class="path-body">
-          <span class="path-sub" style="color:#4ade80">Pro začátečníky</span>
-          <h3 class="path-title">Cesta první figurky</h3>
-          <p class="path-txt">Začni jednoduše a vytvoř svou první figurku, na kterou budeš hrdě koukat.</p>
-          <a href="#" class="path-btn pb-green">Začít cestu ›</a>
+      <div class="pc bpg">
+        <div class="pimg"><span class="pico">⚔️</span><span class="plbl">Nahradit ilustrací</span></div>
+        <div class="pb">
+          <span class="psub" style="color:#4ade80">Pro začátečníky</span>
+          <h3 class="ptit">Cesta první figurky</h3>
+          <p class="ptxt">Začni jednoduše a vytvoř svou první figurku, na kterou budeš hrdě koukat.</p>
+          <a href="#" class="pbtn pbgr">Začít cestu ›</a>
         </div>
       </div>
-      <!-- Card 2 – featured -->
-      <div class="path-card bg-p-blue">
-        <div class="path-feat-badge">⭐ Nejoblíbenější</div>
-        <div class="path-img">
-          <span class="path-img-ico">🐉</span>
-          <span class="path-img-lbl">Nahradit ilustrací</span>
-        </div>
-        <div class="path-body">
-          <span class="path-sub" style="color:var(--gold)">Pro rostoucí tvůrce</span>
-          <h3 class="path-title">Dračí trénink</h3>
-          <p class="path-txt">Postupné lekce a výzvy, které z tebe udělají lepšího tvůrce.</p>
-          <a href="#" class="path-btn pb-gold">Jít trénovat ›</a>
+      <div class="pc bpb">
+        <div class="pfb">⭐ Nejoblíbenější</div>
+        <div class="pimg"><span class="pico">🐉</span><span class="plbl">Nahradit ilustrací</span></div>
+        <div class="pb">
+          <span class="psub" style="color:var(--gold)">Pro rostoucí tvůrce</span>
+          <h3 class="ptit">Dračí trénink</h3>
+          <p class="ptxt">Postupné lekce a výzvy, které z tebe udělají lepšího tvůrce.</p>
+          <a href="#" class="pbtn pbg">Jít trénovat ›</a>
         </div>
       </div>
-      <!-- Card 3 -->
-      <div class="path-card bg-p-amber">
-        <div class="path-img">
-          <span class="path-img-ico">🎨</span>
-          <span class="path-img-lbl">Nahradit ilustrací</span>
-        </div>
-        <div class="path-body">
-          <span class="path-sub" style="color:#fbbf24">Teorie i praxe</span>
-          <h3 class="path-title">Akademie barev</h3>
-          <p class="path-txt">Ponoř se do světa barev, světel, stínů a efektů.</p>
-          <a href="#" class="path-btn pb-amber">Objevit barvy ›</a>
+      <div class="pc bpa">
+        <div class="pimg"><span class="pico">🎨</span><span class="plbl">Nahradit ilustrací</span></div>
+        <div class="pb">
+          <span class="psub" style="color:#fbbf24">Teorie i praxe</span>
+          <h3 class="ptit">Akademie barev</h3>
+          <p class="ptxt">Ponoř se do světa barev, světel, stínů a efektů.</p>
+          <a href="#" class="pbtn pbam">Objevit barvy ›</a>
         </div>
       </div>
-      <!-- Card 4 -->
-      <div class="path-card bg-p-stone">
-        <div class="path-img">
-          <span class="path-img-ico">🏰</span>
-          <span class="path-img-lbl">Nahradit ilustrací</span>
-        </div>
-        <div class="path-body">
-          <span class="path-sub" style="color:#a8a29e">Pro zkušené tvůrce</span>
-          <h3 class="path-title">Projektová dílna</h3>
-          <p class="path-txt">Větší projekty, diorámy a příběhy, které ožijí tvýma rukama.</p>
-          <a href="#" class="path-btn pb-stone">Otevřít dílnu ›</a>
+      <div class="pc bps">
+        <div class="pimg"><span class="pico">🏰</span><span class="plbl">Nahradit ilustrací</span></div>
+        <div class="pb">
+          <span class="psub" style="color:#a8a29e">Pro zkušené tvůrce</span>
+          <h3 class="ptit">Projektová dílna</h3>
+          <p class="ptxt">Větší projekty, diorámy a příběhy, které ožijí tvýma rukama.</p>
+          <a href="#" class="pbtn pbst">Otevřít dílnu ›</a>
         </div>
       </div>
     </div>
@@ -574,119 +473,81 @@ a{text-decoration:none;color:inherit}
 </section>
 
 <!-- ===================== SKILLS ===================== -->
-<section class="section-pad" style="background:var(--card-alt)">
+<section class="sp" style="background:var(--card-alt)">
   <div class="wrap">
     <div class="g2">
       <div>
-        <div class="eyebrow"><span class="eyebrow-txt">Víc než figurky</span></div>
-        <h2 class="section-title" style="margin-bottom:1.25rem">Nejde jen<br>o figurky</h2>
-        <p style="font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:1rem">
-          Figurky jsou nástroj. Skutečným cílem je naučit se soustředit,
-          vydržet, pracovat s chybou a dokončovat věci.
-        </p>
-        <p style="font-size:1rem;color:var(--muted);line-height:1.75">
-          Každý tah štětcem je malý krok k větší trpělivosti, kreativitě
-          a sebejistotě — dovednostem, které se hodí v tvorbě i v životě.
-        </p>
+        <div class="eb"><span class="ebt">Víc než figurky</span></div>
+        <h2 class="st" style="margin-bottom:1.25rem">Nejde jen<br>o figurky</h2>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:1rem">Figurky jsou nástroj. Skutečným cílem je naučit se soustředit, vydržet, pracovat s chybou a dokončovat věci.</p>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.75">Každý tah štětcem je malý krok k větší trpělivosti, kreativitě a sebejistotě.</p>
       </div>
-      <div class="ben-grid">
-        <div class="ben">
-          <span class="ben-ico">✋</span>
-          <div><div class="ben-t">Jemná motorika</div><div class="ben-d">Každý tah štětcem zpřesňuje pohyby ruky.</div></div>
-        </div>
-        <div class="ben">
-          <span class="ben-ico">🧘</span>
-          <div><div class="ben-t">Soustředění</div><div class="ben-d">Tvorba vyžaduje klid a přítomnost.</div></div>
-        </div>
-        <div class="ben">
-          <span class="ben-ico">🔄</span>
-          <div><div class="ben-t">Práce s chybou</div><div class="ben-d">Chyba je součást procesu, ze které se učíme.</div></div>
-        </div>
-        <div class="ben">
-          <span class="ben-ico">💡</span>
-          <div><div class="ben-t">Kreativita</div><div class="ben-d">Vlastní rozhodnutí o barvách, stylu a příběhu.</div></div>
-        </div>
-        <div class="ben ben-span">
-          <span class="ben-ico">🏆</span>
-          <div><div class="ben-t">Radost z dokončení</div><div class="ben-d">Dokončený projekt je konkrétní důkaz toho, co dokážeš.</div></div>
-        </div>
+      <div class="bng">
+        <div class="bn"><span class="bnico">✋</span><div><div class="bnt">Jemná motorika</div><div class="bnd">Každý tah štětcem zpřesňuje pohyby ruky.</div></div></div>
+        <div class="bn"><span class="bnico">🧘</span><div><div class="bnt">Soustředění</div><div class="bnd">Tvorba vyžaduje klid a přítomnost.</div></div></div>
+        <div class="bn"><span class="bnico">🔄</span><div><div class="bnt">Práce s chybou</div><div class="bnd">Chyba je součást procesu, ze které se učíme.</div></div></div>
+        <div class="bn"><span class="bnico">💡</span><div><div class="bnt">Kreativita</div><div class="bnd">Vlastní rozhodnutí o barvách, stylu a příběhu.</div></div></div>
+        <div class="bn bnsp"><span class="bnico">🏆</span><div><div class="bnt">Radost z dokončení</div><div class="bnd">Dokončený projekt je konkrétní důkaz toho, co dokážeš.</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== HOW IT WORKS ===================== -->
-<section id="jak-to-funguje" class="section-pad" style="background:var(--dark)">
+<section id="da-jak" class="sp" style="background:var(--dark)">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sh">
       <div class="orn"><span>◆</span></div>
-      <h2 class="section-title">Jak akademie funguje</h2>
-      <p class="section-sub" style="margin-top:.875rem">Čtyři jednoduché kroky k tomu, aby ses stal skutečným tvůrcem.</p>
+      <h2 class="st">Jak akademie funguje</h2>
+      <p class="ss" style="margin-top:.875rem">Čtyři jednoduché kroky k tomu, aby ses stal skutečným tvůrcem.</p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-conn"></div>
-        <div class="step-circ"><span class="step-num">1</span><span class="step-ico">🗺️</span></div>
-        <div class="step-body">
-          <div class="step-ttl">Vybereš si cestu</div>
-          <div class="step-txt">Zvolíš si program, který tě nejvíc láká a vytvoříš si svůj plán.</div>
-        </div>
+    <div class="stps">
+      <div class="stp">
+        <div class="stpc"></div>
+        <div class="stpci"><span class="stpn">1</span><span class="stpio">🗺️</span></div>
+        <div class="stpb"><div class="stpt">Vybereš si cestu</div><div class="stpd">Zvolíš si program, který tě nejvíc láká a vytvoříš si svůj plán.</div></div>
       </div>
-      <div class="step">
-        <div class="step-conn"></div>
-        <div class="step-circ"><span class="step-num">2</span><span class="step-ico">▶️</span></div>
-        <div class="step-body">
-          <div class="step-ttl">Sleduješ lekce</div>
-          <div class="step-txt">Srozumitelné video lekce tě provedou každým krokem.</div>
-        </div>
+      <div class="stp">
+        <div class="stpc"></div>
+        <div class="stpci"><span class="stpn">2</span><span class="stpio">▶️</span></div>
+        <div class="stpb"><div class="stpt">Sleduješ lekce</div><div class="stpd">Srozumitelné video lekce tě provedou každým krokem.</div></div>
       </div>
-      <div class="step">
-        <div class="step-conn"></div>
-        <div class="step-circ"><span class="step-num">3</span><span class="step-ico">🖌️</span></div>
-        <div class="step-body">
-          <div class="step-ttl">Tvoříš vlastníma rukama</div>
-          <div class="step-txt">Praktické úkoly, tipy a zpětná vazba tě posunou dopředu.</div>
-        </div>
+      <div class="stp">
+        <div class="stpc"></div>
+        <div class="stpci"><span class="stpn">3</span><span class="stpio">🖌️</span></div>
+        <div class="stpb"><div class="stpt">Tvoříš vlastníma rukama</div><div class="stpd">Praktické úkoly, tipy a zpětná vazba tě posunou dopředu.</div></div>
       </div>
-      <div class="step">
-        <div class="step-circ"><span class="step-num">4</span><span class="step-ico">📈</span></div>
-        <div class="step-body">
-          <div class="step-ttl">Postupně rosteš</div>
-          <div class="step-txt">Dokončuješ projekty, získáváš dovednosti a rosteš spolu s akademií.</div>
-        </div>
+      <div class="stp">
+        <div class="stpci"><span class="stpn">4</span><span class="stpio">📈</span></div>
+        <div class="stpb"><div class="stpt">Postupně rosteš</div><div class="stpd">Dokončuješ projekty, získáváš dovednosti a rosteš spolu s akademií.</div></div>
       </div>
     </div>
-    <div class="steps-cta">
-      <a href="#cesty" class="btn btn-primary">Vybrat si svoji cestu</a>
-    </div>
+    <div class="stpcta"><a href="#da-cesty" class="btn bp">Vybrat si svoji cestu</a></div>
   </div>
 </section>
 
 <!-- ===================== FOR PARENTS ===================== -->
-<section id="pro-rodice" class="section-pad" style="background:var(--card-alt)">
+<section id="da-rodice" class="sp" style="background:var(--card-alt)">
   <div class="wrap">
     <div class="g2">
-      <!-- Illustration -->
-      <div class="par-illus">
-        <div class="corn tl"></div><div class="corn tr"></div>
-        <div class="corn bl"></div><div class="corn br"></div>
-        <div class="ill-in">
+      <div class="pill">
+        <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+        <div style="text-align:center;padding:2rem">
           <span style="font-size:3.5rem;opacity:.5;display:block;margin-bottom:.75rem">👨‍👧</span>
-          <p style="font-size:.75rem;color:var(--dim);font-style:italic;max-width:220px;line-height:1.55;margin:0 auto .5rem">Fotografie: rodič a dítě tvoří společně u pracovního stolu — štětce, figurky, teplé světlo dílny</p>
+          <p style="font-size:.75rem;color:var(--dim);font-style:italic;max-width:220px;line-height:1.55;margin:0 auto .5rem">Fotografie: rodič a dítě tvoří společně u pracovního stolu — štětce, figurky, teplé světlo</p>
           <span style="font-size:.5rem;color:rgba(201,148,58,.3);letter-spacing:.2em;text-transform:uppercase">Nahradit fotografií</span>
         </div>
       </div>
-      <!-- Text -->
-      <div class="par-body">
-        <div class="eyebrow"><span class="eyebrow-txt">Pro rodiče</span></div>
-        <h2 class="section-title" style="margin-bottom:1.25rem">Tvoření,<br>které má přesah</h2>
+      <div class="parbody">
+        <div class="eb"><span class="ebt">Pro rodiče</span></div>
+        <h2 class="st" style="margin-bottom:1.25rem">Tvoření,<br>které má přesah</h2>
         <p>Dračí akademie není jen další obrazovka navíc. Video lekce slouží jako průvodce, ale hlavní práce se odehrává mimo displej — u pracovního stolu, se štětcem v ruce.</p>
-        <p>Děti se učí <strong>trpělivosti, jemné motorice, soustředění</strong> a tomu, že chyba není konec — to jsou dovednosti do života.</p>
-        <div class="bdg-grid">
-          <div class="bdg"><span class="bdg-ico">🛡️</span><span class="bdg-lbl">Bezpečné prostředí</span></div>
-          <div class="bdg"><span class="bdg-ico">🌱</span><span class="bdg-lbl">Smysluplný rozvoj</span></div>
-          <div class="bdg"><span class="bdg-ico">✋</span><span class="bdg-lbl">Offline dovednosti</span></div>
-          <div class="bdg"><span class="bdg-ico">🤝</span><span class="bdg-lbl">Komunita a podpora</span></div>
+        <p>Děti se učí <strong>trpělivosti, jemné motorice, soustředění</strong> a tomu, že chyba není konec.</p>
+        <div class="bdgg">
+          <div class="bdg"><span class="bdgico">🛡️</span><span class="bdglbl">Bezpečné prostředí</span></div>
+          <div class="bdg"><span class="bdgico">🌱</span><span class="bdglbl">Smysluplný rozvoj</span></div>
+          <div class="bdg"><span class="bdgico">✋</span><span class="bdglbl">Offline dovednosti</span></div>
+          <div class="bdg"><span class="bdgico">🤝</span><span class="bdglbl">Komunita a podpora</span></div>
         </div>
       </div>
     </div>
@@ -694,101 +555,79 @@ a{text-decoration:none;color:inherit}
 </section>
 
 <!-- ===================== COMMUNITY ===================== -->
-<section class="section-pad" style="background:var(--dark)">
+<section class="sp" style="background:var(--dark)">
   <div class="wrap">
-    <div class="text-center" style="margin-bottom:3rem">
+    <div class="tc" style="margin-bottom:3rem">
       <div class="orn"><span>◆</span></div>
-      <h2 class="section-title" style="margin-top:.5rem">
-        Od první figurky<br>
-        <span style="color:var(--gold)">až ke komunitě</span>
-      </h2>
-      <p class="section-sub" style="margin:.875rem auto 0">
-        Dračí akademie je součástí širšího světa <strong style="color:var(--parch);font-weight:500">Valiente Projectu</strong> —
-        workshopů, soutěží, školních programů a komunitních akcí.
-        Začít můžeš doma u jedné figurky. Jednou svůj model ukázat ostatním na soutěži <span style="color:var(--gold);font-weight:500">Golden Goblin</span>.
-      </p>
+      <h2 class="st" style="margin-top:.5rem">Od první figurky<br><span style="color:var(--gold)">až ke komunitě</span></h2>
+      <p class="ss" style="margin:.875rem auto 0">Dračí akademie je součástí širšího světa <strong style="color:var(--parch);font-weight:500">Valiente Projectu</strong> — workshopů, soutěží, školních programů a komunitních akcí. Začít můžeš doma u jedné figurky. Jednou svůj model ukázat ostatním na soutěži <span style="color:var(--gold);font-weight:500">Golden Goblin</span>.</p>
     </div>
-    <div class="milestones">
-      <div class="ms"><div class="ms-ico">🏠</div><span class="ms-lbl">Doma u figurky</span></div>
-      <span class="ms-arr">›</span>
-      <div class="ms"><div class="ms-ico">📚</div><span class="ms-lbl">Online lekce</span></div>
-      <span class="ms-arr">›</span>
-      <div class="ms"><div class="ms-ico">🎪</div><span class="ms-lbl">Workshop</span></div>
-      <span class="ms-arr">›</span>
-      <div class="ms"><div class="ms-ico">🏆</div><span class="ms-lbl">Golden Goblin</span></div>
+    <div class="mst">
+      <div class="ms"><div class="msico">🏠</div><span class="mslbl">Doma u figurky</span></div>
+      <span class="msarr">›</span>
+      <div class="ms"><div class="msico">📚</div><span class="mslbl">Online lekce</span></div>
+      <span class="msarr">›</span>
+      <div class="ms"><div class="msico">🎪</div><span class="mslbl">Workshop</span></div>
+      <span class="msarr">›</span>
+      <div class="ms"><div class="msico">🏆</div><span class="mslbl">Golden Goblin</span></div>
     </div>
-    <div class="comm-footer">
-      <div><div class="cf-title">Workshopy</div><div class="cf-txt">Živé setkání tvůrců</div></div>
-      <div><div class="cf-title">Školní programy</div><div class="cf-txt">Kreativita ve třídě</div></div>
-      <div><div class="cf-title">Golden Goblin</div><div class="cf-txt">Soutěž pro všechny úrovně</div></div>
+    <div class="cf">
+      <div><div class="cft">Workshopy</div><div class="cfd">Živé setkání tvůrců</div></div>
+      <div><div class="cft">Školní programy</div><div class="cfd">Kreativita ve třídě</div></div>
+      <div><div class="cft">Golden Goblin</div><div class="cfd">Soutěž pro všechny úrovně</div></div>
     </div>
   </div>
 </section>
 
 <!-- ===================== FINAL CTA ===================== -->
-<section class="section-cta">
-  <div class="cta-bg-g1"></div>
-  <div class="cta-bg-g2"></div>
-  <div class="cta-grid-bg"></div>
-  <div class="cta-corn tl"></div><div class="cta-corn tr"></div>
-  <div class="cta-corn bl"></div><div class="cta-corn br"></div>
-  <div class="cta-in">
-    <div class="cta-dragon">🐉</div>
+<section class="scta">
+  <div class="cg1"></div><div class="cg2"></div><div class="cgrid"></div>
+  <div class="ccorn tl"></div><div class="ccorn tr"></div><div class="ccorn bl"></div><div class="ccorn br"></div>
+  <div class="cin">
+    <div style="font-size:3.5rem;margin-bottom:1.5rem;opacity:.8">🐉</div>
     <div class="orn"><span>◆</span></div>
-    <h2 class="cta-title" style="margin-top:.5rem">
-      Začni svoji<br>
-      <span class="acc">tvůrčí cestu</span>
-    </h2>
-    <p class="cta-lead">Nemusíš být talentovaný. Stačí začít.</p>
-    <p class="cta-desc">Každý velký tvůrce začínal přesně tam, kde jsi teď — s jednou figurkou a touhou zkusit to.</p>
-    <a href="#cesty" class="btn btn-primary" style="font-size:.9rem;padding:1rem 2.25rem">🐉 Vstoupit do Dračí akademie</a>
-    <p class="cta-note">Bez závazků · Začni hned · Valiente Project</p>
+    <h2 class="cttl" style="margin-top:.5rem">Začni svoji<br><span class="acc">tvůrčí cestu</span></h2>
+    <p style="font-size:1.125rem;color:var(--text);margin-bottom:.75rem">Nemusíš být talentovaný. Stačí začít.</p>
+    <p style="font-size:1rem;color:var(--muted);margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7">Každý velký tvůrce začínal přesně tam, kde jsi teď — s jednou figurkou a touhou zkusit to.</p>
+    <a href="#da-cesty" class="btn bp" style="font-size:.9rem;padding:1rem 2.25rem">🐉 Vstoupit do Dračí akademie</a>
+    <p style="margin-top:1.5rem;font-size:.75rem;color:var(--dim);letter-spacing:.08em">Bez závazků · Začni hned · Valiente Project</p>
   </div>
 </section>
 
 <!-- ===================== FOOTER ===================== -->
-<footer class="site-footer" id="kontakt">
+<footer class="ft" id="da-kontakt">
   <div class="wrap">
-    <div class="foot-main">
-      <div class="f-brand">
-        <div class="f-logo">
-          <div class="f-logo-ico">🐉</div>
-          <span class="f-logo-txt">Dračí akademie</span>
-        </div>
-        <p class="f-tagline">Kreativně-vzdělávací projekt od <em>Valiente Projectu</em>. Spojujeme fantasy, řemeslo a vzdělání.</p>
-        <div class="soc-row">
-          <a href="#" class="soc-a" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="#" class="soc-a" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="#" class="soc-a" aria-label="YouTube">
-            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
+    <div class="ftm">
+      <div class="fbrand">
+        <div class="flog"><div class="flic">🐉</div><span class="fltx">Dračí akademie</span></div>
+        <p class="ftag">Kreativně-vzdělávací projekt od <em>Valiente Projectu</em>. Spojujeme fantasy, řemeslo a vzdělání.</p>
+        <div class="socr">
+          <a href="#" class="soca" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" class="soca" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" class="soca" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         </div>
       </div>
       <div>
-        <div class="f-col-ttl">Akademie</div>
-        <ul class="f-links">
-          <li><a href="#o-akademii">O akademii</a></li>
-          <li><a href="#cesty">Cesty</a></li>
-          <li><a href="#jak-to-funguje">Jak to funguje</a></li>
-          <li><a href="#pro-rodice">Pro rodiče</a></li>
+        <div class="fct">Akademie</div>
+        <ul class="fl">
+          <li><a href="#da-onas">O akademii</a></li>
+          <li><a href="#da-cesty">Cesty</a></li>
+          <li><a href="#da-jak">Jak to funguje</a></li>
+          <li><a href="#da-rodice">Pro rodiče</a></li>
         </ul>
       </div>
       <div>
-        <div class="f-col-ttl">Podpora</div>
-        <ul class="f-links">
-          <li><a href="#kontakt">Kontakt</a></li>
+        <div class="fct">Podpora</div>
+        <ul class="fl">
+          <li><a href="#da-kontakt">Kontakt</a></li>
           <li><a href="#">Ochrana osobních údajů</a></li>
           <li><a href="#">Obchodní podmínky</a></li>
         </ul>
       </div>
     </div>
-    <div class="foot-bot">
-      <span class="f-copy">© 2024 Valiente Project. Všechna práva vyhrazena.</span>
-      <div class="f-legal">
+    <div class="ftb">
+      <span class="fcp">© 2024 Valiente Project. Všechna práva vyhrazena.</span>
+      <div class="fleg">
         <a href="#">Ochrana osobních údajů</a>
         <span>·</span>
         <a href="#">Obchodní podmínky</a>
@@ -797,34 +636,38 @@ a{text-decoration:none;color:inherit}
   </div>
 </footer>
 
+</div><!-- /#da-root -->
+
 <script>
 (function(){
-  // Header scroll
-  var hdr = document.getElementById('site-header');
-  window.addEventListener('scroll', function(){
+  var root = document.getElementById('da-root');
+  if(!root) return;
+  var hdr = root.querySelector('.hdr');
+  var btn = document.getElementById('da-hbg');
+  var mm  = document.getElementById('da-mm');
+
+  // Header scroll effect
+  function onScroll(){
     hdr.classList.toggle('scrolled', window.scrollY > 24);
-  }, {passive:true});
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
 
-  // Hamburger
-  var btn = document.getElementById('hamburger');
-  var menu = document.getElementById('mob-menu');
-  btn.addEventListener('click', function(){
-    var open = btn.classList.toggle('open');
-    menu.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', open);
-    menu.setAttribute('aria-hidden', !open);
-  });
-
-  // Close mobile menu on link click
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      btn.classList.remove('open');
-      menu.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-      menu.setAttribute('aria-hidden','true');
+  // Hamburger toggle
+  if(btn && mm){
+    btn.addEventListener('click', function(){
+      var open = btn.classList.toggle('open');
+      mm.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+      mm.setAttribute('aria-hidden', !open);
     });
-  });
+    mm.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        btn.classList.remove('open');
+        mm.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        mm.setAttribute('aria-hidden','true');
+      });
+    });
+  }
 })();
 </script>
-</body>
-</html>
