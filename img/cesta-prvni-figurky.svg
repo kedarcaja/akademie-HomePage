@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="60%" r="70%">
+      <stop offset="0%" stop-color="#0d1f10"/>
+      <stop offset="100%" stop-color="#060a07"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4a7c59" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#4a7c59" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="softglow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <rect width="480" height="320" fill="url(#bg)"/>
+  <ellipse cx="240" cy="200" rx="220" ry="160" fill="url(#glow)" filter="url(#blur)"/>
+
+  <!-- Forest background trees (dark silhouettes) -->
+  <path d="M0 320 L0 180 L30 220 L30 160 L60 200 L60 150 L90 190 L90 140 L110 175 L110 320 Z" fill="#0a1508" opacity="0.9"/>
+  <path d="M370 320 L370 145 L395 180 L395 130 L420 170 L420 120 L445 155 L445 140 L470 170 L480 140 L480 320 Z" fill="#0a1508" opacity="0.9"/>
+  <!-- Mid trees lighter -->
+  <path d="M90 320 L90 175 L115 210 L115 165 L140 200 L140 155 L160 185 L160 320 Z" fill="#0d1e0d" opacity="0.85"/>
+  <path d="M310 320 L310 160 L340 195 L340 150 L365 180 L365 145 L380 170 L380 320 Z" fill="#0d1e0d" opacity="0.85"/>
+
+  <!-- Distant misty mountains -->
+  <path d="M0 230 C60 180 120 200 180 175 C240 150 300 170 360 155 C420 140 460 165 480 160 L480 260 L0 260 Z" fill="#0f1a0f" opacity="0.5"/>
+
+  <!-- Stone path / cobblestone road -->
+  <path d="M180 320 C200 280 220 260 240 260 C260 260 280 280 300 320 Z" fill="#1a1a10" opacity="0.7"/>
+  <ellipse cx="240" cy="270" rx="20" ry="5" fill="#252515" opacity="0.5"/>
+
+  <!-- Glowing path markers / runes -->
+  <circle cx="200" cy="280" r="3" fill="#4a9a5a" opacity="0.7" filter="url(#softglow)"/>
+  <circle cx="240" cy="268" r="4" fill="#5aaa6a" opacity="0.6" filter="url(#softglow)"/>
+  <circle cx="280" cy="280" r="3" fill="#4a9a5a" opacity="0.7" filter="url(#softglow)"/>
+
+  <!-- MAIN FIGURINE: Warrior/Knight -->
+  <!-- Base -->
+  <ellipse cx="240" cy="255" rx="28" ry="8" fill="#1a2a1a" opacity="0.8"/>
+  <!-- Legs -->
+  <rect x="228" y="225" width="10" height="30" rx="3" fill="#2a3a2a" opacity="0.9"/>
+  <rect x="242" y="225" width="10" height="30" rx="3" fill="#2a3a2a" opacity="0.9"/>
+  <!-- Boots -->
+  <rect x="225" y="246" width="14" height="10" rx="3" fill="#1a2a18" opacity="0.9"/>
+  <rect x="241" y="246" width="14" height="10" rx="3" fill="#1a2a18" opacity="0.9"/>
+  <!-- Torso / armor -->
+  <rect x="224" y="185" width="32" height="42" rx="4" fill="#2e4a2e" opacity="0.95"/>
+  <!-- Armor lines -->
+  <line x1="240" y1="188" x2="240" y2="226" stroke="#3a6a3a" stroke-opacity="0.4" stroke-width="1"/>
+  <line x1="226" y1="200" x2="254" y2="200" stroke="#4a8a4a" stroke-opacity="0.3" stroke-width="1"/>
+  <!-- Gold trim -->
+  <rect x="224" y="185" width="32" height="4" rx="1" fill="#C9943A" opacity="0.6"/>
+  <rect x="224" y="224" width="32" height="3" rx="1" fill="#C9943A" opacity="0.5"/>
+  <!-- Pauldrons (shoulders) -->
+  <ellipse cx="220" cy="193" rx="9" ry="6" fill="#3a5a3a" opacity="0.9"/>
+  <ellipse cx="260" cy="193" rx="9" ry="6" fill="#3a5a3a" opacity="0.9"/>
+  <!-- Head/helmet -->
+  <ellipse cx="240" cy="176" rx="13" ry="14" fill="#2e4a2e" opacity="0.95"/>
+  <!-- Helmet crest -->
+  <path d="M232 165 L240 158 L248 165" fill="#C9943A" opacity="0.6"/>
+  <!-- Visor slit glow -->
+  <rect x="233" y="174" width="14" height="3" rx="1" fill="#4aaa4a" opacity="0.5" filter="url(#softglow)"/>
+  <!-- Eye glow -->
+  <circle cx="240" cy="175" r="5" fill="#4aaa4a" opacity="0.1" filter="url(#blur)"/>
+  <!-- Sword held up -->
+  <rect x="258" y="150" width="5" height="65" rx="2" fill="#8a8878" opacity="0.85"/>
+  <rect x="252" y="182" width="17" height="4" rx="1" fill="#C9943A" opacity="0.8"/>
+  <!-- Sword glow -->
+  <rect x="258" y="150" width="5" height="30" rx="2" fill="#aaa898" opacity="0.3" filter="url(#softglow)"/>
+  <!-- Shield -->
+  <path d="M216 195 C210 198 208 210 210 220 C212 228 218 232 222 230 C218 222 216 210 218 200 Z" fill="#1a3a1a" opacity="0.85"/>
+  <path d="M218 200 L222 230 L216 215 Z" fill="#C9943A" opacity="0.3"/>
+
+  <!-- Fireflies / magic sparks -->
+  <circle cx="160" cy="220" r="2" fill="#6aCC6a" opacity="0.5" filter="url(#softglow)"/>
+  <circle cx="310" cy="210" r="1.5" fill="#6aCC6a" opacity="0.4" filter="url(#softglow)"/>
+  <circle cx="190" cy="190" r="1" fill="#aaffaa" opacity="0.4"/>
+  <circle cx="290" cy="200" r="1.5" fill="#aaffaa" opacity="0.3"/>
+  <circle cx="340" cy="230" r="1" fill="#6aCC6a" opacity="0.4" filter="url(#softglow)"/>
+
+  <!-- Ground fog -->
+  <ellipse cx="240" cy="310" rx="220" ry="25" fill="#1a2a1a" opacity="0.4" filter="url(#blur)"/>
+
+  <!-- Label -->
+  <text x="240" y="308" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#4a9a5a" fill-opacity="0.4" letter-spacing="2">CESTA PRVNÍ FIGURKY — 480 × 320 px</text>
+</svg>

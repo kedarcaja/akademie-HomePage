@@ -85,32 +85,6 @@
 #da-root .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
 #da-root .g2{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 
-/* =====================
-   HEADER (sticky)
-   ===================== */
-#da-root .hdr{position:sticky;top:0;z-index:100;transition:all .3s;background:transparent}
-#da-root .hdr.scrolled{background:rgba(6,8,13,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 4px 30px rgba(0,0,0,.5)}
-#da-root .hi{display:flex;align-items:center;justify-content:space-between;height:72px}
-#da-root .logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
-#da-root .lic{width:36px;height:36px;border-radius:50%;border:2px solid rgba(201,148,58,.7);display:flex;align-items:center;justify-content:center;font-size:1.125rem;transition:all .2s}
-#da-root .logo:hover .lic{border-color:var(--gold);background:rgba(201,148,58,.1)}
-#da-root .ltx{font-family:var(--ff-serif);color:var(--gold);font-weight:700;font-size:1rem;letter-spacing:.12em;text-transform:uppercase}
-#da-root .nav{display:flex;align-items:center;gap:1.75rem}
-#da-root .nav a{color:var(--muted);font-size:.875rem;font-weight:500;letter-spacing:.04em;transition:color .2s;position:relative}
-#da-root .nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
-#da-root .nav a:hover{color:var(--gold)}
-#da-root .nav a:hover::after{width:100%}
-#da-root .hr{display:flex;align-items:center;gap:.75rem}
-#da-root .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem}
-#da-root .hbg span{display:block;width:22px;height:2px;background:var(--gold);border-radius:9999px;transition:all .3s}
-#da-root .hbg.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-#da-root .hbg.open span:nth-child(2){opacity:0;transform:scaleX(0)}
-#da-root .hbg.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-#da-root .mm{display:none;background:rgba(6,8,13,.98);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:1rem 1.5rem 1.5rem}
-#da-root .mm.open{display:block}
-#da-root .mm a{display:block;padding:.875rem .75rem;color:var(--muted);font-weight:500;transition:color .2s,background .2s;border-radius:2px}
-#da-root .mm a:hover{color:var(--gold);background:rgba(201,148,58,.05)}
-#da-root .mc{margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border)}
 
 /* =====================
    HERO
@@ -123,7 +97,8 @@
 #da-root .hg2{position:absolute;bottom:28%;right:18%;width:280px;height:280px;border-radius:50%;background:rgba(125,33,40,.07);filter:blur(80px);z-index:1}
 #da-root .hgrid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(201,148,58,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,148,58,1) 1px,transparent 1px);background-size:80px 80px;z-index:1}
 #da-root .hill{position:absolute;right:0;top:0;bottom:0;width:52%;display:flex;align-items:center;justify-content:center;z-index:1}
-#da-root .hillb{width:82%;max-width:460px;aspect-ratio:4/3;background:rgba(17,22,32,.6);border:1px solid rgba(201,148,58,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;backdrop-filter:blur(4px)}
+#da-root .hillb{width:82%;max-width:460px;aspect-ratio:4/3;overflow:hidden}
+#da-root .hillb img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85}
 #da-root .hcon{position:relative;z-index:10;padding:4rem 0;max-width:560px}
 #da-root .htit{font-family:var(--ff-serif);font-size:clamp(2.25rem,5vw,3.5rem);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:1.5rem}
 #da-root .htit .acc{color:var(--gold)}
@@ -161,9 +136,9 @@
 #da-root .pc{position:relative;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s,box-shadow .3s}
 #da-root .pc:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.5)}
 #da-root .pfb{position:relative;z-index:10;background:var(--gold);color:var(--darker);font-size:.5875rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-align:center;padding:.375rem 1rem}
-#da-root .pimg{position:relative;z-index:10;height:9rem;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(255,255,255,.05)}
-#da-root .pico{font-size:3rem;opacity:.6}
-#da-root .plbl{position:absolute;bottom:.5rem;left:0;right:0;text-align:center;font-size:.5rem;color:var(--dim);letter-spacing:.15em;text-transform:uppercase}
+#da-root .pimg{position:relative;z-index:10;height:11rem;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.05)}
+#da-root .pimg img{width:100%;height:100%;object-fit:cover;display:block;opacity:.75;transition:opacity .3s,transform .4s}
+#da-root .pc:hover .pimg img{opacity:.9;transform:scale(1.04)}
 #da-root .pb{position:relative;z-index:10;padding:1.5rem;display:flex;flex-direction:column;flex:1}
 #da-root .psub{font-size:.625rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.375rem}
 #da-root .ptit{font-family:var(--ff-serif);font-size:.9375rem;font-weight:700;color:var(--parch);line-height:1.3;margin-bottom:.625rem;letter-spacing:.04em}
@@ -207,7 +182,8 @@
 /* =====================
    FOR PARENTS
    ===================== */
-#da-root .pill{position:relative;background:linear-gradient(135deg,#1A1408 0%,#0D1520 100%);border:1px solid var(--border);min-height:420px;display:flex;align-items:center;justify-content:center}
+#da-root .pill{position:relative;border:1px solid var(--border);min-height:420px;overflow:hidden}
+#da-root .pill img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;opacity:.7}
 #da-root .co{position:absolute;width:2rem;height:2rem}
 #da-root .co.tl{top:.75rem;left:.75rem;border-top:2px solid rgba(201,148,58,.3);border-left:2px solid rgba(201,148,58,.3)}
 #da-root .co.tr{top:.75rem;right:.75rem;border-top:2px solid rgba(201,148,58,.3);border-right:2px solid rgba(201,148,58,.3)}
@@ -288,8 +264,6 @@
   #da-root .fbrand{grid-column:span 2}
 }
 @media(max-width:768px){
-  #da-root .nav,#da-root .hbtndesk{display:none}
-  #da-root .hbg{display:flex}
   #da-root .g3,#da-root .g4{grid-template-columns:1fr}
   #da-root .g2{grid-template-columns:1fr;gap:2rem}
   #da-root .hill{display:none}
@@ -316,41 +290,6 @@
 
 <div id="da-root">
 
-<!-- ===================== HEADER ===================== -->
-<header class="hdr" id="da-header">
-  <div class="wrap">
-    <div class="hi">
-      <a href="#da-domov" class="logo">
-        <div class="lic">🐉</div>
-        <span class="ltx">Dračí akademie</span>
-      </a>
-      <nav class="nav" aria-label="Hlavní navigace">
-        <a href="#da-domov">Domů</a>
-        <a href="#da-onas">O akademii</a>
-        <a href="#da-cesty">Cesty</a>
-        <a href="#da-rodice">Pro rodiče</a>
-        <a href="#da-kontakt">Kontakt</a>
-      </nav>
-      <div class="hr">
-        <a href="#da-cesty" class="btn bo bsm hbtndesk">Vstoupit</a>
-        <button class="hbg" id="da-hbg" aria-label="Otevřít menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="mm" id="da-mm" aria-hidden="true">
-    <a href="#da-domov">Domů</a>
-    <a href="#da-onas">O akademii</a>
-    <a href="#da-cesty">Cesty</a>
-    <a href="#da-rodice">Pro rodiče</a>
-    <a href="#da-kontakt">Kontakt</a>
-    <div class="mc">
-      <a href="#da-cesty" class="btn bp" style="width:100%;justify-content:center">Vstoupit do akademie</a>
-    </div>
-  </div>
-</header>
-
 <!-- ===================== HERO ===================== -->
 <section id="da-domov" class="hero">
   <div class="hbg2">
@@ -359,9 +298,7 @@
     <div class="hgrid"></div>
     <div class="hill">
       <div class="hillb">
-        <span style="font-size:3.5rem;opacity:.5">🐉</span>
-        <p style="font-size:.6875rem;color:var(--muted);font-style:italic;max-width:200px;text-align:center;line-height:1.55">Ilustrace: dítě a drak u pracovního stolu se štětci a figurkami</p>
-        <span style="font-size:.5625rem;color:rgba(201,148,58,.3);letter-spacing:.2em;text-transform:uppercase">Nahradit obrázkem</span>
+        <img src="img/hero.jpg" alt="Dítě malující fantasy figurku u pracovního stolu s drakem">
       </div>
     </div>
   </div>
@@ -440,7 +377,7 @@
     </div>
     <div class="g4">
       <div class="pc bpg">
-        <div class="pimg"><span class="pico">⚔️</span><span class="plbl">Nahradit ilustrací</span></div>
+        <div class="pimg"><img src="img/cesta-prvni-figurky.jpg" alt="Cesta první figurky"></div>
         <div class="pb">
           <span class="psub" style="color:#4ade80">Pro začátečníky</span>
           <h3 class="ptit">Cesta první figurky</h3>
@@ -450,7 +387,7 @@
       </div>
       <div class="pc bpb">
         <div class="pfb">⭐ Nejoblíbenější</div>
-        <div class="pimg"><span class="pico">🐉</span><span class="plbl">Nahradit ilustrací</span></div>
+        <div class="pimg"><img src="img/draci-trenink.jpg" alt="Dračí trénink"></div>
         <div class="pb">
           <span class="psub" style="color:var(--gold)">Pro rostoucí tvůrce</span>
           <h3 class="ptit">Dračí trénink</h3>
@@ -459,7 +396,7 @@
         </div>
       </div>
       <div class="pc bpa">
-        <div class="pimg"><span class="pico">🎨</span><span class="plbl">Nahradit ilustrací</span></div>
+        <div class="pimg"><img src="img/akademie-barev.jpg" alt="Akademie barev"></div>
         <div class="pb">
           <span class="psub" style="color:#fbbf24">Teorie i praxe</span>
           <h3 class="ptit">Akademie barev</h3>
@@ -468,7 +405,7 @@
         </div>
       </div>
       <div class="pc bps">
-        <div class="pimg"><span class="pico">🏰</span><span class="plbl">Nahradit ilustrací</span></div>
+        <div class="pimg"><img src="img/projektova-dilna.jpg" alt="Projektová dílna"></div>
         <div class="pb">
           <span class="psub" style="color:#a8a29e">Pro zkušené tvůrce</span>
           <h3 class="ptit">Projektová dílna</h3>
@@ -540,11 +477,7 @@
     <div class="g2">
       <div class="pill">
         <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
-        <div style="text-align:center;padding:2rem">
-          <span style="font-size:3.5rem;opacity:.5;display:block;margin-bottom:.75rem">👨‍👧</span>
-          <p style="font-size:.75rem;color:var(--dim);font-style:italic;max-width:220px;line-height:1.55;margin:0 auto .5rem">Fotografie: rodič a dítě tvoří společně u pracovního stolu — štětce, figurky, teplé světlo</p>
-          <span style="font-size:.5rem;color:rgba(201,148,58,.3);letter-spacing:.2em;text-transform:uppercase">Nahradit fotografií</span>
-        </div>
+        <img src="img/pro-rodice.jpg" alt="Rodič a dítě tvoří společně u pracovního stolu">
       </div>
       <div class="parbody">
         <div class="eb"><span class="ebt">Pro rodiče</span></div>
@@ -650,7 +583,6 @@
 (function(){
   var root = document.getElementById('da-root');
   if(!root) return;
-
   // Vyčisti padding/max-width na parent elementech systeme.io
   var p = root.parentElement;
   for(var i = 0; i < 8 && p && p !== document.body; i++){
@@ -661,34 +593,6 @@
     p.style.setProperty('width','100%','important');
     p.style.setProperty('overflow','visible','important');
     p = p.parentElement;
-  }
-
-  var hdr = root.querySelector('.hdr');
-  var btn = document.getElementById('da-hbg');
-  var mm  = document.getElementById('da-mm');
-
-  // Header scroll effect
-  function onScroll(){
-    hdr.classList.toggle('scrolled', window.scrollY > 24);
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-
-  // Hamburger toggle
-  if(btn && mm){
-    btn.addEventListener('click', function(){
-      var open = btn.classList.toggle('open');
-      mm.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', open);
-      mm.setAttribute('aria-hidden', !open);
-    });
-    mm.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){
-        btn.classList.remove('open');
-        mm.classList.remove('open');
-        btn.setAttribute('aria-expanded','false');
-        mm.setAttribute('aria-hidden','true');
-      });
-    });
   }
 })();
 </script>
