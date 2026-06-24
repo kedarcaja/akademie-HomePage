@@ -1,0 +1,211 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:480px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.55}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.2) 0%,rgba(10,12,18,.75) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 1.25rem}
+#da-root .hero-sub{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:38rem;margin:0 0 2rem}
+#da-root .instructor-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:border-color .2s}
+#da-root .instructor-card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .instructor-portrait{height:280px;overflow:hidden;background:linear-gradient(135deg,#0d1a2e,#1a2440);position:relative}
+#da-root .instructor-portrait img{width:100%;height:100%;object-fit:cover;opacity:.75}
+#da-root .instructor-body{padding:1.75rem}
+#da-root .instructor-specialty{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+#da-root .instructor-name{font-family:'Cinzel',serif;font-size:1.2rem;color:var(--parchment);margin:0 0 .75rem}
+#da-root .instructor-bio{font-size:.875rem;color:var(--muted);line-height:1.7;margin:0}
+#da-root .philosophy-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+#da-root .principle-num{font-family:'Cinzel',serif;font-size:3rem;font-weight:900;color:var(--gold);opacity:.2;line-height:1;margin-bottom:.5rem}
+#da-root .cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:600px){
+  #da-root .philosophy-row{grid-template-columns:1fr}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/lektori/hero/hero-lektori.jpg" alt="Lektoři – Dračí akademie">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Tým</span>
+        <h1 class="hero-h1">Strážci akademie.</h1>
+        <p class="hero-sub">Za každou lekcí, workshopem a výzvou stojí konkrétní člověk. Lektoři Dračí akademie nejsou jen učitelé — jsou tvůrci, kteří to žijí naplno.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="#lektori" class="btn-gold">Poznat tým</a>
+          <a href="#filosofie" class="btn-outline">Naše filozofie</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEKTOŘI -->
+  <section class="sec" id="lektori" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Tým lektorů</span><span></span></div>
+        <h2 class="sec-title">Kdo tě povede</h2>
+        <p class="sec-sub">Malí na papíře, velcí v detailu. Každý lektor přináší svůj specifický styl a přístup.</p>
+      </div>
+      <div class="grid-3">
+        <div class="instructor-card">
+          <div class="instructor-portrait">
+            <img src="https://assets.draciakademie.cz/images/lektori/hero/hero-lektori.jpg" alt="Radek – Dračí akademie">
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-specialty">Zakladatel · Malování figurek · NMM</div>
+            <h3 class="instructor-name">Radek</h3>
+            <p class="instructor-bio">Zakladatel Valiente Project a hlavní tvůrce Dračí akademie. Maluje figurky přes 15 let a učí od roku 2019. Jeho specialitou je Non-Metallic Metal a pokročilé glazury. Věří, že každý, kdo chce, se to naučit může.</p>
+          </div>
+        </div>
+        <div class="instructor-card" style="border-color:rgba(201,148,58,.4)">
+          <div class="instructor-portrait">
+            <img src="https://assets.draciakademie.cz/images/lektori/hero/hero-lektori.jpg" alt="Petra – Dračí akademie">
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-specialty">Lektorka · Bázování · Výtvarná edukace</div>
+            <h3 class="instructor-name">Petra</h3>
+            <p class="instructor-bio">Výtvarná pedagožka a nadšená tvůrkyně terénů a diorám. Vede workshopy pro děti i dospělé, specializuje se na bázování a tvoření scenerií. Přinesla do akademie přístup přátelský pro úplné začátečníky.</p>
+          </div>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-portrait">
+            <img src="https://assets.draciakademie.cz/images/lektori/hero/hero-lektori.jpg" alt="Tomáš – Dračí akademie">
+          </div>
+          <div class="instructor-body">
+            <div class="instructor-specialty">Lektor · Kompletní armády · Speed painting</div>
+            <h3 class="instructor-name">Tomáš</h3>
+            <p class="instructor-bio">Veterán Warhammer scény s přes 20 lety u armádního malování. Tomáš ví, jak zvládnout 100 figurek bez ztráty kvality — a tuhle disciplínu učí s výsledky, které jsou vidět. Mistr speed paintingu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:#070911;padding:.5rem 0"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- FILOZOFIE VÝUKY -->
+  <section class="sec" id="filosofie">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Přístup</span><span></span></div>
+        <h2 class="sec-title">Filozofie výuky</h2>
+        <p class="sec-sub">Tři principy, které jsou za každou lekcí, výzvou a setkáním v Dračí akademii.</p>
+      </div>
+      <div class="philosophy-row">
+        <div>
+          <div class="principle-num">01</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.05rem;color:var(--parchment);margin:0 0 .75rem">Praxe před teorií</h3>
+          <p style="font-size:.9rem;color:var(--muted);line-height:1.7;margin:0">Nejlepší učení probíhá rukama. Každý princip vysvětlujeme na konkrétní figurce, nikoli na prezentaci. Teorie přichází přirozeně z toho, co vidíš před sebou.</p>
+        </div>
+        <div>
+          <div class="principle-num">02</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.05rem;color:var(--parchment);margin:0 0 .75rem">Zpětná vazba bez kritiky</h3>
+          <p style="font-size:.9rem;color:var(--muted);line-height:1.7;margin:0">Hodnotíme pokrok, ne dokonalost. Naše zpětná vazba je konkrétní a konstruktivní — ukazujeme cestu dopředu, ne to, co bylo špatně.</p>
+        </div>
+        <div>
+          <div class="principle-num">03</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.05rem;color:var(--parchment);margin:0 0 .75rem">Komunita jako základ</h3>
+          <p style="font-size:.9rem;color:var(--muted);line-height:1.7;margin:0">Lektoři jsou součástí komunity, ne nad ní. V Dračím kruhu sdílíme své vlastní práce, chyby i překvapení. Protože tvoření je lidské.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="wrap-sm">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:1.5rem"><span></span><span>Tým</span><span></span></div>
+      <h2 class="sec-title">Poznat tým zblízka</h2>
+      <p class="sec-sub" style="margin-bottom:2rem">Lektoři jsou aktivní v komunitě Dračí kruh každý den. Vstup a začni s nimi tvořit.</p>
+      <a href="/komunita" class="btn-gold" style="font-size:.95rem;padding:1rem 2.5rem">Vstoupit do Dračího kruhu</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>

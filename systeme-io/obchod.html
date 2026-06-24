@@ -1,0 +1,253 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:480px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.55}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.2) 0%,rgba(10,12,18,.75) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 1.25rem}
+#da-root .hero-sub{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:38rem;margin:0 0 2rem}
+#da-root .product-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:border-color .2s;display:flex;flex-direction:column}
+#da-root .product-card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .product-img-wrap{height:220px;overflow:hidden;background:linear-gradient(135deg,#0d1a2e,#1a2440);position:relative}
+#da-root .product-img-wrap img{width:100%;height:100%;object-fit:cover;opacity:.7}
+#da-root .product-badge{position:absolute;top:1rem;left:1rem;background:var(--gold);color:#0A0C12;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .65rem}
+#da-root .product-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+#da-root .product-price{font-family:'Cinzel',serif;font-size:1.75rem;font-weight:900;color:var(--parchment);margin:.75rem 0}
+#da-root .product-price span{font-size:.85rem;font-family:'Inter',sans-serif;color:var(--muted);font-weight:400}
+#da-root .product-cta{margin-top:auto;padding-top:1.25rem}
+#da-root .kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+#da-root .subscription-band{background:linear-gradient(135deg,rgba(201,148,58,.08),rgba(201,148,58,.03));border:1px solid rgba(201,148,58,.3);padding:3rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+#da-root .cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:700px){
+  #da-root .subscription-band{grid-template-columns:1fr}
+  #da-root .kit-grid{grid-template-columns:1fr}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/obchod/hero/hero-obchod.jpg" alt="Obchod – Dračí akademie">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Obchod</span>
+        <h1 class="hero-h1">Vše, co potřebuješ<br>k tvorbě.</h1>
+        <p class="hero-sub">Starter kit, členství, předplatné zásilky. Vybavení, které tě provede od první figurky k sbírce, na kterou jsi hrdý.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="#produkty" class="btn-gold">Prozkoumat obchod</a>
+          <a href="#zasilka" class="btn-outline">Dračí zásilka</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUKTY -->
+  <section class="sec" id="produkty" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Nabídka</span><span></span></div>
+        <h2 class="sec-title">Vyber si svůj start</h2>
+        <p class="sec-sub">Tři možnosti, jak vstoupit do akademie. Každá jiná, každá správná.</p>
+      </div>
+      <div class="grid-3">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://assets.draciakademie.cz/images/obchod/hero/hero-obchod.jpg" alt="Starter kit Dračí akademie">
+            <span class="product-badge">Nejprodávanější</span>
+          </div>
+          <div class="product-body">
+            <h3 style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--parchment);margin:0 0 .5rem">Starter kit Dračí akademie</h3>
+            <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Vše, co potřebuješ k první figurce v jedné krabičce. Barvy, štětce, figurka, průvodce.</p>
+            <div class="product-price">999 Kč</div>
+            <div class="product-cta">
+              <a href="#" class="btn-gold" style="width:100%;justify-content:center">Přidat do košíku</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" style="border-color:rgba(201,148,58,.4)">
+          <div class="product-img-wrap">
+            <img src="https://assets.draciakademie.cz/images/obchod/hero/hero-obchod.jpg" alt="Měsíční členství">
+            <span class="product-badge" style="background:var(--card);color:var(--gold);border:1px solid var(--gold)">Členství</span>
+          </div>
+          <div class="product-body">
+            <h3 style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--parchment);margin:0 0 .5rem">Měsíční členství</h3>
+            <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Přístup ke všem kurzům, komunitě Dračí kruh, výzvám a live setkáním. Zruš kdykoli.</p>
+            <div class="product-price">299 Kč <span>/ měsíc</span></div>
+            <div class="product-cta">
+              <a href="#" class="btn-gold" style="width:100%;justify-content:center">Začít členství</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://assets.draciakademie.cz/images/obchod/hero/hero-obchod.jpg" alt="Dračí zásilka">
+            <span class="product-badge" style="background:rgba(201,148,58,.15);color:var(--gold);border:1px solid rgba(201,148,58,.4)">Předplatné</span>
+          </div>
+          <div class="product-body">
+            <h3 style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--parchment);margin:0 0 .5rem">Dračí zásilka</h3>
+            <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Každý měsíc krabička s figurkou, barvami a překvapením přímo domů. Žádné plánování, jen otevření.</p>
+            <div class="product-price">549 Kč <span>/ měsíc</span></div>
+            <div class="product-cta">
+              <a href="#zasilka" class="btn-outline" style="width:100%;justify-content:center">Zjistit víc</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:#070911;padding:.5rem 0"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- CO JE VE STARTER KITU -->
+  <section class="sec">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+        <div>
+          <div class="eyebrow"><span></span><span>Obsah balení</span></div>
+          <h2 class="sec-title">Co je ve starter kitu</h2>
+          <p style="color:var(--muted);line-height:1.7;margin:0 0 2rem">Každý detail starter kitu jsme volili záměrně — žádné zbytečnosti, žádné chybějící části.</p>
+          <div class="kit-grid">
+            <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> 6 barev Citadel Base</div>
+            <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> 2 barvy Citadel Shade</div>
+            <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Štětec základní</div>
+            <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Štětec detailový</div>
+            <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Figurka GW (dle dostupnosti)</div>
+            <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Základový sprej</div>
+            <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Průvodce v češtině</div>
+            <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> QR kód na první lekci</div>
+          </div>
+        </div>
+        <div style="height:380px;overflow:hidden;background:linear-gradient(135deg,#0d1a2e,#1a2440);position:relative">
+          <img src="https://assets.draciakademie.cz/images/obchod/hero/hero-obchod.jpg" alt="Starter kit obsah" style="width:100%;height:100%;object-fit:cover;opacity:.7">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- DRAČÍ ZÁSILKA -->
+  <section class="sec" style="background:#070911" id="zasilka">
+    <div class="wrap">
+      <div class="subscription-band">
+        <div>
+          <div class="eyebrow"><span></span><span>Předplatné</span></div>
+          <h2 class="sec-title">Dračí zásilka</h2>
+          <p style="color:var(--muted);line-height:1.7;margin:0 0 1.5rem">Každý měsíc krabička. Uvnitř vždy figurka, tématická sada barev, překvapení a tipy na malování. Žádné plánování z vaší strany — jen radost z otevírání.</p>
+          <ul style="list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:.6rem">
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Nová figurka každý měsíc (kurátor vybírá)</li>
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Tématická sada barev ke konkrétní figurce</li>
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Karta s tipy a technikami</li>
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Překvapení (náhodný doplněk, promo, slevy)</li>
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Zrušení kdykoli, bez poplatků</li>
+          </ul>
+          <div style="display:flex;align-items:baseline;gap:.5rem;margin-bottom:2rem">
+            <span style="font-family:'Cinzel',serif;font-size:2rem;color:var(--parchment);font-weight:900">549 Kč</span>
+            <span style="color:var(--muted);font-size:.9rem">/ měsíc vč. poštovného</span>
+          </div>
+          <a href="#" class="btn-gold">Objednat zásilku</a>
+        </div>
+        <div style="height:320px;overflow:hidden;background:linear-gradient(135deg,#0d1a2e,#1a2440);position:relative">
+          <img src="https://assets.draciakademie.cz/images/obchod/hero/hero-obchod.jpg" alt="Dračí zásilka" style="width:100%;height:100%;object-fit:cover;opacity:.65">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="wrap-sm">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:1.5rem"><span></span><span>Obchod</span><span></span></div>
+      <h2 class="sec-title">Prozkoumat celý obchod</h2>
+      <p class="sec-sub" style="margin-bottom:2rem">Starter kity, členství, zásilky, sady pro školy. Vše na jednom místě.</p>
+      <a href="#" class="btn-gold" style="font-size:.95rem;padding:1rem 2.5rem">Prozkoumat obchod</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>

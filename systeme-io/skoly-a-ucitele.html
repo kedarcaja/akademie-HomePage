@@ -1,0 +1,285 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:480px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.55}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.2) 0%,rgba(10,12,18,.75) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 1.25rem}
+#da-root .hero-sub{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:38rem;margin:0 0 2rem}
+#da-root .process-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+#da-root .process-row::after{content:'';position:absolute;top:1.5rem;left:12.5%;right:12.5%;height:1px;background:linear-gradient(to right,var(--gold) 0%,rgba(201,148,58,.2) 100%);z-index:0}
+#da-root .process-step{position:relative;z-index:1;padding:0 .75rem;text-align:center}
+#da-root .process-dot{width:3rem;height:3rem;border:2px solid var(--gold);background:var(--dark);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold);font-weight:700}
+#da-root .audience-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+#da-root .audience-item{background:rgba(201,148,58,.05);border:1px solid rgba(201,148,58,.2);padding:1.25rem;display:flex;align-items:flex-start;gap:.75rem}
+#da-root .audience-icon{font-size:1.5rem;flex-shrink:0}
+#da-root .form-field{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem}
+#da-root .form-field label{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold)}
+#da-root .form-field input,#da-root .form-field textarea{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text);padding:.75rem 1rem;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s}
+#da-root .form-field input:focus,#da-root .form-field textarea:focus{border-color:rgba(201,148,58,.5)}
+#da-root .form-field textarea{resize:vertical;min-height:120px}
+#da-root .cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:900px){
+  #da-root .process-row{grid-template-columns:1fr 1fr}
+  #da-root .process-row::after{display:none}
+  #da-root .audience-row{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .process-row,#da-root .audience-row{grid-template-columns:1fr}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/skoly-a-ucitele/hero/hero-skoly-a-ucitele.jpg" alt="Školy a učitelé – Dračí akademie">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Školy &amp; organizace</span>
+        <h1 class="hero-h1">Workshop,<br>který zanechá stopu.</h1>
+        <p class="hero-sub">Přinášíme tvoření přímo do škol, DDM a organizací. Program, po kterém se děti ptají, kdy bude znovu.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="#form" class="btn-gold">Poptat workshop</a>
+          <a href="#nabidka" class="btn-outline">Prohlédnout nabídku</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CO NABÍZÍME -->
+  <section class="sec" id="nabidka" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Nabídka</span><span></span></div>
+        <h2 class="sec-title">Co nabízíme</h2>
+        <p class="sec-sub">Tři formáty pro různé potřeby a příležitosti.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div style="font-size:2rem;margin-bottom:1rem">⚡</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--parchment);margin:0 0 .75rem">Jednorázový workshop</h3>
+          <p style="font-size:.9rem;color:var(--muted);line-height:1.6;margin:0 0 1rem">90–180 minut plného tvoření. Každý účastník odchází s dokončenou figurkou. Vhodné pro třídní akce, dni otevřených dveří nebo výlety.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.4rem">
+            <li style="font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.5rem"><span style="color:var(--gold)">◆</span> Vybavení zahrnuto</li>
+            <li style="font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.5rem"><span style="color:var(--gold)">◆</span> Skupiny 10–30 osob</li>
+            <li style="font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.5rem"><span style="color:var(--gold)">◆</span> Věk 6–100 let</li>
+          </ul>
+        </div>
+        <div class="card" style="border-color:rgba(201,148,58,.4)">
+          <div style="font-size:2rem;margin-bottom:1rem">📅</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--parchment);margin:0 0 .75rem">Sériový program</h3>
+          <p style="font-size:.9rem;color:var(--muted);line-height:1.6;margin:0 0 1rem">4–8 lekcí v průběhu semestru. Děti postupují od základů k pokročilým technikám a dokončí vlastní projekt.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.4rem">
+            <li style="font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.5rem"><span style="color:var(--gold)">◆</span> Osnova na míru</li>
+            <li style="font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.5rem"><span style="color:var(--gold)">◆</span> Průběžné materiály</li>
+            <li style="font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.5rem"><span style="color:var(--gold)">◆</span> Závěrečná výstava</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div style="font-size:2rem;margin-bottom:1rem">📦</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--parchment);margin:0 0 .75rem">Materiály a sady</h3>
+          <p style="font-size:.9rem;color:var(--muted);line-height:1.6;margin:0 0 1rem">Kompletní sady pro školy — figurky, barvy, štětce a průvodce v češtině. Pedagog vede sám, my dodáme vše potřebné.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.4rem">
+            <li style="font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.5rem"><span style="color:var(--gold)">◆</span> Skupinové slevy</li>
+            <li style="font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.5rem"><span style="color:var(--gold)">◆</span> Metodický průvodce</li>
+            <li style="font-size:.85rem;color:var(--text);display:flex;align-items:center;gap:.5rem"><span style="color:var(--gold)">◆</span> Konzultace online</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:#070911;padding:.5rem 0"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- PRO KOHO -->
+  <section class="sec">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Cílové skupiny</span><span></span></div>
+        <h2 class="sec-title">Pro koho je nabídka</h2>
+      </div>
+      <div class="audience-row">
+        <div class="audience-item">
+          <span class="audience-icon">🏫</span>
+          <div>
+            <h3 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin:0 0 .4rem">Základní školy</h3>
+            <p style="font-size:.85rem;color:var(--muted);line-height:1.5;margin:0">Výtvarka, kroužky, projektové dny i školní výlety.</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <span class="audience-icon">🏠</span>
+          <div>
+            <h3 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin:0 0 .4rem">DDM a střediska</h3>
+            <p style="font-size:.85rem;color:var(--muted);line-height:1.5;margin:0">Kroužky a programy volnočasových center.</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <span class="audience-icon">🌐</span>
+          <div>
+            <h3 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin:0 0 .4rem">Soukromé organizace</h3>
+            <p style="font-size:.85rem;color:var(--muted);line-height:1.5;margin:0">Táborové programy, kurzy, spolky a neziskovky.</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <span class="audience-icon">💼</span>
+          <div>
+            <h3 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin:0 0 .4rem">Firemní akce</h3>
+            <p style="font-size:.85rem;color:var(--muted);line-height:1.5;margin:0">Team building s výstupem, který si každý odnese domů.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- JAK TO FUNGUJE -->
+  <section class="sec" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Proces</span><span></span></div>
+        <h2 class="sec-title">Jak to funguje</h2>
+        <p class="sec-sub">Od prvního kontaktu po hotové figurky — čtyři kroky, žádná složitost.</p>
+      </div>
+      <div class="process-row">
+        <div class="process-step">
+          <div class="process-dot">01</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Poptávka</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.5;margin:0">Vyplníš formulář níže nebo nám napíšeš. Sdělíš nám skupinu, termín a záměr.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-dot">02</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Konzultace</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.5;margin:0">Zavoláme si a upřesníme detaily — program, věk, počet, prostory.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-dot">03</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Workshop</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.5;margin:0">Přijedeme s vybavením. Děti tvoří, bavíme se a odcházíme s hotovými výtvory.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-dot">04</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Výsledky</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.5;margin:0">Fotodokumentace pro školu a vzpomínka, na kterou se nezapomíná.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKTNÍ FORMULÁŘ -->
+  <section class="sec" id="form">
+    <div class="wrap-sm">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Poptávka</span><span></span></div>
+        <h2 class="sec-title">Napište nám</h2>
+        <p class="sec-sub">Ozveme se do 2 pracovních dnů s nabídkou na míru.</p>
+      </div>
+      <div class="card">
+        <div class="form-field">
+          <label for="s-name">Jméno a příjmení</label>
+          <input type="text" id="s-name" name="jmeno" placeholder="Jana Nováková">
+        </div>
+        <div class="form-field">
+          <label for="s-org">Název organizace / školy</label>
+          <input type="text" id="s-org" name="organizace" placeholder="ZŠ Mánesova, Praha">
+        </div>
+        <div class="form-field">
+          <label for="s-email">E-mail</label>
+          <input type="email" id="s-email" name="email" placeholder="jana@skola.cz">
+        </div>
+        <div class="form-field">
+          <label for="s-msg">Zpráva</label>
+          <textarea id="s-msg" name="zprava" placeholder="Řeknete nám víc — počet dětí, věk, termín a co od workshopu očekáváte."></textarea>
+        </div>
+        <button class="btn-gold" style="width:100%;justify-content:center;padding:1rem">Odeslat poptávku</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>

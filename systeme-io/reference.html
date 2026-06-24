@@ -1,0 +1,246 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:480px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.55}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.2) 0%,rgba(10,12,18,.75) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 1.25rem}
+#da-root .hero-sub{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:38rem;margin:0 0 2rem}
+#da-root .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+#da-root .gallery-item{height:220px;overflow:hidden;background:linear-gradient(135deg,#0d1a2e,#1a2440);position:relative}
+#da-root .gallery-item img{width:100%;height:100%;object-fit:cover;opacity:.65;transition:opacity .3s}
+#da-root .gallery-item:hover img{opacity:.85}
+#da-root .gallery-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:1rem;background:linear-gradient(to top,rgba(10,12,18,.7) 0%,transparent 60%);opacity:0;transition:opacity .3s}
+#da-root .gallery-item:hover .gallery-overlay{opacity:1}
+#da-root .testimonial-card{background:var(--card);border:1px solid var(--border);padding:1.75rem}
+#da-root .stars{color:var(--gold);font-size:1rem;letter-spacing:.1rem;margin-bottom:.75rem}
+#da-root .testimonial-text{font-style:italic;line-height:1.7;color:var(--text);margin:0 0 1rem;font-size:.95rem}
+#da-root .testimonial-author{font-size:.8rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+#da-root .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--card);border:1px solid var(--border)}
+#da-root .stat-item{padding:2.5rem;text-align:center;border-right:1px solid var(--border)}
+#da-root .stat-item:last-child{border-right:none}
+#da-root .stat-num{font-family:'Cinzel',serif;font-size:2.5rem;font-weight:900;color:var(--parchment);line-height:1;margin-bottom:.35rem}
+#da-root .stat-label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+#da-root .cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:900px){
+  #da-root .gallery-grid{grid-template-columns:1fr 1fr}
+  #da-root .stats-row{grid-template-columns:1fr}
+  #da-root .stat-item{border-right:none;border-bottom:1px solid var(--border)}
+  #da-root .stat-item:last-child{border-bottom:none}
+}
+@media(max-width:600px){
+  #da-root .gallery-grid{grid-template-columns:1fr}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/reference/hero/hero-reference.jpg" alt="Reference – Dračí akademie">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Reference</span>
+        <h1 class="hero-h1">Co říkají tvůrci.</h1>
+        <p class="hero-sub">Nejsme ti, kteří si vymýšlejí — jsme ti, za jejichž výsledky mluví práce ostatních. Tady jsou jejich slova a figurky.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="#testimonials" class="btn-gold">Číst zkušenosti</a>
+          <a href="#stats" class="btn-outline">Naše čísla</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALERIE VÝSLEDKŮ -->
+  <section class="sec" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Výsledky tvůrců</span><span></span></div>
+        <h2 class="sec-title">Reálné výsledky</h2>
+        <p class="sec-sub">Bez filtrů. Bez profesionálního studia. Jen figurky, které tvůrci namalovali po absolvování kurzu.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://assets.draciakademie.cz/images/reference/hero/hero-reference.jpg" alt="Výsledek tvůrce 1">
+          <div class="gallery-overlay"><span style="color:var(--parchment);font-size:.85rem;font-family:'Cinzel',serif">Marek K. · Dračí trénink</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://assets.draciakademie.cz/images/reference/hero/hero-reference.jpg" alt="Výsledek tvůrce 2">
+          <div class="gallery-overlay"><span style="color:var(--parchment);font-size:.85rem;font-family:'Cinzel',serif">Tereza V. · Cesta první figurky</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://assets.draciakademie.cz/images/reference/hero/hero-reference.jpg" alt="Výsledek tvůrce 3">
+          <div class="gallery-overlay"><span style="color:var(--parchment);font-size:.85rem;font-family:'Cinzel',serif">Ondřej M. · Akademie barev</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://assets.draciakademie.cz/images/reference/hero/hero-reference.jpg" alt="Výsledek tvůrce 4">
+          <div class="gallery-overlay"><span style="color:var(--parchment);font-size:.85rem;font-family:'Cinzel',serif">Jana P. · Workshop Praha</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://assets.draciakademie.cz/images/reference/hero/hero-reference.jpg" alt="Výsledek tvůrce 5">
+          <div class="gallery-overlay"><span style="color:var(--parchment);font-size:.85rem;font-family:'Cinzel',serif">Pavel H. · Projektová dílna</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://assets.draciakademie.cz/images/reference/hero/hero-reference.jpg" alt="Výsledek tvůrce 6">
+          <div class="gallery-overlay"><span style="color:var(--parchment);font-size:.85rem;font-family:'Cinzel',serif">Lucie B. · Dračí zásilka</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:#070911;padding:.5rem 0"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec" id="testimonials">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Zkušenosti</span><span></span></div>
+        <h2 class="sec-title">Slova tvůrců</h2>
+      </div>
+      <div class="grid-2">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Dračí trénink mi změnil přístup k malování. Konečně chápu, proč barvy fungují tak, jak fungují — a moje figurky to ukazují. Za ty peníze to byl nejlepší výdaj za rok."</p>
+          <div class="testimonial-author">— Marek K., Brno · Dračí trénink</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Začala jsem bez jediné zkušenosti. Dnes mám za sebou vlastní diorámu. Komunita Dračího kruhu mě podpořila v každém kroku — i v těch trapných začátcích."</p>
+          <div class="testimonial-author">— Tereza V., Praha · Cesta první figurky</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Workshop pro naše děti (ZŠ) byl hit. Děti pracovaly 3 hodiny bez jediné stížnosti a každé odešlo s hotovou figurkou. Chtějí ho znova."</p>
+          <div class="testimonial-author">— Mgr. Jana P., učitelka ZŠ · Workshop pro školy</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★☆</div>
+          <p class="testimonial-text">"Dračí zásilka je skvělý nápad. Každý měsíc se těším, co přijde — a vždy je to figurka, se kterou bych si sám nevěděl rady, ale nakonec dopadne líp, než čekám."</p>
+          <div class="testimonial-author">— Ondřej M., Ostrava · Dračí zásilka</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- STATS -->
+  <section class="sec" style="background:#070911" id="stats">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>V číslech</span><span></span></div>
+        <h2 class="sec-title">Čísla, která mluví</h2>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Aktivních tvůrců</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.9/5</div>
+          <div class="stat-label">Průměrné hodnocení</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">12</div>
+          <div class="stat-label">Zemí v komunitě</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="wrap-sm">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:1.5rem"><span></span><span>Připoj se</span><span></span></div>
+      <h2 class="sec-title">Přidat se k tvůrcům</h2>
+      <p class="sec-sub" style="margin-bottom:2rem">Stovky tvůrců už začaly. Tvoje figurky čekají jen na tebe.</p>
+      <a href="/zacni-tady" class="btn-gold" style="font-size:.95rem;padding:1rem 2.5rem">Přidat se k tvůrcům</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>

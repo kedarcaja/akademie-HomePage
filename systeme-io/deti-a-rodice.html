@@ -1,0 +1,253 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:480px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.55}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.2) 0%,rgba(10,12,18,.75) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 1.25rem}
+#da-root .hero-sub{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:38rem;margin:0 0 2rem}
+#da-root .age-range{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:700;color:var(--gold);margin-bottom:.5rem}
+#da-root .age-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+#da-root .testimonial-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.5rem 1.75rem}
+#da-root .testimonial-text{font-style:italic;line-height:1.7;color:var(--text);margin:0 0 1rem;font-size:.95rem}
+#da-root .testimonial-author{font-size:.8rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+#da-root .product-band{background:linear-gradient(135deg,#0d1a2e,#111620);border:1px solid rgba(201,148,58,.3);padding:3rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+#da-root .product-img{height:280px;overflow:hidden;background:linear-gradient(135deg,#0d1a2e,#1a2440)}
+#da-root .product-img img{width:100%;height:100%;object-fit:cover;opacity:.7}
+#da-root .cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:700px){
+  #da-root .product-band{grid-template-columns:1fr}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/deti-a-rodice/hero/hero-deti-a-rodice.jpg" alt="Děti a rodiče – Dračí akademie">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Rodina</span>
+        <h1 class="hero-h1">Tvoření rukama jako dar,<br>na který se nezapomíná.</h1>
+        <p class="hero-sub">Offline. Bez obrazovky. Figurky, které děti vyrobí vlastníma rukama, zůstávají s nimi navždy — a stejně tak ten pocit z dotvoření.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="#vek" class="btn-gold">Vybrat sadu pro dítě</a>
+          <a href="#proc" class="btn-outline">Proč tvoření rukama</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VĚKOVÉ SKUPINY -->
+  <section class="sec" id="vek" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Věkové skupiny</span><span></span></div>
+        <h2 class="sec-title">Pro každý věk jinak</h2>
+        <p class="sec-sub">Materiály, obtížnost i přístup přizpůsobujeme věku. Žádné kompromisy.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card" style="text-align:center">
+          <div class="age-range">3–6</div>
+          <div class="age-label">Předškolní</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .75rem">Malí průzkumníci</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Jednoduché tvarování a základní barvy. Soustředění na dotek a materiál, ne na výsledek.</p>
+        </div>
+        <div class="card" style="text-align:center;border-color:rgba(201,148,58,.3)">
+          <div class="age-range">6–10</div>
+          <div class="age-label">První stupeň</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .75rem">Malí tvůrci</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">První figurky se základním malováním. Trpělivost, přesnost, pocit z dokončeného projektu.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="age-range">10–15</div>
+          <div class="age-label">Druhý stupeň</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .75rem">Nastupující hrdinové</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Plná výuka malování, vrstvení barev, první armády. Ideální věk pro hluboký zájem.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="age-range">15+</div>
+          <div class="age-label">Dospělí</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .75rem">Tvůrci bez hranic</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Plný přístup ke kurzům akademie — Dračí trénink, Akademie barev i Projektová dílna.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:#070911;padding:.5rem 0"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- PROČ TVOŘENÍ RUKAMA -->
+  <section class="sec" id="proc">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Benefity</span><span></span></div>
+        <h2 class="sec-title">Proč tvoření rukama</h2>
+        <p class="sec-sub">Není to jen koníček. Je to trénink pro mozek i duši.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">🧠</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Soustředění</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Malování figurek rozvíjí schopnost soustředit se na detail déle než jakákoliv aplikace.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">✋</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Jemná motorika</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Práce se štětcem posiluje koordinaci ruky a oka — základ pro psaní, hudbu i sport.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">⏳</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Trpělivost</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Proces, který nelze uspěchat. Dítě se učí, že výsledek přichází s časem a snahou.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">⭐</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Sebevědomí</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Hotová figurka je hmatatelný důkaz jejich schopností. Ten pocit hrdosti je k nezaplacení.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- TESTIMONIALS RODIČŮ -->
+  <section class="sec" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Rodiče říkají</span><span></span></div>
+        <h2 class="sec-title">Co říkají rodiče</h2>
+      </div>
+      <div class="grid-2">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Syn (8 let) prosí každý víkend, aby mohl malovat. Konečně něco, u čeho nezávisí na obrazovce. Soustředí se hodiny bez jediného hluku."</p>
+          <div class="testimonial-author">— Lenka P., maminka dvou kluků</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Starter kit jsme dostali jako dárek. Dcera (11) ho rozebrala za hodinu a už prosí o další figurky. Výsledky jsou ohromující — a hlavně je to baví oba."</p>
+          <div class="testimonial-author">— Pavel D., tatínek a nečekaný spoluhráč</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TEASER -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="product-band">
+        <div class="product-img">
+          <img src="https://assets.draciakademie.cz/images/deti-a-rodice/hero/hero-deti-a-rodice.jpg" alt="Starter kit pro děti">
+        </div>
+        <div>
+          <div class="eyebrow"><span></span><span>Produkt</span></div>
+          <h2 class="sec-title">Starter kit pro dítě</h2>
+          <p style="color:var(--muted);line-height:1.7;margin:0 0 1.5rem">Vše, co dítě potřebuje k první figurce v jedné krabičce. Barvy, štětce, figurka a průvodce v češtině. Žádné chemikálie, vhodné od 6 let.</p>
+          <ul style="list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:.5rem">
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> 6 základních barev Citadel</li>
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> 2 štětce (základ + detail)</li>
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> 1 figurka Warhammer (podle věku)</li>
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Průvodce malováním v češtině</li>
+            <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold)">◆</span> Certifikát prvního tvůrce</li>
+          </ul>
+          <a href="/obchod" class="btn-gold">Vybrat sadu pro dítě</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="wrap-sm">
+      <h2 class="sec-title">Dejte dětem něco hmatatelného</h2>
+      <p class="sec-sub" style="margin-bottom:2rem">Tvoření rukama není hobby z minulosti. Je to dar do budoucnosti.</p>
+      <a href="/obchod" class="btn-gold" style="font-size:.95rem;padding:1rem 2.5rem">Vybrat sadu pro dítě</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>

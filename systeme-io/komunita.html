@@ -1,0 +1,267 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:480px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.55}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.2) 0%,rgba(10,12,18,.75) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 1.25rem}
+#da-root .hero-sub{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:38rem;margin:0 0 2rem}
+#da-root .grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem}
+#da-root .role-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border)}
+#da-root .role-item{padding:1.5rem;border-right:1px solid var(--border);text-align:center}
+#da-root .role-item:last-child{border-right:none}
+#da-root .role-rank{font-family:'Cinzel',serif;font-size:1.5rem;margin-bottom:.5rem}
+#da-root .role-name{font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin-bottom:.4rem}
+#da-root .role-desc{font-size:.8rem;color:var(--muted);line-height:1.5}
+#da-root .challenge-band{background:linear-gradient(135deg,rgba(201,148,58,.08),rgba(201,148,58,.03));border:1px solid rgba(201,148,58,.3);padding:3rem;text-align:center}
+#da-root .cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-5{grid-template-columns:1fr 1fr}
+  #da-root .role-row{grid-template-columns:1fr 1fr}
+  #da-root .role-item{border-right:none;border-bottom:1px solid var(--border)}
+  #da-root .role-item:nth-child(odd){border-right:1px solid var(--border)}
+  #da-root .role-item:last-child{border-bottom:none}
+}
+@media(max-width:600px){
+  #da-root .grid-5{grid-template-columns:1fr}
+  #da-root .role-row{grid-template-columns:1fr}
+  #da-root .role-item{border-right:none}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/komunita/hero/hero-komunita.jpg" alt="Komunita Dračí kruh">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Dračí kruh</span>
+        <h1 class="hero-h1">Komunita,<br>která tvoří s tebou.</h1>
+        <p class="hero-sub">Nejsi sám. Dračí kruh je místo, kde sdílíš, dostáváš zpětnou vazbu a zároveň posuneš ostatní. Tvoření je lepší ve skupině.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="#join" class="btn-gold">Vstoupit do Dračího kruhu</a>
+          <a href="#co-je" class="btn-outline">Zjistit víc</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CO JE DRAČÍ KRUH -->
+  <section class="sec" id="co-je" style="background:#070911">
+    <div class="wrap">
+      <div class="grid-2" style="gap:4rem;align-items:center">
+        <div>
+          <div class="eyebrow"><span></span><span>Komunita</span></div>
+          <h2 class="sec-title">Co je Dračí kruh</h2>
+          <p style="color:var(--muted);line-height:1.7;margin:0 0 1.5rem">Dračí kruh je uzavřená komunita tvůrců akademie — místo, kde sdílíš svoji práci, dostáváš konkrétní zpětnou vazbu a bereš se z tvoření ostatních. Přístup k výzvám, živým setkáním a exkluzivnímu obsahu.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.75rem">
+            <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold);margin-top:.1rem">◆</span> Přímý kontakt s lektory a ostatními tvůrci</li>
+            <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold);margin-top:.1rem">◆</span> Měsíční výzvy s odznaky za splnění</li>
+            <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold);margin-top:.1rem">◆</span> Živá setkání online i offline</li>
+            <li style="display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:var(--text)"><span style="color:var(--gold);margin-top:.1rem">◆</span> Roleplay systém s postupovými tituly</li>
+          </ul>
+        </div>
+        <div style="background:linear-gradient(135deg,#0d1a2e,#111620);border:1px solid var(--border);padding:2.5rem">
+          <div style="font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);margin-bottom:.5rem;letter-spacing:.1em;text-transform:uppercase">Dračí kruh — co zahrnuje</div>
+          <div style="font-family:'Cinzel',serif;font-size:3rem;font-weight:900;color:var(--parchment);margin-bottom:.25rem">500+</div>
+          <div style="color:var(--muted);font-size:.9rem;margin-bottom:2rem">tvůrců v komunitě</div>
+          <div style="display:flex;flex-direction:column;gap:.75rem">
+            <div style="display:flex;justify-content:space-between;font-size:.9rem;border-bottom:1px solid var(--border);padding-bottom:.75rem"><span style="color:var(--text)">Sdílení prací</span><span style="color:var(--gold)">✓</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.9rem;border-bottom:1px solid var(--border);padding-bottom:.75rem"><span style="color:var(--text)">Měsíční výzvy</span><span style="color:var(--gold)">✓</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.9rem;border-bottom:1px solid var(--border);padding-bottom:.75rem"><span style="color:var(--text)">Odznaky a tituly</span><span style="color:var(--gold)">✓</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.9rem;border-bottom:1px solid var(--border);padding-bottom:.75rem"><span style="color:var(--text)">Živá setkání</span><span style="color:var(--gold)">✓</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.9rem"><span style="color:var(--text)">Exkluzivní obsah</span><span style="color:var(--gold)">✓</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:#070911;padding:.5rem 0"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- V KOMUNITĚ NAJDEŠ -->
+  <section class="sec">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Obsah</span><span></span></div>
+        <h2 class="sec-title">V komunitě najdeš</h2>
+      </div>
+      <div class="grid-5">
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">🖼️</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin:0 0 .5rem">Sdílení prací</h3>
+          <p style="font-size:.8rem;color:var(--muted);line-height:1.5;margin:0">Foť a sdílej. Každý komentář je zpětná vazba, ne soutěžení.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">⚔️</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin:0 0 .5rem">Výzvy</h3>
+          <p style="font-size:.8rem;color:var(--muted);line-height:1.5;margin:0">Každý měsíc nová výzva. Splnit ji je volitelné, zábavné a oceněné.</p>
+        </div>
+        <div class="card" style="text-align:center;border-color:rgba(201,148,58,.4)">
+          <div style="font-size:2rem;margin-bottom:.75rem">🏅</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin:0 0 .5rem">Role a odznaky</h3>
+          <p style="font-size:.8rem;color:var(--muted);line-height:1.5;margin:0">Systém titulů od Nováčka po Mistra. Každý postup se počítá.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">🎙️</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin:0 0 .5rem">Živá setkání</h3>
+          <p style="font-size:.8rem;color:var(--muted);line-height:1.5;margin:0">Online Q&amp;A, speedpainting streamy i reálná setkání na akcích.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2rem;margin-bottom:.75rem">🤝</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--parchment);margin:0 0 .5rem">Podpora</h3>
+          <p style="font-size:.8rem;color:var(--muted);line-height:1.5;margin:0">Kdykoli se zaseknete, komunita a lektoři jsou tu pro tebe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- DRAČÍ VÝZVY -->
+  <section class="sec" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Měsíční výzvy</span><span></span></div>
+        <h2 class="sec-title">Dračí výzvy</h2>
+        <p class="sec-sub">Každý měsíc nové téma. Tvoříš, fotíš, sdílíš a sbíráš odznaky. Bez soutěžení, s respektem ke každé úrovni.</p>
+      </div>
+      <div class="challenge-band">
+        <div style="font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem">Aktuální výzva · Červen 2025</div>
+        <h3 style="font-family:'Cinzel',serif;font-size:1.75rem;color:var(--parchment);margin:0 0 .75rem">Výzva: Oheň a stíny</h3>
+        <p style="color:var(--muted);max-width:36rem;margin:0 auto 2rem;line-height:1.7">Namáluj figurku s efektem ohně nebo zdroje světla. OSL, jemné glazury, nebo jen odvaha s barvou — záleží na tobě.</p>
+        <a href="#join" class="btn-gold">Chci se zapojit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLE V KOMUNITĚ -->
+  <section class="sec">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Systém rolí</span><span></span></div>
+        <h2 class="sec-title">Role v komunitě</h2>
+        <p class="sec-sub">Každý postup se počítá. Od prvního vstupu po titul Mistra — cesta je odměna sama o sobě.</p>
+      </div>
+      <div class="role-row">
+        <div class="role-item">
+          <div class="role-rank">🐣</div>
+          <div class="role-name">Nováček</div>
+          <div class="role-desc">Právě vstoupil do kruhu. Každý byl jednou tady.</div>
+        </div>
+        <div class="role-item">
+          <div class="role-rank">🐉</div>
+          <div class="role-name">Zkušený tvůrce</div>
+          <div class="role-desc">Aktivní člen se splněnou první výzvou.</div>
+        </div>
+        <div class="role-item">
+          <div class="role-rank">🛡️</div>
+          <div class="role-name">Strážce</div>
+          <div class="role-desc">Pomáhá ostatním, sdílí zkušenosti, vzor komunity.</div>
+        </div>
+        <div class="role-item">
+          <div class="role-rank">👑</div>
+          <div class="role-name">Mistr</div>
+          <div class="role-desc">Nejvyšší titul. Jen pro ty, co prošli celou cestou.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band" id="join">
+    <div class="wrap-sm">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:1.5rem"><span></span><span>Připoj se</span><span></span></div>
+      <h2 class="sec-title">Vstup do Dračího kruhu</h2>
+      <p class="sec-sub" style="margin-bottom:2rem">Komunita tvůrců čeká. Tvoje první sdílení je jen krok daleko.</p>
+      <a href="#" class="btn-gold" style="font-size:.95rem;padding:1rem 2.5rem">Vstoupit do Dračího kruhu</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>

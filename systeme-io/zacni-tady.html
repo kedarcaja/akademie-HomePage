@@ -1,0 +1,233 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:480px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.55}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.2) 0%,rgba(10,12,18,.75) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 1.25rem}
+#da-root .hero-sub{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:38rem;margin:0 0 2rem}
+#da-root .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+#da-root .step-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+#da-root .step-num{font-family:'Cinzel',serif;font-size:3rem;font-weight:900;color:var(--gold);opacity:.3;line-height:1;margin-bottom:.5rem}
+#da-root .step-title{font-family:'Cinzel',serif;font-size:1rem;color:var(--parchment);margin:0 0 .5rem}
+#da-root .step-desc{font-size:.9rem;color:var(--muted);line-height:1.6;margin:0}
+#da-root .cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:600px){
+  #da-root .step-row{grid-template-columns:1fr}
+  #da-root .hero-ctas{flex-direction:column;align-items:flex-start}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/zacni-tady/hero/hero-zacni-tady.jpg" alt="Začni tady – Dračí akademie">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Nový tvůrce</span>
+        <h1 class="hero-h1">Kde začít?<br>To ti řekneme.</h1>
+        <p class="hero-sub">Ať už jsi nikdy figurku nedržel v ruce, nebo jsi prostě hledal komunitu, kde vás víc — jsi tady správně. Ukážeme ti první kroky bez zbytečného zmatku.</p>
+        <div class="hero-ctas">
+          <a href="#pruvodce" class="btn-gold">Stáhnout průvodce zdarma</a>
+          <a href="#cesta" class="btn-outline">Vybrat cestu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VYBER SI CESTU -->
+  <section class="sec" id="cesta" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Orientace</span><span></span></div>
+        <h2 class="sec-title">Vyber si cestu</h2>
+        <p class="sec-sub">Každý tvůrce začíná jinak. Kde jsi ty?</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:1rem">🐣</div>
+          <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Cesta 1</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--parchment);margin:0 0 .75rem">Jsem úplný začátečník</h3>
+          <p style="font-size:.9rem;line-height:1.6;color:var(--muted);margin:0 0 1.5rem">Nikdy jsi figurku nemalovával a nevíš, kde začít. Žádný problém — průvodce tě provede krok za krokem.</p>
+          <a href="#pruvodce" class="btn-gold">Chci průvodce</a>
+        </div>
+        <div class="card" style="text-align:center;border-color:rgba(201,148,58,.4)">
+          <div style="font-size:2.5rem;margin-bottom:1rem">🐉</div>
+          <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Cesta 2</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--parchment);margin:0 0 .75rem">Mám trochu zkušeností</h3>
+          <p style="font-size:.9rem;line-height:1.6;color:var(--muted);margin:0 0 1.5rem">Pár figurek za sebou máš, ale chceš se posunout dál. Podívej se na naše kurzy a stezky.</p>
+          <a href="/kurzy" class="btn-gold">Prozkoumat kurzy</a>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:1rem">⚔️</div>
+          <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Cesta 3</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--parchment);margin:0 0 .75rem">Hledám komunitu</h3>
+          <p style="font-size:.9rem;line-height:1.6;color:var(--muted);margin:0 0 1.5rem">Techniku máš zvládnutou, chybí ti ale lidé, kteří to žijí s tebou. Vstup do Dračího kruhu.</p>
+          <a href="/komunita" class="btn-gold">Vstoupit do kruhu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:#070911;padding:.5rem 0"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- PRVNÍ KROKY -->
+  <section class="sec">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Jak začít</span><span></span></div>
+        <h2 class="sec-title">Tvoje první kroky</h2>
+        <p class="sec-sub">Tři věci, které tě od první hotové figurky dělí. Opravdu jen tři.</p>
+      </div>
+      <div class="step-row">
+        <div>
+          <div class="step-num">01</div>
+          <h3 class="step-title">Stáhni průvodce</h3>
+          <p class="step-desc">Zdarma. Bez registrace. PDF s přehledem základního vybavení, technik a prvním projektem přímo pro tebe.</p>
+        </div>
+        <div>
+          <div class="step-num">02</div>
+          <h3 class="step-title">Projdi první lekci</h3>
+          <p class="step-desc">Vyber si jednu ze vstupních lekcí a sleduj, jak ze šedé figurky vzniká něco, co tě překvapí i tebe.</p>
+        </div>
+        <div>
+          <div class="step-num">03</div>
+          <h3 class="step-title">Vlož do komunity</h3>
+          <p class="step-desc">Vyfotografuj svůj první výsledek a sdílej ho v Dračím kruhu. Každý začátek slavíme — bez výjimky.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- CO TĚ ČEKÁ -->
+  <section class="sec" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Výhody</span><span></span></div>
+        <h2 class="sec-title">Co tě čeká</h2>
+        <p class="sec-sub">Víc než jen malování. Celý svět, do kterého se ponoříš.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card" style="text-align:center">
+          <div style="font-size:1.75rem;margin-bottom:.75rem">🎨</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Výuka od základů</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Jasné lekce bez předpokladu předchozích znalostí.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:1.75rem;margin-bottom:.75rem">🏆</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Výzvy a odznaky</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Každý splněný krok tě posouvá blíže k titulu Mistr akademie.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:1.75rem;margin-bottom:.75rem">👥</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Živá komunita</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Stovky tvůrců z Česka i zahraničí, kteří sdílejí, co tvoří.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <div style="font-size:1.75rem;margin-bottom:.75rem">📦</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Sady a materiály</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Starter kit a dračí zásilka s vším, co potřebuješ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band" id="pruvodce">
+    <div class="wrap-sm">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:1.5rem"><span></span><span>Zdarma</span><span></span></div>
+      <h2 class="sec-title">Průvodce začínajícího tvůrce</h2>
+      <p class="sec-sub" style="margin-bottom:2rem">PDF s přehledem vybavení, prvním projektem a tipem na první figurku. Žádné halucinace, jen konkrétní kroky.</p>
+      <a href="#" class="btn-gold" style="font-size:.95rem;padding:1rem 2.5rem">Stáhnout průvodce zdarma</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>

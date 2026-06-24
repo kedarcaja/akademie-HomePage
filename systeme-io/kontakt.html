@@ -1,0 +1,235 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:320px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.45}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.3) 0%,rgba(10,12,18,.8) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,4vw,2.75rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 .75rem}
+#da-root .hero-sub{color:var(--text);font-size:1rem;line-height:1.7;max-width:38rem;margin:0}
+#da-root .form-field{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem}
+#da-root .form-field label{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold)}
+#da-root .form-field input,#da-root .form-field textarea{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text);padding:.75rem 1rem;font-family:'Inter',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s;width:100%}
+#da-root .form-field input:focus,#da-root .form-field textarea:focus{border-color:rgba(201,148,58,.5)}
+#da-root .form-field textarea{resize:vertical;min-height:140px}
+#da-root .social-btn{display:flex;align-items:center;gap:.75rem;border:1px solid var(--border);padding:.85rem 1.5rem;color:var(--text);text-decoration:none;font-size:.9rem;transition:all .2s;background:var(--card)}
+#da-root .social-btn:hover{border-color:rgba(201,148,58,.4);color:var(--parchment)}
+#da-root .social-icon{font-size:1.25rem;width:2rem;text-align:center}
+#da-root .social-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+#da-root .faq-item{border-bottom:1px solid var(--border);padding:1.25rem 0}
+#da-root .faq-item:last-child{border-bottom:none}
+#da-root .faq-q{font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+#da-root .faq-a{font-size:.9rem;color:var(--muted);line-height:1.65;margin:0}
+#da-root .response-note{background:rgba(201,148,58,.06);border:1px solid rgba(201,148,58,.2);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:.75rem;margin-top:1rem}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:700px){
+  #da-root .social-grid{grid-template-columns:1fr}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO (menší) -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/kontakt/hero/hero-kontakt.jpg" alt="Kontakt – Dračí akademie">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Kontakt</span>
+        <h1 class="hero-h1">Napiš nám.</h1>
+        <p class="hero-sub">Máš otázku, nápad nebo jen chceš říct ahoj? Jsme tady. Odpovídáme do 2 pracovních dnů.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMULÁŘ + SOCIÁLNÍ SÍTĚ -->
+  <section class="sec">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start">
+
+        <!-- FORMULÁŘ -->
+        <div>
+          <div class="eyebrow"><span></span><span>Zpráva</span></div>
+          <h2 class="sec-title">Pošli zprávu</h2>
+          <p style="color:var(--muted);line-height:1.7;margin:0 0 2rem">Ať jde o kurzy, workshopy, spolupráci nebo jen zvědavost — ozveme se.</p>
+          <div class="card" style="padding:2rem">
+            <div class="form-field">
+              <label for="k-name">Jméno</label>
+              <input type="text" id="k-name" name="jmeno" placeholder="Tvoje jméno">
+            </div>
+            <div class="form-field">
+              <label for="k-email">E-mail</label>
+              <input type="email" id="k-email" name="email" placeholder="tvuj@email.cz">
+            </div>
+            <div class="form-field">
+              <label for="k-msg">Zpráva</label>
+              <textarea id="k-msg" name="zprava" placeholder="Co tě přivádí? Klidně piš neformálně."></textarea>
+            </div>
+            <button class="btn-gold" style="width:100%;justify-content:center;padding:1rem">Odeslat zprávu</button>
+            <div class="response-note">
+              <span style="color:var(--gold);flex-shrink:0">⏱</span>
+              <span style="font-size:.85rem;color:var(--muted)">Odpovídáme do <strong style="color:var(--text)">2 pracovních dnů</strong>. Pokud máš urgentní dotaz, piš nám přímo na Discord.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOCIÁLNÍ SÍTĚ -->
+        <div>
+          <div class="eyebrow"><span></span><span>Najdi nás</span></div>
+          <h2 class="sec-title" style="font-size:clamp(1.5rem,3vw,2rem)">Nebo nás najdi na</h2>
+          <p style="color:var(--muted);line-height:1.7;margin:0 0 1.5rem">Jsme aktivní na všech platformách — každý den.</p>
+          <div class="social-grid">
+            <a href="#" class="social-btn">
+              <span class="social-icon">📸</span>
+              <div>
+                <div style="font-weight:600;color:var(--parchment);font-size:.9rem">Instagram</div>
+                <div style="font-size:.75rem;color:var(--muted)">@draciakademie</div>
+              </div>
+            </a>
+            <a href="#" class="social-btn">
+              <span class="social-icon">👍</span>
+              <div>
+                <div style="font-weight:600;color:var(--parchment);font-size:.9rem">Facebook</div>
+                <div style="font-size:.75rem;color:var(--muted)">Dračí akademie</div>
+              </div>
+            </a>
+            <a href="#" class="social-btn">
+              <span class="social-icon">🎮</span>
+              <div>
+                <div style="font-weight:600;color:var(--parchment);font-size:.9rem">Discord</div>
+                <div style="font-size:.75rem;color:var(--muted)">Dračí kruh</div>
+              </div>
+            </a>
+            <a href="#" class="social-btn">
+              <span class="social-icon">▶️</span>
+              <div>
+                <div style="font-weight:600;color:var(--parchment);font-size:.9rem">YouTube</div>
+                <div style="font-size:.75rem;color:var(--muted)">Valiente Project</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- FAQ -->
+  <section class="sec" style="background:#070911">
+    <div class="wrap-sm">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>FAQ</span><span></span></div>
+        <h2 class="sec-title">Časté dotazy</h2>
+        <p class="sec-sub">Nejčastější otázky před tím, než napíšete nám.</p>
+      </div>
+      <div class="card">
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <span>Potřebuji předchozí zkušenosti pro kurzy?</span>
+            <span style="color:var(--gold);font-family:'Cinzel',serif">+</span>
+          </h3>
+          <p class="faq-a">Ne. Všechny naše kurzy jsou přístupné od nuly — Cesta první figurky je speciálně navržena pro absolutní začátečníky. Jediné, co potřebuješ, je chuť zkusit to.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <span>Jak rychle dostanu starter kit po objednání?</span>
+            <span style="color:var(--gold);font-family:'Cinzel',serif">+</span>
+          </h3>
+          <p class="faq-a">Standardně odesíláme do 3 pracovních dnů od objednávky. Doručení Česká pošta nebo Zásilkovna do 2–4 pracovních dnů. Zahraniční zásilky na dotaz.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">
+            <span>Dá se členství kdykoli zrušit?</span>
+            <span style="color:var(--gold);font-family:'Cinzel',serif">+</span>
+          </h3>
+          <p class="faq-a">Ano, bez jakýchkoliv poplatků. Členství zrušíš přes svůj profil nebo nám prostě napíšeš. Přístup trvá do konce zaplacenému období — pak nic neúčtujeme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>

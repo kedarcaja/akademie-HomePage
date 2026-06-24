@@ -1,0 +1,233 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:480px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.55}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.2) 0%,rgba(10,12,18,.75) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 1.25rem}
+#da-root .hero-sub{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:38rem;margin:0 0 2rem}
+#da-root .mise-band{background:linear-gradient(135deg,rgba(201,148,58,.07),rgba(201,148,58,.02));border:1px solid rgba(201,148,58,.25);padding:3.5rem;text-align:center}
+#da-root .mise-quote{font-family:'Cinzel',serif;font-size:clamp(1.25rem,3vw,1.75rem);color:var(--parchment);line-height:1.5;font-weight:600;margin:0}
+#da-root .hodnota-icon{font-size:2rem;margin-bottom:.75rem;display:block}
+#da-root .ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .eco-item{background:rgba(201,148,58,.04);border:1px solid rgba(201,148,58,.15);padding:1.5rem}
+#da-root .cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:700px){
+  #da-root .ecosystem-grid{grid-template-columns:1fr}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/o-nas/hero/hero-o-nas.jpg" alt="O nás – Dračí akademie">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Valiente Project</span>
+        <h1 class="hero-h1">Jsme Valiente Project.<br>A toto je náš projekt.</h1>
+        <p class="hero-sub">Dračí akademie není firma ve stylu korporátního newsletteru. Je to projekt lidí, kteří malování milují a chtějí ho sdílet — autenticky, bez příkras.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="#mise" class="btn-gold">Naše mise</a>
+          <a href="#pribehy" class="btn-outline">Proč vznikla akademie</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISE -->
+  <section class="sec" id="mise" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Poslání</span><span></span></div>
+        <h2 class="sec-title">Naše mise</h2>
+      </div>
+      <div class="mise-band">
+        <p class="mise-quote">"Zpřístupnit malování figurek každému,<br>kdo o to stojí — bez ohledu na věk, zkušenosti nebo vybavení."</p>
+      </div>
+      <p style="color:var(--muted);line-height:1.7;margin:2rem auto 0;max-width:52rem;text-align:center;font-size:1.05rem">Věříme, že tvoření rukama je víc než hobby. Je to způsob myšlení, způsob bytí. A každý, kdo si to jednou zkusí, to pochopí sám.</p>
+    </div>
+  </section>
+
+  <div class="divider" style="background:#070911;padding:.5rem 0"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- PŘÍBĚH -->
+  <section class="sec" id="pribehy">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center">
+        <div style="height:400px;overflow:hidden;background:linear-gradient(135deg,#0d1a2e,#1a2440);position:relative">
+          <img src="https://assets.draciakademie.cz/images/o-nas/hero/hero-o-nas.jpg" alt="Vznik Dračí akademie" style="width:100%;height:100%;object-fit:cover;opacity:.65">
+        </div>
+        <div>
+          <div class="eyebrow"><span></span><span>Příběh</span></div>
+          <h2 class="sec-title">Proč vznikla Dračí akademie</h2>
+          <p style="color:var(--muted);line-height:1.8;margin:0 0 1.25rem">Začalo to frustrem. Radek chtěl naučit kamaráda malovat figurky — a zjistil, že dobré česky psané vzdělávání jednoduše neexistuje. Byly jen anglické videá, stovky hodin obsahu bez struktury a žádná komunita, na které by záleželo.</p>
+          <p style="color:var(--muted);line-height:1.8;margin:0 0 1.25rem">Tak začal Valiente Project. Nejdřív jako blog, pak jako YouTube kanál, pak jako akademie. Dnes je Dračí akademie ekosystém, který kombinuje vzdělávání, komunitu a fyzické produkty — vše v češtině a vše s láskou k řemeslu.</p>
+          <p style="color:var(--text);line-height:1.8;margin:0;font-style:italic">"Nechtěli jsme vybudovat největší akademii. Chtěli jsme vybudovat tu nejlepší."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- HODNOTY -->
+  <section class="sec" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Hodnoty</span><span></span></div>
+        <h2 class="sec-title">Na čem stojíme</h2>
+        <p class="sec-sub">Čtyři hodnoty, které jsou za každým rozhodnutím v akademii.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card" style="text-align:center">
+          <span class="hodnota-icon">🎯</span>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Autenticita</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Neříkáme, co chcete slyšet. Říkáme, co je pravda — i kdyby to mělo být o chybě, kterou jsme udělali.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <span class="hodnota-icon">🤲</span>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Dostupnost</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Kvalitní vzdělávání by nemělo být privilege. Proto máme bezplatný obsah, průvodce a komunitu otevřenou všem.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <span class="hodnota-icon">🌱</span>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Pokrok</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Každý se zlepšuje jinak a jinou rychlostí. Slavíme každý krok, ne jen finální výsledek.</p>
+        </div>
+        <div class="card" style="text-align:center">
+          <span class="hodnota-icon">🔥</span>
+          <h3 style="font-family:'Cinzel',serif;font-size:.95rem;color:var(--parchment);margin:0 0 .5rem">Vášeň</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Malujeme figurky, protože to milujeme. Tato energie jde do každého kurzu, produktu i setkání.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EKOSYSTÉM -->
+  <section class="sec">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Co tvoříme</span><span></span></div>
+        <h2 class="sec-title">Ekosystém Dračí akademie</h2>
+        <p class="sec-sub">Akademie není jen kurzy. Je to celý svět — vzdělávání, komunita a fyzické produkty.</p>
+      </div>
+      <div class="ecosystem-grid">
+        <div class="eco-item">
+          <div style="font-size:1.5rem;margin-bottom:.75rem">📚</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:var(--parchment);margin:0 0 .5rem">Vzdělávání</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">4 stezky, vstupní kurzy, workshopy a YouTube obsah. Malujete s námi, ať jste kdekoliv.</p>
+        </div>
+        <div class="eco-item">
+          <div style="font-size:1.5rem;margin-bottom:.75rem">👥</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:var(--parchment);margin:0 0 .5rem">Komunita</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Dračí kruh — 500+ tvůrců, výzvy, odznaky, živá setkání. Tvoření je lepší ve skupině.</p>
+        </div>
+        <div class="eco-item">
+          <div style="font-size:1.5rem;margin-bottom:.75rem">📦</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:var(--parchment);margin:0 0 .5rem">Produkty</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0">Starter kit, Dračí zásilka, sady pro školy. Fyzické produkty, které doplňují vzdělávání.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="wrap-sm">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:1.5rem"><span></span><span>Zjistit víc</span><span></span></div>
+      <h2 class="sec-title">Zjistit víc o projektu</h2>
+      <p class="sec-sub" style="margin-bottom:2rem">Projekt, komunita, produkty. Vše je tady — a vše začíná jednou figurkou.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/zacni-tady" class="btn-gold" style="font-size:.95rem;padding:1rem 2.5rem">Začít tady</a>
+        <a href="/kontakt" class="btn-outline" style="font-size:.95rem;padding:1rem 2.5rem">Kontaktovat nás</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>

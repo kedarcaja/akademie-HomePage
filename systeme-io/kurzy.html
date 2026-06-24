@@ -1,0 +1,249 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+#da-root {
+  width:100vw!important;
+  position:relative!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  max-width:none!important;
+  overflow-x:hidden!important;
+  font-family:'Inter',sans-serif;
+  background:#0A0C12;
+  color:#A8B4C8;
+  box-sizing:border-box;
+}
+#da-root *{box-sizing:border-box}
+
+#da-root{
+  --gold:#C9943A;
+  --gold-light:#E8B84B;
+  --parchment:#DEC991;
+  --dark:#0A0C12;
+  --darker:#070911;
+  --card:#111620;
+  --border:#1E2535;
+  --text:#A8B4C8;
+  --muted:#7A8BA3;
+}
+
+#da-root .sec{padding:5rem 1.5rem}
+#da-root .wrap{max-width:72rem;margin:0 auto}
+#da-root .wrap-sm{max-width:48rem;margin:0 auto}
+#da-root h1,#da-root h2,#da-root h3{font-family:'Cinzel',Georgia,serif;color:var(--parchment)}
+#da-root .eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem}
+#da-root .eyebrow span:first-child{width:2rem;height:1px;background:var(--gold)}
+#da-root .eyebrow span:last-child{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+#da-root .sec-title{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;line-height:1.2;margin:0 0 1rem}
+#da-root .sec-sub{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+#da-root .divider{display:flex;justify-content:center;margin-bottom:1rem}
+#da-root .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0A0C12;padding:.85rem 2rem;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+#da-root .btn-gold:hover{background:var(--gold-light)}
+#da-root .btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--gold);color:var(--gold);padding:.85rem 2rem;font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;transition:all .2s}
+#da-root .btn-outline:hover{background:rgba(201,148,58,.1)}
+#da-root .card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+#da-root .card:hover{border-color:rgba(201,148,58,.4)}
+#da-root .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+#da-root .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+#da-root .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){
+  #da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  #da-root .sec{padding:3.5rem 1rem}
+  #da-root .grid-2,#da-root .grid-3,#da-root .grid-4{grid-template-columns:1fr}
+}
+
+/* PAGE SPECIFIC */
+#da-root .hero-wrap{height:480px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420 0%,#111a2e 100%)}
+#da-root .hero-wrap img{width:100%;height:100%;object-fit:cover;opacity:.55}
+#da-root .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,12,18,.2) 0%,rgba(10,12,18,.75) 100%);display:flex;align-items:center}
+#da-root .hero-content{padding:2rem 1.5rem;max-width:72rem;margin:0 auto;width:100%}
+#da-root .hero-tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .85rem;margin-bottom:1.5rem}
+#da-root .hero-h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--parchment);line-height:1.15;margin:0 0 1.25rem}
+#da-root .hero-sub{color:var(--text);font-size:1.1rem;line-height:1.7;max-width:38rem;margin:0 0 2rem}
+#da-root .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+#da-root .path-img{height:220px;overflow:hidden;position:relative;background:linear-gradient(135deg,#0d1420,#1a2440);margin:-1.75rem -1.75rem 1.5rem}
+#da-root .path-img img{width:100%;height:100%;object-fit:cover;opacity:.6}
+#da-root .level-badge{display:inline-block;background:rgba(201,148,58,.15);border:1px solid rgba(201,148,58,.3);color:var(--gold);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .65rem;margin-bottom:.75rem}
+#da-root .path-price{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--parchment);margin:.75rem 0 1.25rem}
+#da-root .path-price span{font-size:.8rem;color:var(--muted);font-family:'Inter',sans-serif}
+#da-root .step-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+#da-root .step-num{font-family:'Cinzel',serif;font-size:3rem;font-weight:900;color:var(--gold);opacity:.3;line-height:1;margin-bottom:.5rem}
+#da-root .testimonial-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.5rem 1.75rem}
+#da-root .testimonial-text{font-style:italic;line-height:1.7;color:var(--text);margin:0 0 1rem;font-size:.95rem}
+#da-root .testimonial-author{font-size:.8rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+#da-root .cta-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+#da-root .footer-bar{background:var(--darker);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center}
+#da-root .footer-bar p{margin:0;font-size:.8rem;color:var(--muted)}
+#da-root .footer-social{display:flex;justify-content:center;gap:1.25rem;margin-bottom:1rem;font-size:1.25rem}
+@media(max-width:600px){
+  #da-root .step-row{grid-template-columns:1fr}
+  #da-root .hero-ctas{flex-direction:column;align-items:flex-start}
+}
+</style>
+
+<div id="da-root">
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <img src="https://assets.draciakademie.cz/images/kurzy/hero/hero-kurzy.jpg" alt="Kurzy a stezky – Dračí akademie">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="hero-tag">Vzdělávání</span>
+        <h1 class="hero-h1">Vyber si<br>svoji stezku.</h1>
+        <p class="hero-sub">Čtyři cesty, jeden cíl — figurky, které tě naplňují. Každá stezka tě provede jiným zákoutím malování i tvoření.</p>
+        <div class="hero-ctas">
+          <a href="#stezky" class="btn-gold">Vybrat stezku</a>
+          <a href="#jak-funguje" class="btn-outline">Jak to funguje</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEZKY -->
+  <section class="sec" id="stezky" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Vzdělávací stezky</span><span></span></div>
+        <h2 class="sec-title">Čtyři cesty tvůrce</h2>
+        <p class="sec-sub">Každá stezka je navržena pro jiný cíl. Vyber tu, která ti sedí.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="path-img">
+            <img src="https://assets.draciakademie.cz/images/kurzy/hero/hero-kurzy.jpg" alt="Cesta první figurky">
+          </div>
+          <span class="level-badge">Začátečník</span>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.05rem;color:var(--parchment);margin:0 0 .5rem">Cesta první figurky</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0 0 .5rem">Od holé miniatury k hotovému výtvoru. Základy, které tě budou provázet celou tvůrčí cestu.</p>
+          <div class="path-price">zdarma <span>vstupní lekce</span></div>
+          <a href="#" class="btn-gold" style="width:100%;justify-content:center">Začít zdarma</a>
+        </div>
+        <div class="card" style="border-color:rgba(201,148,58,.4)">
+          <div class="path-img">
+            <img src="https://assets.draciakademie.cz/images/kurzy/hero/hero-kurzy.jpg" alt="Dračí trénink">
+          </div>
+          <span class="level-badge">Středně pokročilý</span>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.05rem;color:var(--parchment);margin:0 0 .5rem">Dračí trénink</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0 0 .5rem">Vrstvení barev, světlo a stíny, finální detaily. Tahle stezka z tebe udělá skutečného tvůrce.</p>
+          <div class="path-price">1 490 Kč</div>
+          <a href="#" class="btn-gold" style="width:100%;justify-content:center">Nastoupit na stezku</a>
+        </div>
+        <div class="card">
+          <div class="path-img">
+            <img src="https://assets.draciakademie.cz/images/kurzy/hero/hero-kurzy.jpg" alt="Akademie barev">
+          </div>
+          <span class="level-badge">Pokročilý</span>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.05rem;color:var(--parchment);margin:0 0 .5rem">Akademie barev</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0 0 .5rem">Teorie barev v praxi, pokročilé glazury, NMM a OSL techniky. Pro ty, kdo chtějí víc.</p>
+          <div class="path-price">2 490 Kč</div>
+          <a href="#" class="btn-gold" style="width:100%;justify-content:center">Nastoupit na stezku</a>
+        </div>
+        <div class="card">
+          <div class="path-img">
+            <img src="https://assets.draciakademie.cz/images/kurzy/hero/hero-kurzy.jpg" alt="Projektová dílna">
+          </div>
+          <span class="level-badge">Všechny úrovně</span>
+          <h3 style="font-family:'Cinzel',serif;font-size:1.05rem;color:var(--parchment);margin:0 0 .5rem">Projektová dílna</h3>
+          <p style="font-size:.875rem;color:var(--muted);line-height:1.6;margin:0 0 .5rem">Celý projekt od A do Z — od výběru figurky přes bázování až po fotografii hotového díla.</p>
+          <div class="path-price">990 Kč</div>
+          <a href="#" class="btn-gold" style="width:100%;justify-content:center">Nastoupit na stezku</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:#070911;padding:.5rem 0"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- JAK FUNGUJE -->
+  <section class="sec" id="jak-funguje">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Systém</span><span></span></div>
+        <h2 class="sec-title">Jak funguje vzdělávání v akademii</h2>
+        <p class="sec-sub">Bez suchých teorií. Jen praxe, zpětná vazba a komunita kolem tebe.</p>
+      </div>
+      <div class="step-row">
+        <div>
+          <div class="step-num">01</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:var(--parchment);margin:0 0 .5rem">Vyber stezku</h3>
+          <p style="font-size:.9rem;color:var(--muted);line-height:1.6;margin:0">Najdi stezku, která odpovídá tvé úrovni a tomu, co chceš tvořit. Každá je samostatná.</p>
+        </div>
+        <div>
+          <div class="step-num">02</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:var(--parchment);margin:0 0 .5rem">Tvoř a sdílej</h3>
+          <p style="font-size:.9rem;color:var(--muted);line-height:1.6;margin:0">Každá lekce je praktická. Svůj pokrok sdílíš do komunity a dostáváš zpětnou vazbu.</p>
+        </div>
+        <div>
+          <div class="step-num">03</div>
+          <h3 style="font-family:'Cinzel',serif;font-size:1rem;color:var(--parchment);margin:0 0 .5rem">Postup a odznaky</h3>
+          <p style="font-size:.9rem;color:var(--muted);line-height:1.6;margin:0">Splněné stezky ti přinášejí odznaky, tituly a přístup k exkluzivnímu obsahu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span style="color:var(--gold)">◆</span></div>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec" style="background:#070911">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow" style="justify-content:center"><span></span><span>Tvůrci</span><span></span></div>
+        <h2 class="sec-title">Co říkají tvůrci</h2>
+      </div>
+      <div class="grid-3">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Dračí trénink mi dal víc za dva měsíce než tři roky YouTube videí. Konečně rozumím, proč barvy fungují tak, jak fungují."</p>
+          <div class="testimonial-author">— Marek K., Brno</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Začala jsem Cestou první figurky bez jediné zkušenosti. Dnes mám za sebou vlastní diorámu a 40 figurek z armády."</p>
+          <div class="testimonial-author">— Tereza V., Praha</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Akademie barev mi otevřela oči v teorii barev. Způsob, jakým to učí Radek, je přímočarý a šlape od první lekce."</p>
+          <div class="testimonial-author">— Ondřej M., Ostrava</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="wrap-sm">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:1.5rem"><span></span><span>Zvol stezku</span><span></span></div>
+      <h2 class="sec-title">Připraven nastoupit?</h2>
+      <p class="sec-sub" style="margin-bottom:2rem">Každá stezka začíná první lekcí. A každá první lekce začíná rozhodnutím.</p>
+      <a href="#stezky" class="btn-gold" style="font-size:.95rem;padding:1rem 2.5rem">Vybrat stezku</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <div class="footer-social">
+      <a href="#" style="text-decoration:none" title="Instagram">📸</a>
+      <a href="#" style="text-decoration:none" title="Facebook">👍</a>
+      <a href="#" style="text-decoration:none" title="Discord">🎮</a>
+      <a href="#" style="text-decoration:none" title="YouTube">▶️</a>
+    </div>
+    <p>Dračí akademie &nbsp;·&nbsp; Valiente Project &nbsp;·&nbsp; © 2025</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var r=document.getElementById('da-root');
+  if(!r)return;
+  var p=r.parentElement;
+  for(var i=0;i<8&&p&&p!==document.body;i++){
+    p.style.setProperty('padding','0','important');
+    p.style.setProperty('max-width','none','important');
+    p.style.setProperty('width','100%','important');
+    p.style.setProperty('overflow','visible','important');
+    p=p.parentElement;
+  }
+})();
+</script>
