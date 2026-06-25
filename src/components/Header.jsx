@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 
 const navLinks = [
-  { href: '#domov', label: 'Domů' },
-  { href: '#o-akademii', label: 'O akademii' },
-  { href: '#cesty', label: 'Cesty' },
-  { href: '#pro-rodice', label: 'Pro rodiče' },
-  { href: '#kontakt', label: 'Kontakt' },
+  { href: '#akademie',     label: 'Akademie' },
+  { href: '#zacni-tady',  label: 'Začni tady' },
+  { href: '#stezky',      label: 'Stezky' },
+  { href: '#deti-rodice', label: 'Děti a rodiče' },
+  { href: '#skoly',       label: 'Školy' },
+  { href: '#komunita',    label: 'Komunita' },
+  { href: '#obchod',      label: 'Obchod' },
+  { href: '#o-nas',       label: 'O nás' },
 ]
 
 export default function Header() {
@@ -30,17 +33,17 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           {/* Logo */}
-          <a href="#domov" className="flex items-center gap-3 group shrink-0">
-            <div className="w-9 h-9 rounded-full border-2 border-brand-gold/70 flex items-center justify-center text-lg group-hover:border-brand-gold group-hover:bg-brand-gold/10 transition-all duration-200">
-              🐉
+          <a href="#akademie" className="flex items-center gap-2.5 group shrink-0">
+            <div className="w-9 h-9 rounded-full border border-brand-gold/50 overflow-hidden shrink-0">
+              <img src="https://kedarcaja.github.io/akademie-HomePage/img/dragon-emblem.png" alt="" className="w-full h-full object-cover" />
             </div>
-            <span className="font-cinzel text-brand-gold font-bold text-base md:text-lg tracking-widest uppercase">
+            <span className="font-cinzel text-brand-gold font-bold text-sm md:text-base tracking-widest uppercase hidden sm:block">
               Dračí akademie
             </span>
           </a>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center gap-7" aria-label="Hlavní navigace">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Hlavní navigace">
             {navLinks.map(({ href, label }) => (
               <a
                 key={href}
@@ -54,15 +57,16 @@ export default function Header() {
           </nav>
 
           {/* Right side */}
-          <div className="flex items-center gap-3">
-            <a href="#cesty" className="hidden md:inline-flex btn-outline py-2 px-4 text-xs">
-              Vstoupit
-            </a>
+          <div className="flex items-center gap-2">
+            {/* Shield / crest icon */}
+            <div className="hidden lg:flex w-8 h-8 rounded border border-brand-gold/30 items-center justify-center text-brand-gold/60 text-sm">
+              🛡️
+            </div>
 
             {/* Mobile hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden p-2 text-brand-gold"
+              className="lg:hidden p-2 text-brand-gold"
               aria-label={menuOpen ? 'Zavřít menu' : 'Otevřít menu'}
               aria-expanded={menuOpen}
             >
@@ -78,8 +82,8 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden border-t border-brand-border bg-brand-darker/98 backdrop-blur-md transition-all duration-300 overflow-hidden ${
-          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        className={`lg:hidden border-t border-brand-border bg-brand-darker/98 backdrop-blur-md transition-all duration-300 overflow-hidden ${
+          menuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <nav className="px-4 py-4 space-y-1" aria-label="Mobilní navigace">
@@ -94,8 +98,8 @@ export default function Header() {
             </a>
           ))}
           <div className="pt-3 border-t border-brand-border">
-            <a href="#cesty" onClick={() => setMenuOpen(false)} className="btn-primary w-full text-center">
-              Vstoupit do akademie
+            <a href="#zacni-tady" onClick={() => setMenuOpen(false)} className="btn-primary w-full text-center">
+              Začni tady
             </a>
           </div>
         </nav>

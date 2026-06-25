@@ -1,71 +1,90 @@
-const milestones = [
-  { icon: '🏠', label: 'Doma u figurky' },
-  { icon: '📚', label: 'Online lekce' },
-  { icon: '🎪', label: 'Workshop' },
-  { icon: '🏆', label: 'Golden Goblin' },
+const testimonials = [
+  {
+    quote: 'Díky akademii se syn naučil nevzdávat se a těšit se z malých pokroků. A hlavně — tvoří dobrovolně!',
+    name: 'Martina, máma',
+    child: 'Vojtík (10 let)',
+    avatar: '👩',
+    verified: true,
+  },
+  {
+    photo: 'group',
+    quote: 'Tady se nejde na výkon, ale na radost. To je přesně to, co jsem hledal.',
+    name: 'Tomáš, táta',
+    child: 'a modelář začátečník',
+    avatar: '👨',
+    verified: true,
+  },
+  {
+    quote: 'Každý workshop je jako malá výprava. Odcházíme unavení, ale šťastní.',
+    name: 'Eliška (13 let)',
+    avatar: '👧',
+    verified: true,
+  },
 ]
 
 export default function Community() {
   return (
-    <section className="py-24 md:py-32 bg-brand-dark">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="komunita" className="py-20 md:py-28" style={{ backgroundColor: '#080E18' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section header */}
-        <div className="ornament-divider mb-4">
-          <span className="text-brand-gold text-base">◆</span>
+        <div className="text-center mb-3">
+          <p className="text-brand-text-dim text-xs tracking-[0.2em] uppercase">
+            Dračí akademie je součástí komunity Valiente Project – projektu, který podporuje kreativitu, znalosti a komunitu.
+            Tvoříme nástroje, organizujeme workshopy a pomáháme tisícům tvůrců po celé CZ/SK.
+          </p>
         </div>
 
-        <h2 className="section-title mb-6">
-          Od první figurky<br />
-          <span className="text-brand-gold">až ke komunitě</span>
-        </h2>
+        <div className="flex items-center justify-center gap-3 mb-12">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-brand-gold/30 to-brand-gold/50" />
+          <h2 className="font-cinzel text-sm sm:text-base md:text-lg font-bold tracking-[0.12em] uppercase text-brand-parchment text-center shrink-0 px-2">
+            Součást komunity Valiente Project
+          </h2>
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-brand-gold/30 to-brand-gold/50" />
+        </div>
 
-        <p className="section-subtitle mx-auto max-w-3xl mb-12">
-          Dračí akademie je součástí širšího světa{' '}
-          <span className="text-brand-parchment font-medium">Valiente Projectu</span> —
-          workshopů, soutěží, školních programů, komunitních akcí a kreativních výzev.
-          Začít můžeš doma u jedné figurky. Pokračovat můžeš na workshopu.
-          A jednou svůj model ukázat ostatním třeba na soutěži{' '}
-          <span className="text-brand-gold font-medium">Golden Goblin</span>.
-        </p>
-
-        {/* Journey milestones */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-0">
-          {milestones.map(({ icon, label }, index) => (
-            <div key={label} className="flex items-center">
-              <div className="flex flex-col items-center gap-2 px-4 py-3">
-                <div className="w-14 h-14 rounded-full border border-brand-gold/30 bg-brand-card flex items-center justify-center text-2xl hover:border-brand-gold/60 hover:bg-brand-gold/8 transition-all duration-300">
-                  {icon}
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+          {testimonials.map(({ quote, name, child, avatar, verified }) => (
+            <div
+              key={name}
+              className="card-parchment rounded-sm p-6 flex flex-col gap-4 transition-all duration-200 hover:border-brand-gold/30"
+            >
+              {/* Avatar */}
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-xl shrink-0">
+                  {avatar}
                 </div>
-                <span className="text-brand-text-muted text-xs font-medium tracking-wide text-center whitespace-nowrap">
-                  {label}
-                </span>
+                {verified && (
+                  <div className="w-5 h-5 rounded-full bg-green-900/60 border border-green-700/40 flex items-center justify-center shrink-0">
+                    <span className="text-green-400 text-[10px]">✓</span>
+                  </div>
+                )}
               </div>
 
-              {index < milestones.length - 1 && (
-                <div className="hidden sm:flex items-center">
-                  <div className="w-8 h-px bg-gradient-to-r from-brand-gold/40 to-brand-gold/20" />
-                  <span className="text-brand-gold/30 text-xs">›</span>
-                </div>
-              )}
+              {/* Quote */}
+              <p className="text-brand-text text-sm leading-relaxed flex-1 italic">
+                „{quote}"
+              </p>
+
+              {/* Name */}
+              <div>
+                <p className="text-brand-parchment text-xs font-semibold">— {name}</p>
+                {child && <p className="text-brand-text-dim text-[11px]">{child}</p>}
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Divider */}
-        <div className="mt-14 pt-14 border-t border-brand-border">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {[
-              { value: 'Workshopy', desc: 'Živé setkání tvůrců' },
-              { value: 'Školní programy', desc: 'Kreativita ve třídě' },
-              { value: 'Golden Goblin', desc: 'Soutěž pro všechny úrovně' },
-            ].map(({ value, desc }) => (
-              <div key={value} className="space-y-1">
-                <p className="font-cinzel text-brand-gold font-bold text-base tracking-wide">{value}</p>
-                <p className="text-brand-text-muted text-sm">{desc}</p>
-              </div>
-            ))}
-          </div>
+        {/* Bottom brand line */}
+        <div className="border-t border-brand-border pt-8 text-center space-y-2">
+          <p className="text-brand-text-dim text-xs tracking-widest uppercase">
+            Dračí akademie je součástí Valiente Project
+          </p>
+          <p className="text-brand-text-muted text-xs max-w-xl mx-auto">
+            Projektu, který podporuje kreativitu, znalosti a komunitu.
+            Tvoříme nástroje, organizujeme workshopy a pomáháme tisícům tvůrců po celé CZ/SK.
+          </p>
         </div>
 
       </div>
