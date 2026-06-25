@@ -76,9 +76,36 @@
 #da-root .hmic{font-size:.75rem;color:var(--dim);font-style:italic}
 
 /* === CAMPUS MAP === */
-#da-root .campus-img-wrap{position:relative;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(201,148,58,.2),0 24px 60px rgba(0,0,0,.8)}
-#da-root .campus-img-wrap img{width:100%;display:block}
-#da-root .campus-img-wrap::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 55%,rgba(6,8,13,.65) 100%)}
+#da-root .campus-map-outer{position:relative}
+#da-root .campus-img-wrap{position:relative;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(201,148,58,.2),0 24px 60px rgba(0,0,0,.8);aspect-ratio:4/3}
+#da-root .campus-img-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+#da-root .campus-img-wrap .map-fb{position:absolute;inset:0;display:none;background:linear-gradient(135deg,#050810,#0D1830);align-items:center;justify-content:center;flex-direction:column;gap:1rem}
+#da-root .campus-img-wrap .map-vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 55%,rgba(6,8,13,.65) 100%);pointer-events:none}
+
+/* === WAYPOINTS === */
+@keyframes da-ping{75%,100%{transform:scale(2.2);opacity:0}}
+#da-root .wpo{position:absolute;inset:0;overflow:visible;pointer-events:none}
+#da-root .wp{position:absolute;transform:translate(-50%,-50%);z-index:20;pointer-events:auto;cursor:pointer}
+#da-root .wp.wpa{z-index:40}
+#da-root .wpring{position:absolute;inset:-4px;border-radius:50%;background:rgba(201,148,58,.4);animation:da-ping 1s cubic-bezier(0,0,.2,1) infinite;pointer-events:none;display:none}
+#da-root .wp.wpa .wpring{display:block}
+#da-root .wpdot{position:relative;display:flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid rgba(201,148,58,.4);background:rgba(6,8,13,.78);font-size:.875rem;width:32px;height:32px;transition:border-color .2s,box-shadow .2s;user-select:none;-webkit-user-select:none;line-height:1}
+#da-root .wpdot.big{width:44px;height:44px;font-size:1.25rem}
+#da-root .wp:hover .wpdot{border-color:rgba(201,148,58,.8);box-shadow:0 0 12px 3px rgba(201,148,58,.35)}
+#da-root .wp.wpa .wpdot{border-color:#C9943A;background:rgba(201,148,58,.2);box-shadow:0 0 16px 5px rgba(201,148,58,.55)}
+#da-root .wppop{position:absolute;z-index:50;width:210px;border:1px solid rgba(201,148,58,.4);background:rgba(6,8,13,.97);box-shadow:0 20px 60px rgba(0,0,0,.8);display:none;pointer-events:auto}
+#da-root .wp.wpa .wppop{display:block}
+#da-root .wph{display:flex;align-items:center;gap:.5rem;padding:.625rem .75rem;border-bottom:1px solid #1E2A3A}
+#da-root .wphi{font-size:1rem;flex-shrink:0;line-height:1}
+#da-root .wphn{font-family:'Cinzel',serif;color:#C9943A;font-size:.625rem;font-weight:700;letter-spacing:.04em;line-height:1.3}
+#da-root .wpb{padding:.625rem .75rem}
+#da-root .wpd{font-size:.625rem;color:#EAD9BE;line-height:1.65;margin-bottom:.5rem}
+#da-root .wpcs{display:flex;flex-wrap:wrap;gap:.25rem;margin-bottom:.5rem}
+#da-root .wpc{font-size:.5rem;padding:.125rem .375rem;border:1px solid #1E2A3A;background:#111620;color:#7A8BA3}
+#da-root .wpf{display:flex;align-items:center;justify-content:space-between;padding-top:.375rem;border-top:1px solid #1E2A3A}
+#da-root .wpbdg{font-size:.5rem;font-weight:600;padding:.125rem .375rem}
+#da-root .wplnk{font-size:.5625rem;color:#C9943A;font-weight:600;text-decoration:none}
+#da-root .wplnk:hover{color:#E8B84B}
 #da-root .campus-corners .co{position:absolute;width:1.5rem;height:1.5rem}
 #da-root .campus-corners .co.tl{top:.75rem;left:.75rem;border-top:2px solid rgba(201,148,58,.4);border-left:2px solid rgba(201,148,58,.4)}
 #da-root .campus-corners .co.tr{top:.75rem;right:.75rem;border-top:2px solid rgba(201,148,58,.4);border-right:2px solid rgba(201,148,58,.4)}
@@ -228,13 +255,41 @@
     <p class="sec-sub">13 budov · každá s vlastním oborem · klikni a prozkoumej</p>
 
     <!-- Mapa kampusu -->
-    <div class="campus-img-wrap campus-corners" style="position:relative">
-      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
-      <img src="https://kedarcaja.github.io/akademie-HomePage/img/kampus-mapa.png" alt="Mapa kampusu Dračí akademie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <!-- Fallback if image missing -->
-      <div style="display:none;min-height:320px;background:linear-gradient(135deg,#050810,#0D1830);align-items:center;justify-content:center;flex-direction:column;gap:1rem">
-        <span style="font-size:3rem">🐉</span>
-        <p style="font-family:'Cinzel',serif;color:rgba(201,148,58,.6);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase">Mapa kampusu</p>
+    <div class="campus-map-outer">
+      <div class="campus-img-wrap campus-corners">
+        <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+        <img src="https://kedarcaja.github.io/akademie-HomePage/img/kampus-mapa.png" alt="Mapa kampusu Dračí akademie" onerror="this.style.display='none';this.parentElement.querySelector('.map-fb').style.display='flex'">
+        <div class="map-fb"><span style="font-size:3rem">🐉</span><p style="font-family:'Cinzel',serif;color:rgba(201,148,58,.6);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase">Mapa kampusu</p></div>
+        <div class="map-vig"></div>
+      </div>
+      <!-- Waypoints overlay — outside overflow:hidden so popups aren't clipped -->
+      <div class="wpo" id="da-wpo">
+        <!-- sin-stezek -->
+        <div class="wp" onclick="daWpClick(this)" style="left:22%;top:28%"><div class="wpring"></div><div class="wpdot">🧭</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">🧭</span><span class="wphn">Síň stezek</span></div><div class="wpb"><div class="wpd">Vstupní bod pro volbu tvůrčí stezky. Každá stezka má vlastní milníky, projekty a komunitu.</div><div class="wpcs"><span class="wpc">Stezka malíře</span><span class="wpc">Stezka modeláře</span><span class="wpc">Stezka stavitele světů</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#stezky" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- dilna -->
+        <div class="wp" onclick="daWpClick(this)" style="left:13%;top:44%"><div class="wpring"></div><div class="wpdot">🏺</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">🏺</span><span class="wphn">Dílna první figurky</span></div><div class="wpb"><div class="wpd">Místo pro úplné začátečníky. Bojit se chybovat je tady zakázáno — chyba je součást procesu.</div><div class="wpcs"><span class="wpc">Figurka z nuly</span><span class="wpc">Základy malování</span><span class="wpc">Moje první armáda</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(22,101,52,.3);color:#4ade80;border:1px solid rgba(74,222,128,.3)">Začátečníci</span><a href="#da-zacni" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- kovarna -->
+        <div class="wp" onclick="daWpClick(this)" style="left:17%;top:57%"><div class="wpring"></div><div class="wpdot">⚒️</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">⚒️</span><span class="wphn">Kovárna modelářů</span></div><div class="wpb"><div class="wpd">Pokročilé techniky modelování a konverzí. Pro ty, kdo chtějí překročit hranice standardních kitů.</div><div class="wpcs"><span class="wpc">Konverze a kitbashing</span><span class="wpc">Scratch building</span><span class="wpc">Terén a dioramy</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(127,29,29,.3);color:#f87171;border:1px solid rgba(248,113,113,.3)">Pokročilí</span><a href="#stezky" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- nadvori -->
+        <div class="wp" onclick="daWpClick(this)" style="left:20%;top:67%"><div class="wpring"></div><div class="wpdot">🎯</div><div class="wppop" style="left:34px;bottom:-6px"><div class="wph"><span class="wphi">🎯</span><span class="wphn">Tréninkové nádvoří</span></div><div class="wpb"><div class="wpd">Mentální stránka tvorby. Jak pracovat s frustrací, budovat rutinu a vytrvat i když to jde pomalu.</div><div class="wpcs"><span class="wpc">Soustředění a flow</span><span class="wpc">Práce s chybou</span><span class="wpc">Trpělivost jako nástroj</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#da-jak" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- atelier -->
+        <div class="wp" onclick="daWpClick(this)" style="left:27%;top:80%"><div class="wpring"></div><div class="wpdot">🏛️</div><div class="wppop" style="left:34px;bottom:-6px"><div class="wph"><span class="wphi">🏛️</span><span class="wphn">Ateliér Valiente</span></div><div class="wpb"><div class="wpd">Zákulisí Valiente Project — jak tvoříme pomůcky, lekce a obsah, který každý den v akademii používáme.</div><div class="wpcs"><span class="wpc">Za kulisami tvorby</span><span class="wpc">Naše metody</span><span class="wpc">Jak testujeme projekty</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Zvídaví</span><a href="#da-co-je" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- vez-barev -->
+        <div class="wp" onclick="daWpClick(this)" style="left:36%;top:12%"><div class="wpring"></div><div class="wpdot">🎨</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">🎨</span><span class="wphn">Alchymistická věž barev</span></div><div class="wpb"><div class="wpd">Vše o barvách — míchání, vrstvení, washes, glazury a pokročilé techniky malování miniatur.</div><div class="wpcs"><span class="wpc">Základy míchání barev</span><span class="wpc">Glazury a washes</span><span class="wpc">OSL efekty</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všechny úrovně</span><a href="#stezky" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- draci-kruh (velký) -->
+        <div class="wp" onclick="daWpClick(this)" style="left:50%;top:47%"><div class="wpring"></div><div class="wpdot big">🐉</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">🐉</span><span class="wphn">Dračí kruh</span></div><div class="wpb"><div class="wpd">Srdce kampusu. Místo kde se sbíhají stezky, sdílíme pokroky a slavíme chyby jako vítězství.</div><div class="wpcs"><span class="wpc">Komunitní výzvy</span><span class="wpc">Sdílení projektů</span><span class="wpc">Živé workshopy</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Komunita</span><a href="#da-komunita" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- hlavni-brana (velký) -->
+        <div class="wp" onclick="daWpClick(this)" style="left:50%;top:88%"><div class="wpring"></div><div class="wpdot big">🚪</div><div class="wppop" style="left:34px;bottom:-6px"><div class="wph"><span class="wphi">🚪</span><span class="wphn">Hlavní brána</span></div><div class="wpb"><div class="wpd">Vstupní bod do celého kampusu. Přivítej se, zorientuj a vyber svůj první krok — bez spěchu.</div><div class="wpcs"><span class="wpc">Orientace v kampusu</span><span class="wpc">Výběr stezky</span><span class="wpc">Úvodní projekt</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(22,101,52,.3);color:#4ade80;border:1px solid rgba(74,222,128,.3)">Nováčci</span><a href="#da-zacni" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- knihovna -->
+        <div class="wp" onclick="daWpClick(this)" style="left:68%;top:10%"><div class="wpring"></div><div class="wpdot">📚</div><div class="wppop" style="right:34px;top:-6px"><div class="wph"><span class="wphi">📚</span><span class="wphn">Knihovna mistrů</span></div><div class="wpb"><div class="wpd">Rozsáhlá sbírka technik, inspirace a příběhů od mistrů oboru. Videotéka, čítárna a archiv.</div><div class="wpcs"><span class="wpc">Techniky legend</span><span class="wpc">Inspirační knihovna</span><span class="wpc">Světy fantasy</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#da-komunita" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- pavilon -->
+        <div class="wp" onclick="daWpClick(this)" style="left:80%;top:32%"><div class="wpring"></div><div class="wpdot">🏠</div><div class="wppop" style="right:34px;top:-6px"><div class="wph"><span class="wphi">🏠</span><span class="wphn">Pavilon rodičů</span></div><div class="wpb"><div class="wpd">Speciální sekce pro rodiče — jak podporovat tvůrce doma, co si připravit a jak fungují workshopy.</div><div class="wpcs"><span class="wpc">Průvodce pro rodiče</span><span class="wpc">Podpora doma</span><span class="wpc">Dětské projekty</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(30,58,138,.3);color:#60a5fa;border:1px solid rgba(96,165,250,.3)">Rodiče</span><a href="#da-komunita" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- ucitelska -->
+        <div class="wp" onclick="daWpClick(this)" style="left:83%;top:49%"><div class="wpring"></div><div class="wpdot">🎓</div><div class="wppop" style="right:34px;top:-6px"><div class="wph"><span class="wphi">🎓</span><span class="wphn">Učitelská síň</span></div><div class="wpb"><div class="wpd">Pro pedagogy a vedoucí kroužků. Metodiky, materiály a kurzy pro výuku kreativních dovedností.</div><div class="wpcs"><span class="wpc">Metodika výuky</span><span class="wpc">Vedení workshopů</span><span class="wpc">Stát se průvodcem</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(88,28,135,.3);color:#c084fc;border:1px solid rgba(192,132,252,.3)">Pedagogové</span><a href="#da-co-je" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- trziste -->
+        <div class="wp" onclick="daWpClick(this)" style="left:73%;top:62%"><div class="wpring"></div><div class="wpdot">🛒</div><div class="wppop" style="right:34px;top:-6px"><div class="wph"><span class="wphi">🛒</span><span class="wphn">Tržiště akademie</span></div><div class="wpb"><div class="wpd">Akademický obchod — barvy, štětce, kity a pomůcky, které skutečně doporučujeme a sami používáme.</div><div class="wpcs"><span class="wpc">Barvy a štětce</span><span class="wpc">Figurky a kity</span><span class="wpc">Nástroje mistrů</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#da-komunita" class="wplnk">Vstoupit ›</a></div></div></div></div>
+        <!-- draci-posta -->
+        <div class="wp" onclick="daWpClick(this)" style="left:79%;top:77%"><div class="wpring"></div><div class="wpdot">📬</div><div class="wppop" style="right:34px;bottom:-6px"><div class="wph"><span class="wphi">📬</span><span class="wphn">Dračí pošta</span></div><div class="wpb"><div class="wpd">Zůstaň v kontaktu. Newsletter s novinkami, výzvy, oznámení workshopů a zprávy z celé akademie.</div><div class="wpcs"><span class="wpc">Newsletter akademie</span><span class="wpc">Měsíční výzvy</span><span class="wpc">Oznámení workshopů</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#da-kontakt" class="wplnk">Vstoupit ›</a></div></div></div></div>
       </div>
     </div>
 
@@ -470,6 +525,7 @@
 </div><!-- /#da-root -->
 
 <script>
+// Strip Systeme.io wrapper padding
 (function(){
   var root = document.getElementById('da-root');
   if(!root) return;
@@ -484,4 +540,19 @@
     p = p.parentElement;
   }
 })();
+
+// Waypoint interactivity
+function daWpClick(el){
+  var wpo = document.getElementById('da-wpo');
+  if(!wpo) return;
+  var wasActive = el.classList.contains('wpa');
+  wpo.querySelectorAll('.wp').forEach(function(w){ w.classList.remove('wpa'); });
+  if(!wasActive) el.classList.add('wpa');
+}
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.wp')){
+    var wpo = document.getElementById('da-wpo');
+    if(wpo) wpo.querySelectorAll('.wp').forEach(function(w){ w.classList.remove('wpa'); });
+  }
+});
 </script>
