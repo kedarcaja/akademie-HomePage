@@ -1,0 +1,46 @@
+export const systemeImplementation = {
+  hned: {
+    title: 'Hned v Systeme.io',
+    icon: '✅',
+    items: [
+      { item: 'Veřejné stránky', detail: 'Akademie, Začni tady, Stezky, Děti a rodiče, Školy, Komunita, Obchod, O nás, Kontakt' },
+      { item: 'Landing pages / funnely', detail: '7 dní u štětce, První plamen, Tvoření mimo obrazovky, Poptávka workshopu' },
+      { item: 'Kurzy a moduly', detail: 'První plamen, Vejce draka, Mládě draka, Deskovkářská stezka' },
+      { item: 'Lekce s videem a textem', detail: 'Každá lekce má video + text + pracovní list ke stažení' },
+      { item: 'Pracovní listy ke stažení', detail: 'PDF soubory dostupné jako downloads v lekci' },
+      { item: 'E-maily a sekvence', detail: 'Všechny e-mailové sekvence, uvítání, nurturing, nabídky' },
+      { item: 'Tagy a segmentace', detail: 'Všechny tagy interest-, access-, level-, badge-' },
+      { item: 'Přístup podle členství', detail: 'Různé kurzy pro různé typy členství' },
+      { item: 'Komunita', detail: 'Dračí kruh jako Systeme.io komunita' },
+      { item: 'Formuláře a poptávky', detail: 'Školy, workshopy, kontakt' },
+      { item: 'Prodej členství a kurzů', detail: 'Platby, recurring billing, upsell' },
+      { item: 'Webináře přes externí link', detail: 'Zoom/Meet odkaz v lekci nebo e-mailu' },
+      { item: 'Podcast jako lekce', detail: 'Audio lekce nebo odkaz na podcast platformu' },
+    ],
+  },
+  polurunne: {
+    title: 'Poloručně v Systeme.io',
+    icon: '🔧',
+    items: [
+      { item: 'Achievementy a odznaky', detail: 'Ruční přiřazení tagu + odeslání e-mailu s odznakemPDF' },
+      { item: 'Certifikáty', detail: 'PDF certifikát jako download po splnění podmínek' },
+      { item: 'Galerie pokroku', detail: 'Komunita + pinned posts nebo externě (Google Photos, Notion)' },
+      { item: 'Opravna projektů', detail: 'Formulář + ruční workflow + e-mail s odpovědí' },
+      { item: 'Malířský deník', detail: 'Notion šablona jako odkaz v lekci nebo jako download' },
+      { item: 'Komunitní ocenění', detail: 'Ruční pochvala admina v komunitě + tag' },
+    ],
+  },
+  pozdeji: {
+    title: 'Později / externě',
+    icon: '🚀',
+    items: [
+      { item: 'Automatické XP a levely', detail: 'Vyžaduje vlastní mini aplikaci nebo externe nástroj' },
+      { item: 'Profil studenta s historií', detail: 'Vyžaduje databázi a backend' },
+      { item: 'Žebříčky', detail: 'Gamifikační platforma nebo custom build' },
+      { item: 'AI mentor', detail: 'API integrace (Claude/OpenAI) přes vlastní frontend' },
+      { item: 'Automatické vyhodnocení fotek', detail: 'Vyžaduje AI vision API' },
+      { item: 'Pokročilé deníky s históriemi', detail: 'Custom app nebo Notion integrace' },
+      { item: 'Automatický achievement engine', detail: 'Vyžaduje databázi, backend, webhooky' },
+    ],
+  },
+}

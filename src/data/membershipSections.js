@@ -1,0 +1,12 @@
+export const membershipSections = [
+  { id: 'kurzy', icon: '🎓', title: 'Kurzy', desc: 'Strukturované vzdělávací cesty od začátečníka po mistra.', systeme: 'Kurzy s moduly a lekcemi', items: ['První plamen', 'Vejce draka', 'Mládě draka', 'Učeň ohně', 'Strážce pokladu', 'Dračí mistr', 'Deskovkářská stezka', 'Display stezka', 'Mentální toolbox', 'Dětské mise'] },
+  { id: 'pracovni-listy', icon: '📋', title: 'Pracovní listy', desc: 'PDF soubory s technickou i mentální částí a Dračí otázkou.', systeme: 'Downloads v lekcích', items: ['ws-drybrush-zaklady', 'ws-wash-technika', 'ws-prvni-model', 'ws-malirsky-denik'] },
+  { id: 'vyzvy', icon: '🎯', title: 'Výzvy', desc: 'Pravidelné mini výzvy pro udržení motivace.', systeme: 'E-mailové kampaně + komunita', items: ['7 dní u štětce', 'Výzva jedné barvy', 'Výzva chyby', 'Výzva bez mobilu', 'Výzva návratu', 'Výzva armády'] },
+  { id: 'podcasty', icon: '🎙️', title: 'Dračí rádio', desc: 'Podcasty o tvoření, chybách, psychice a rozhovory.', systeme: 'Audio lekce nebo odkaz na podcast', items: ['Proč tvoříme', 'Práce s chybou', 'Rozhovory s malíři', 'Rozhovory s rodiči'] },
+  { id: 'meditace', icon: '🌿', title: 'Meditace a zklidnění', desc: 'Krátká praktická zklidnění před tvorbou nebo po chybě.', systeme: 'Audio/video lekce v kurzu', items: ['3 minuty před malováním', 'Dech před začátkem', 'Když jsem pokazil model', 'Návrat ke stolu'] },
+  { id: 'komunita', icon: '🤝', title: 'Komunita', desc: 'Dračí kruh – sdílení, výzvy, živá setkání.', systeme: 'Systeme.io komunita', items: ['Živé hovory', 'Tiché malování', 'Sdílení pokroku', 'Rozbory projektů'] },
+  { id: 'galerie', icon: '🖼️', title: 'Galerie pokroku', desc: 'Výsledky studentů – ne dokonalost, ale pokrok.', systeme: 'Komunita + pinned posts / externí galerie', items: ['První modely', 'Před a po', 'Modely, co mě něco naučily', 'Nedokončené, ale nevzdané'] },
+  { id: 'denik', icon: '📓', title: 'Malířský deník', desc: 'Nástroj pro reflexi a záznam pokroku.', systeme: 'Notion šablona nebo PDF download', items: ['Datum a projekt', 'Co se nepovedlo', 'Co jsem se naučil', 'Fotka pokroku'] },
+  { id: 'webinare', icon: '📡', title: 'Webináře', desc: 'Tematické večery s hosty a ukázkami technik.', systeme: 'Zoom/Meet odkaz v e-mailu nebo lekci', items: ['Měsíční témata', 'Ukázky technik', 'Hosté', 'Rodičovská témata'] },
+  { id: 'opravna', icon: '🔧', title: 'Opravna projektů', desc: 'Pošleš fotku, dostaneš 3 cesty dál.', systeme: 'Formulář + ruční workflow + e-mail', items: ['Popis problému', 'Fotka stavu', '3 možné cesty', 'Doporučená lekce'] },
+]

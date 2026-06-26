@@ -1,0 +1,65 @@
+export const emailSequences = [
+  {
+    id: 'start-zdarma',
+    title: 'Start zdarma – 7 dní u štětce',
+    icon: '🖌️',
+    trigger: 'Přihlášení na výzvu 7 dní u štětce',
+    emails: [
+      { day: 0, subject: 'Vítej v Dračí akademii 🐉', purpose: 'Uvítání, co čekat, jak výzva funguje' },
+      { day: 1, subject: 'Proč tvoření rukama pomáhá zpomalit', purpose: 'Nastavení mindset, proč je tvoření důležité' },
+      { day: 3, subject: 'Tvoje první malá mise 🎯', purpose: 'Konkrétní úkol: vezmi štětec a udělej jedno gesto' },
+      { day: 5, subject: 'Co když se to nepovede?', purpose: 'Práce s chybou, normalizace chyby' },
+      { day: 7, subject: 'Dokázal/a jsi to. Co dál?', purpose: 'Gratulace + nabídka Prvního plamene' },
+    ],
+  },
+  {
+    id: 'prvni-plamen',
+    title: 'První plamen – po nákupu',
+    icon: '🔥',
+    trigger: 'Nákup kurzu První plamen',
+    emails: [
+      { day: 0, subject: 'Tvůj První plamen je připraven 🔥', purpose: 'Potvrzení přístupu, kde najdou kurz' },
+      { day: 1, subject: 'Jak začít – první 3 minuty', purpose: 'Konkrétní instrukce pro první spuštění' },
+      { day: 3, subject: 'Jak jde první model?', purpose: 'Povzbuzení, odkaz na komunitu' },
+      { day: 7, subject: 'Přidej se do Dračího kruhu', purpose: 'Pozvánka do komunity' },
+    ],
+  },
+  {
+    id: 'clenstvi',
+    title: 'Členství – uvítací sekvence',
+    icon: '🐉',
+    trigger: 'Nákup členství',
+    emails: [
+      { day: 0, subject: 'Vítej v akademii, dráče! 🐉', purpose: 'Uvítání, přehled toho, co mají k dispozici' },
+      { day: 2, subject: 'Vyber si svou stezku', purpose: 'Průvodce výběrem stezky' },
+      { day: 4, subject: 'Představ se v Dračím kruhu', purpose: 'Onboarding do komunity' },
+      { day: 6, subject: 'Stáhni si malířský deník', purpose: 'Odkaz na PDF deníku' },
+      { day: 14, subject: 'Tvůj první měsíc u štětce', purpose: 'První měsíční výzva + pozvánka na živý hovor' },
+    ],
+  },
+  {
+    id: 'rodice',
+    title: 'Rodiče – lead sekvence',
+    icon: '👨‍👧',
+    trigger: 'Přihlášení na rodičovský lead magnet',
+    emails: [
+      { day: 0, subject: 'Tady je tvůj průvodce ✨', purpose: 'PDF ke stažení + co čekat' },
+      { day: 2, subject: 'Proč tvoření rukama mění dítě', purpose: 'Obsah: motorika, soustředění, práce s chybou' },
+      { day: 4, subject: 'Jak podpořit dítě bez tlaku', purpose: 'Praktické tipy pro rodiče' },
+      { day: 6, subject: 'Malý tvořivý koutek doma', purpose: 'Jak připravit prostor' },
+      { day: 8, subject: 'Chceš víc? Dětské mise v akademii', purpose: 'Nabídka dětského kurzu nebo workshopu' },
+    ],
+  },
+  {
+    id: 'skoly',
+    title: 'Školy – po poptávce',
+    icon: '🏫',
+    trigger: 'Poptávka workshopu odeslána',
+    emails: [
+      { day: 0, subject: 'Děkujeme za zájem o workshop', purpose: 'Potvrzení, kdy se ozveme' },
+      { day: 1, subject: 'Co program rozvíjí u dětí', purpose: 'Přehled benefitů programu' },
+      { day: 3, subject: 'Jak program probíhá', purpose: 'Praktické informace, délka, průběh' },
+      { day: 5, subject: 'Možnosti spolupráce', purpose: 'Varianty programů + výzva k domluvě' },
+    ],
+  },
+]
