@@ -57,7 +57,7 @@
 #kmap-root .kpanel-label{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
 #kmap-root .kpanel-courses{display:flex;flex-wrap:wrap;gap:.375rem;margin-bottom:1.125rem}
 #kmap-root .kcourse-tag{font-size:.6875rem;padding:.25rem .625rem;background:rgba(201,148,58,.08);border:1px solid rgba(201,148,58,.2);color:var(--parch)}
-#kmap-root .kbadge{display:inline-flex;align-items:center;font-size:.6rem;font-weight:700;padding:.2rem .5rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem}
+#kmap-root .kbadge{display:inline-flex;align-items:center;font-size:.6rem;font-weight:700;padding:.2rem .5rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem;background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.3)}
 
 #kmap-root .kpanel-footer{padding:.875rem 1.25rem;border-top:1px solid var(--border);flex-shrink:0}
 #kmap-root .kpanel-link{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;background:var(--red);color:var(--parch);font-family:var(--ffs);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(201,148,58,.2);transition:background .2s}
@@ -190,7 +190,7 @@ function kOpenPanel(id) {
   var courses = document.getElementById('kp-courses');
   courses.innerHTML = b.courses.map(function(c){ return '<span class="kcourse-tag">'+c+'</span>'; }).join('');
   document.getElementById('kp-badge').innerHTML =
-    '<span class="kbadge" style="background:'+b.badge+'22;color:'+b.badge+';border:1px solid '+b.badge+'44">'+b.forWho+'</span>';
+    '<span class="kbadge" style="color:'+b.badge+';border-color:'+b.badge+'">'+b.forWho+'</span>';
   if (kClosingTimeout) clearTimeout(kClosingTimeout);
   kpanel.classList.remove('closing');
   kpanel.classList.add('open');
