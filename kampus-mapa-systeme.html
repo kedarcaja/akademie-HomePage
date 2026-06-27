@@ -22,7 +22,7 @@
 #kmap-root .kpin:nth-child(2n){animation-delay:-.8s}
 #kmap-root .kpin:nth-child(3n){animation-delay:-1.6s}
 #kmap-root .kpin:nth-child(4n){animation-delay:-2.4s}
-#kmap-root .kpin-body{position:relative;width:44px;height:44px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.9))}
+#kmap-root .kpin-body{position:relative;width:44px;height:44px}
 #kmap-root .kpin.big .kpin-body{width:56px;height:56px}
 #kmap-root .kpin-diamond{width:100%;height:100%;background:rgba(6,8,13,.92);border:2.5px solid var(--gold);border-radius:4px;transform:rotate(45deg);display:flex;align-items:center;justify-content:center;transition:border-color .2s,box-shadow .2s,background .2s;position:relative;box-shadow:0 0 10px 2px rgba(201,148,58,.35),inset 0 0 8px rgba(201,148,58,.08)}
 #kmap-root .kpin-diamond::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:10px solid var(--gold);transition:border-top-color .2s}
@@ -40,7 +40,7 @@
 @keyframes kslideIn{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes kslideInBottom{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}
 
-#kmap-root .kpanel{position:absolute;top:0;right:0;bottom:0;width:min(340px,90%);background:linear-gradient(160deg,rgba(8,12,22,.97) 0%,rgba(13,21,32,.97) 100%);border-left:1px solid var(--border);display:flex;flex-direction:column;transform:translateX(110%);opacity:0;transition:none;z-index:30}
+#kmap-root .kpanel{position:absolute;top:0;right:0;bottom:0;width:340px;max-width:90%;background:linear-gradient(160deg,rgba(8,12,22,.97) 0%,rgba(13,21,32,.97) 100%);border-left:1px solid var(--border);display:flex;flex-direction:column;transform:translateX(110%);opacity:0;transition:none;z-index:30}
 #kmap-root .kpanel.open{animation:kslideIn .35s cubic-bezier(.22,1,.36,1) forwards}
 #kmap-root .kpanel.closing{animation:kslideIn .25s cubic-bezier(.6,0,.8,1) reverse forwards}
 #kmap-root .kpanel::before{content:'';position:absolute;top:1rem;left:1rem;width:1.5rem;height:1.5rem;border-top:1px solid rgba(201,148,58,.25);border-left:1px solid rgba(201,148,58,.25);pointer-events:none}
