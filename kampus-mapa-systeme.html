@@ -40,7 +40,7 @@
 @keyframes kslideIn{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}
 @keyframes kslideInBottom{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}
 
-#kmap-root .kpanel{position:absolute;top:0;right:0;bottom:0;width:340px;max-width:90%;background:linear-gradient(160deg,rgba(8,12,22,.97) 0%,rgba(13,21,32,.97) 100%);border-left:1px solid var(--border);display:flex;flex-direction:column;transform:translateX(110%);opacity:0;transition:none;z-index:30}
+#kmap-root .kpanel{position:absolute;top:1rem;right:0;bottom:1rem;width:340px;max-width:90%;background:linear-gradient(160deg,rgba(8,12,22,.97) 0%,rgba(13,21,32,.97) 100%);border:1px solid var(--border);border-right:none;border-radius:1.25rem 0 0 1.25rem;display:flex;flex-direction:column;transform:translateX(110%);opacity:0;transition:none;z-index:30;overflow:hidden}
 #kmap-root .kpanel.open{animation:kslideIn .35s cubic-bezier(.22,1,.36,1) forwards}
 #kmap-root .kpanel.closing{animation:kslideIn .25s cubic-bezier(.6,0,.8,1) reverse forwards}
 #kmap-root .kpanel::before{content:'';position:absolute;top:1rem;left:1rem;width:1.5rem;height:1.5rem;border-top:1px solid rgba(201,148,58,.25);border-left:1px solid rgba(201,148,58,.25);pointer-events:none}
@@ -59,8 +59,7 @@
 #kmap-root .kcourse-tag{font-size:.6875rem;padding:.25rem .625rem;background:rgba(201,148,58,.08);border:1px solid rgba(201,148,58,.2);color:var(--parch)}
 #kmap-root .kbadge{display:inline-flex;align-items:center;font-size:.6rem;font-weight:700;padding:.2rem .5rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem;background:rgba(201,148,58,.1);border:1px solid rgba(201,148,58,.3)}
 
-#kmap-root .kpanel-footer{padding:.875rem 1.25rem;border-top:1px solid var(--border);flex-shrink:0}
-#kmap-root .kpanel-link{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;background:var(--red);color:var(--parch);font-family:var(--ffs);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(201,148,58,.2);transition:background .2s}
+#kmap-root .kpanel-link{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;background:var(--red);color:var(--parch);font-family:var(--ffs);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(201,148,58,.2);transition:background .2s;border-radius:.5rem;margin-top:.75rem}
 #kmap-root .kpanel-link:hover{background:#9B2830}
 #kmap-root .kpanel-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
 
@@ -68,7 +67,7 @@
 #kmap-root .klegend span{color:var(--gold)}
 
 @media(max-width:600px){
-  #kmap-root .kpanel{top:auto;right:0;left:0;bottom:0;width:100%;max-height:70%;border-left:none;border-top:1px solid var(--border);border-radius:1rem 1rem 0 0}
+  #kmap-root .kpanel{top:auto;right:0;left:0;bottom:0;width:100%;max-height:72%;border:none;border-top:1px solid var(--border);border-radius:1.25rem 1.25rem 0 0}
   #kmap-root .kpanel.open{animation:kslideInBottom .35s cubic-bezier(.22,1,.36,1) forwards}
   #kmap-root .kpanel.closing{animation:kslideInBottom .25s cubic-bezier(.6,0,.8,1) reverse forwards}
   #kmap-root .kpin-body{width:26px;height:26px}
@@ -95,8 +94,6 @@
         <div class="kpanel-label">Obsah budovy</div>
         <div class="kpanel-courses" id="kp-courses"></div>
         <div id="kp-badge"></div>
-      </div>
-      <div class="kpanel-footer">
         <a href="#" class="kpanel-link" id="kp-link">
           Vstoupit do budovy
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
