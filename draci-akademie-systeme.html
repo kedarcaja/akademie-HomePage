@@ -55,27 +55,6 @@
 #da-root .cardp{background:linear-gradient(135deg,#1A1408 0%,#111620 100%);border:1px solid rgba(201,148,58,.2);transition:transform .3s,border-color .3s,box-shadow .3s}
 #da-root .cardp:hover{transform:translateY(-4px);border-color:rgba(201,148,58,.5);box-shadow:0 0 24px rgba(201,148,58,.08),0 20px 40px rgba(0,0,0,.4)}
 
-/* === NAV === */
-#da-root .nav{position:sticky;top:0;z-index:100;background:rgba(6,8,13,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-#da-root .nav-inner{display:flex;align-items:center;gap:2rem;height:4rem}
-#da-root .nav-logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0;text-decoration:none}
-#da-root .nav-logo-ico{width:32px;height:32px;border-radius:50%;border:1px solid rgba(201,148,58,.4);overflow:hidden;flex-shrink:0}
-#da-root .nav-logo-ico img{width:100%;height:100%;object-fit:cover;display:block}
-#da-root .nav-logo-txt{font-family:var(--ff-serif);color:var(--gold);font-weight:700;font-size:.875rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
-#da-root .nav-links{display:flex;align-items:center;gap:.25rem;margin-left:1rem;flex:1}
-#da-root .nav-links a{font-size:.75rem;font-weight:500;color:var(--muted);padding:.375rem .625rem;transition:color .2s;white-space:nowrap;text-decoration:none;letter-spacing:.03em}
-#da-root .nav-links a:hover{color:var(--parch)}
-#da-root .nav-cta{margin-left:auto;flex-shrink:0}
-#da-root .nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:transparent;border:none;margin-left:auto;flex-shrink:0}
-#da-root .nav-ham span{display:block;width:22px;height:2px;background:var(--gold);border-radius:1px;transition:transform .2s,opacity .2s}
-#da-root .nav-mobile{position:absolute;top:4rem;left:0;right:0;z-index:98;background:rgba(6,8,13,.98);backdrop-filter:blur(12px);flex-direction:column;padding:1.5rem;gap:0;border-top:1px solid var(--border);display:none;overflow-y:auto}
-#da-root .nav-mobile.open{display:flex}
-#da-root .nav-mobile a{font-size:1.0625rem;font-weight:500;color:var(--text);padding:.875rem 0;border-bottom:1px solid var(--border);text-decoration:none;letter-spacing:.02em;transition:color .2s}
-#da-root .nav-mobile a:last-child{border-bottom:none}
-#da-root .nav-mobile a:hover{color:var(--gold)}
-#da-root .nav-mobile .nav-mob-cta{margin-top:1.5rem}
-@media(max-width:900px){#da-root .nav-links{display:none}#da-root .nav-ham{display:flex}}
-@media(max-width:600px){#da-root .nav-cta .btn{padding:.625rem 1rem;font-size:.6875rem}}
 
 /* === HERO === */
 #da-root .hero{min-height:96vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--darker)}
@@ -280,7 +259,6 @@
   #da-root .cta-grid{grid-template-columns:1fr}
   #da-root .gate-grid{grid-template-columns:repeat(2,1fr)}
   #da-root .pg5{grid-template-columns:repeat(3,1fr)}
-  #da-root .es-inner{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   #da-root .g3,#da-root .g5{grid-template-columns:1fr}
@@ -288,61 +266,47 @@
   #da-root .prob-item+.prob-item::before{display:none}
   #da-root .gate-grid{grid-template-columns:1fr}
   #da-root .pg5{grid-template-columns:repeat(2,1fr)}
-  #da-root .hill{display:none}
-  #da-root .hgl{width:100%;background:rgba(6,8,13,.7)}
-  #da-root .hcon{max-width:100%}
-  #da-root .hbtns{flex-direction:column}
-  #da-root .hbtns .btn{width:100%;justify-content:center}
   #da-root .stps{grid-template-columns:1fr}
   #da-root .bldg-grid{grid-template-columns:1fr}
   #da-root .ftop{flex-direction:column}
+  /* Hero mobile */
+  #da-root .hill{display:none}
+  #da-root .hgl{width:100%;background:rgba(6,8,13,.85)}
+  #da-root .hero{min-height:auto;padding:4rem 0}
+  #da-root .hcon{max-width:100%;padding:0}
+  #da-root .htit .lg{font-size:clamp(1.5rem,6vw,2rem)}
+  #da-root .htit .xl{font-size:clamp(1.875rem,7.5vw,2.5rem)}
+  #da-root .hdesc{font-size:.9375rem;margin-bottom:1.75rem}
+  #da-root .hbtns{flex-direction:column;gap:.625rem}
+  #da-root .hbtns .btn{width:100%;justify-content:center}
+  /* Sections */
+  #da-root .sp{padding:3rem 0}
+  #da-root .sp-lg{padding:4rem 0}
+  #da-root .wrap{padding:0 1.25rem}
+  /* Footer */
+  #da-root .ftop{flex-direction:column;gap:1.5rem}
+  #da-root .ftb{flex-direction:column;align-items:flex-start;gap:.5rem}
 }
 @media(max-width:480px){
-  #da-root .sp,#da-root .sp-lg{padding:4rem 0}
+  #da-root .sp{padding:2.5rem 0}
+  #da-root .sp-lg{padding:3rem 0}
+  #da-root .wrap{padding:0 1rem}
   #da-root .pg5{grid-template-columns:1fr}
+  #da-root .gate-grid{grid-template-columns:1fr}
   #da-root .es-form{flex-direction:column}
   #da-root .es-form .btn{width:100%;justify-content:center}
+  #da-root .hero{padding:3rem 0}
+  #da-root .htit .lg{font-size:1.5rem}
+  #da-root .htit .xl{font-size:1.875rem}
+  #da-root .hmic{font-size:.6875rem}
+  #da-root .btn{padding:.8rem 1.25rem;font-size:.6875rem}
+  #da-root .sec-title{font-size:1.125rem;letter-spacing:.06em}
+  #da-root .pc{padding:1.5rem .875rem 1.25rem}
+  #da-root .gate{padding:1.5rem 1.125rem}
 }
 </style>
 
 <div id="da-root">
-
-<!-- ==================== NAV ==================== -->
-<nav class="nav">
-  <div class="wrap" style="padding:0 1.5rem">
-    <div class="nav-inner">
-      <a href="#da-akademie" class="nav-logo">
-        <div class="nav-logo-ico">
-          <img src="https://kedarcaja.github.io/akademie-HomePage/img/dragon-emblem.png" alt="Dračí akademie">
-        </div>
-        <span class="nav-logo-txt">Dračí akademie</span>
-      </a>
-      <div class="nav-links">
-        <a href="#da-akademie">Akademie</a>
-        <a href="#da-jak">Začni tady</a>
-        <a href="#da-kampus">Stezky</a>
-        <a href="#da-komunita">Komunita</a>
-        <a href="#da-co-je">Členství</a>
-        <a href="#da-kontakt">Kontakt</a>
-      </div>
-      <div class="nav-cta">
-        <a href="#da-zacni" class="btn bp" style="padding:.625rem 1.25rem;font-size:.6875rem"><img src="https://kedarcaja.github.io/akademie-HomePage/img/dragon-emblem.png" style="width:16px;height:16px;object-fit:cover;border-radius:50%;opacity:.9" alt="">Začni tady</a>
-      </div>
-      <div class="nav-ham" id="da-ham" onclick="daToggleNav()" role="button" tabindex="0" aria-label="Otevřít menu">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </div>
-</nav>
-<div class="nav-mobile" id="da-nav-mobile">
-  <a href="#da-akademie" onclick="daCloseNav()">Akademie</a>
-  <a href="#da-jak" onclick="daCloseNav()">Začni tady</a>
-  <a href="#da-kampus" onclick="daCloseNav()">Stezky</a>
-  <a href="#da-komunita" onclick="daCloseNav()">Komunita</a>
-  <a href="#da-co-je" onclick="daCloseNav()">Členství</a>
-  <a href="#da-kontakt" onclick="daCloseNav()">Kontakt</a>
-  <div class="nav-mob-cta"><a href="#da-zacni" class="btn bp" onclick="daCloseNav()" style="width:100%;justify-content:center">Začni tady</a></div>
-</div>
 
 <!-- ==================== HERO ==================== -->
 <section id="da-akademie" class="hero">
@@ -624,26 +588,6 @@
     p = p.parentElement;
   }
 })();
-
-// Mobile nav toggle
-function daToggleNav(){
-  var m=document.getElementById('da-nav-mobile');
-  var h=document.getElementById('da-ham');
-  if(!m) return;
-  var open=m.classList.toggle('open');
-  if(h) h.setAttribute('aria-expanded', open ? 'true' : 'false');
-}
-function daCloseNav(){
-  var m=document.getElementById('da-nav-mobile');
-  var h=document.getElementById('da-ham');
-  if(m) m.classList.remove('open');
-  if(h) h.setAttribute('aria-expanded','false');
-}
-// Close mobile nav on anchor click (hash navigation)
-document.addEventListener('click',function(e){
-  if(e.target.closest('.nav-mobile')) return;
-  if(!e.target.closest('#da-ham')) daCloseNav();
-});
 
 // Waypoint interactivity
 function daWpClick(el){
