@@ -128,7 +128,7 @@ KBUILDINGS.forEach(function(b) {
   var pin = document.createElement('div');
   pin.className = 'kpin' + (b.big ? ' big' : '');
   pin.dataset.id = b.id;
-  pin.style.cssText = 'left:'+b.x+'%;top:'+b.y+'%;position:absolute;';
+  pin.style.position = 'absolute';
   pin.innerHTML =
     '<div class="kpin-ring"></div>' +
     '<div class="kpin-body">' +
@@ -139,6 +139,35 @@ KBUILDINGS.forEach(function(b) {
   pin.addEventListener('click', function(e){ e.stopPropagation(); kOpenPanel(b.id); });
   kpinsEl.appendChild(pin);
 });
+
+// Position pins relative to actual rendered image bounds (object-fit:contain)
+function kPositionPins() {
+  var img = document.querySelector('#kmap-root .map-img');
+  var wrap = document.querySelector('#kmap-root .map-wrap');
+  if (!img || !img.naturalWidth) return;
+  var wW = wrap.offsetWidth;
+  var wH = wrap.offsetHeight;
+  var natW = img.naturalWidth;
+  var natH = img.naturalHeight;
+  var scale = Math.min(wW / natW, wH / natH);
+  var rW = natW * scale;
+  var rH = natH * scale;
+  var oX = (wW - rW) / 2;
+  var oY = (wH - rH) / 2;
+  document.querySelectorAll('#kmap-root .kpin').forEach(function(pin) {
+    var id = pin.dataset.id;
+    var b = null;
+    for (var i = 0; i < KBUILDINGS.length; i++) { if (KBUILDINGS[i].id === id) { b = KBUILDINGS[i]; break; } }
+    if (!b) return;
+    pin.style.left = (oX + (b.x / 100) * rW) + 'px';
+    pin.style.top  = (oY + (b.y / 100) * rH) + 'px';
+  });
+}
+
+var kMapImg = document.querySelector('#kmap-root .map-img');
+kMapImg.addEventListener('load', function(){ kPositionPins(); kFadeInPins(); });
+if (kMapImg.complete) { kPositionPins(); }
+window.addEventListener('resize', kPositionPins);
 
 var kpanel = document.getElementById('kpanel');
 var kActiveId = null;
@@ -181,9 +210,12 @@ document.querySelector('#kmap-root .map-wrap').addEventListener('click', functio
 });
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') kClosePanel(); });
 
-document.querySelectorAll('#kmap-root .kpin').forEach(function(p, i){
-  p.style.opacity = '0';
-  p.style.transition = 'opacity .4s';
-  setTimeout(function(){ p.style.opacity = '1'; }, 300 + i * 60);
-});
+function kFadeInPins() {
+  document.querySelectorAll('#kmap-root .kpin').forEach(function(p, i){
+    p.style.opacity = '0';
+    p.style.transition = 'opacity .4s';
+    setTimeout(function(){ p.style.opacity = '1'; }, 300 + i * 60);
+  });
+}
+if (kMapImg.complete) { kFadeInPins(); }
 </script>
