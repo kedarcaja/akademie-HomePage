@@ -1,0 +1,191 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap');
+
+#kmap-root{
+  --gold:#C9943A;--dark:#06080D;--card:#0D1520;
+  --border:#1E2A3A;--parch:#DEC991;--text:#EAD9BE;--muted:#7A8BA3;
+  --red:#7D2128;--ff:'Cinzel',Georgia,serif;--ffs:'Inter',system-ui,sans-serif;
+  position:relative;width:100%;min-height:100vh;
+  background:var(--dark);overflow:hidden;
+  font-family:var(--ffs);
+}
+#kmap-root *,#kmap-root *::before,#kmap-root *::after{box-sizing:border-box;margin:0;padding:0}
+
+#kmap-root .map-wrap{position:relative;width:100%;height:100vh;overflow:hidden}
+#kmap-root .map-img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;user-select:none;-webkit-user-select:none;pointer-events:none}
+#kmap-root .map-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,transparent 60%,rgba(6,8,13,.7) 100%);pointer-events:none}
+
+/* PINS */
+@keyframes kping{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.6);opacity:0}}
+@keyframes kfloat{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-4px)}}
+@keyframes kpopIn{0%{transform:translate(-50%,-50%) scale(.4);opacity:0}70%{transform:translate(-50%,-50%) scale(1.15)}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}
+
+#kmap-root .kpin{position:absolute;transform:translate(-50%,-50%);cursor:pointer;z-index:10;animation:kfloat 3s ease-in-out infinite}
+#kmap-root .kpin:nth-child(2n){animation-delay:-.8s}
+#kmap-root .kpin:nth-child(3n){animation-delay:-1.6s}
+#kmap-root .kpin:nth-child(4n){animation-delay:-2.4s}
+#kmap-root .kpin-body{position:relative;width:32px;height:32px}
+#kmap-root .kpin.big .kpin-body{width:44px;height:44px}
+#kmap-root .kpin-diamond{width:100%;height:100%;background:rgba(6,8,13,.88);border:2px solid rgba(201,148,58,.5);border-radius:3px;transform:rotate(45deg);display:flex;align-items:center;justify-content:center;transition:border-color .2s,box-shadow .2s,background .2s;position:relative}
+#kmap-root .kpin-diamond::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid rgba(201,148,58,.5);transition:border-top-color .2s}
+#kmap-root .kpin-icon{transform:rotate(-45deg);font-size:.875rem;line-height:1;position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center}
+#kmap-root .kpin.big .kpin-icon{font-size:1.2rem}
+#kmap-root .kpin-ring{position:absolute;top:-5px;left:-5px;right:-5px;bottom:-5px;border-radius:50%;border:2px solid rgba(201,148,58,.4);opacity:0;pointer-events:none}
+#kmap-root .kpin.active .kpin-ring,#kmap-root .kpin:hover .kpin-ring{animation:kping 1.2s ease-out infinite;opacity:1}
+#kmap-root .kpin:hover .kpin-diamond,#kmap-root .kpin.active .kpin-diamond{border-color:var(--gold);background:rgba(201,148,58,.18);box-shadow:0 0 18px 4px rgba(201,148,58,.4)}
+#kmap-root .kpin:hover .kpin-diamond::after,#kmap-root .kpin.active .kpin-diamond::after{border-top-color:var(--gold)}
+#kmap-root .kpin.active{animation:none;z-index:20}
+#kmap-root .kpin.active .kpin-body{animation:kpopIn .3s ease-out both}
+
+/* PANEL */
+@keyframes kslideIn{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes kslideInBottom{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}
+
+#kmap-root .kpanel{position:absolute;top:0;right:0;bottom:0;width:min(340px,90%);background:linear-gradient(160deg,rgba(8,12,22,.97) 0%,rgba(13,21,32,.97) 100%);border-left:1px solid var(--border);display:flex;flex-direction:column;transform:translateX(110%);opacity:0;transition:none;z-index:30}
+#kmap-root .kpanel.open{animation:kslideIn .35s cubic-bezier(.22,1,.36,1) forwards}
+#kmap-root .kpanel.closing{animation:kslideIn .25s cubic-bezier(.6,0,.8,1) reverse forwards}
+#kmap-root .kpanel::before{content:'';position:absolute;top:1rem;left:1rem;width:1.5rem;height:1.5rem;border-top:1px solid rgba(201,148,58,.25);border-left:1px solid rgba(201,148,58,.25);pointer-events:none}
+
+#kmap-root .kpanel-top{padding:1.25rem 1.25rem .875rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:.75rem;background:rgba(201,148,58,.04);flex-shrink:0}
+#kmap-root .kpanel-ico{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(201,148,58,.5);background:rgba(6,8,13,.8);display:flex;align-items:center;justify-content:center;font-size:1.375rem;flex-shrink:0}
+#kmap-root .kpanel-name{font-family:var(--ff);color:var(--gold);font-size:.9375rem;font-weight:700;letter-spacing:.04em;line-height:1.3;margin-bottom:.25rem}
+#kmap-root .kpanel-for{font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+#kmap-root .kpanel-close{margin-left:auto;width:28px;height:28px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:.75rem;transition:all .2s}
+#kmap-root .kpanel-close:hover{color:var(--parch);border-color:rgba(201,148,58,.4)}
+
+#kmap-root .kpanel-body{padding:1.125rem 1.25rem;overflow-y:auto;flex:1}
+#kmap-root .kpanel-desc{font-size:.875rem;color:var(--text);line-height:1.75;margin-bottom:1.125rem;font-weight:300}
+#kmap-root .kpanel-label{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+#kmap-root .kpanel-courses{display:flex;flex-wrap:wrap;gap:.375rem;margin-bottom:1.125rem}
+#kmap-root .kcourse-tag{font-size:.6875rem;padding:.25rem .625rem;background:rgba(201,148,58,.08);border:1px solid rgba(201,148,58,.2);color:var(--parch)}
+#kmap-root .kbadge{display:inline-flex;align-items:center;font-size:.6rem;font-weight:700;padding:.2rem .5rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem}
+
+#kmap-root .kpanel-footer{padding:.875rem 1.25rem;border-top:1px solid var(--border);flex-shrink:0}
+#kmap-root .kpanel-link{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.25rem;background:var(--red);color:var(--parch);font-family:var(--ffs);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(201,148,58,.2);transition:background .2s}
+#kmap-root .kpanel-link:hover{background:#9B2830}
+#kmap-root .kpanel-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+
+#kmap-root .klegend{position:absolute;bottom:1rem;left:1rem;background:rgba(6,8,13,.88);border:1px solid var(--border);padding:.625rem .875rem;font-size:.625rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;pointer-events:none}
+#kmap-root .klegend span{color:var(--gold)}
+
+@media(max-width:600px){
+  #kmap-root .kpanel{top:auto;right:0;left:0;bottom:0;width:100%;max-height:70%;border-left:none;border-top:1px solid var(--border);border-radius:1rem 1rem 0 0}
+  #kmap-root .kpanel.open{animation:kslideInBottom .35s cubic-bezier(.22,1,.36,1) forwards}
+  #kmap-root .kpanel.closing{animation:kslideInBottom .25s cubic-bezier(.6,0,.8,1) reverse forwards}
+  #kmap-root .kpin-body{width:26px;height:26px}
+  #kmap-root .kpin.big .kpin-body{width:36px;height:36px}
+}
+</style>
+
+<div id="kmap-root">
+  <div class="map-wrap">
+    <img class="map-img" src="https://kedarcaja.github.io/akademie-HomePage/img/kampus-mapa.png" alt="Mapa kampusu Dračí akademie">
+    <div class="map-overlay"></div>
+    <div class="pins" id="kpins"></div>
+    <div class="kpanel" id="kpanel">
+      <div class="kpanel-top">
+        <div class="kpanel-ico" id="kp-ico"></div>
+        <div>
+          <div class="kpanel-name" id="kp-name"></div>
+          <div class="kpanel-for" id="kp-for"></div>
+        </div>
+        <div class="kpanel-close" id="kpanel-close" role="button" tabindex="0">✕</div>
+      </div>
+      <div class="kpanel-body">
+        <p class="kpanel-desc" id="kp-desc"></p>
+        <div class="kpanel-label">Obsah budovy</div>
+        <div class="kpanel-courses" id="kp-courses"></div>
+        <div id="kp-badge"></div>
+      </div>
+      <div class="kpanel-footer">
+        <a href="#" class="kpanel-link" id="kp-link">
+          Vstoupit do budovy
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="klegend">Klikni na <span>◆</span> pro detail</div>
+  </div>
+</div>
+
+<script>
+var KBUILDINGS = [
+  { id:'sin-stezek',   x:22, y:28, icon:'🧭', name:'Síň stezek',             forWho:'Všichni',        badge:'#C9943A', desc:'Vstupní bod pro volbu tvůrčí stezky. Každá stezka má vlastní milníky, projekty a komunitu.', courses:['Stezka malíře','Stezka modeláře','Stezka stavitele světů'], href:'#stezky' },
+  { id:'dilna',        x:13, y:44, icon:'🏺', name:'Dílna první figurky',     forWho:'Začátečníci',    badge:'#4ade80', desc:'Místo pro úplné začátečníky. Bojit se chybovat je tady zakázáno — chyba je součást procesu.', courses:['Figurka z nuly','Základy malování','Moje první armáda'], href:'#zacni-tady' },
+  { id:'kovarna',      x:17, y:57, icon:'⚒️', name:'Kovárna modelářů',        forWho:'Pokročilí',      badge:'#f87171', desc:'Pokročilé techniky modelování a konverzí. Pro ty, kdo chtějí překročit hranice standardních kitů.', courses:['Konverze a kitbashing','Scratch building','Terén a dioramy'], href:'#stezky' },
+  { id:'nadvori',      x:20, y:67, icon:'🎯', name:'Tréninkové nádvoří',      forWho:'Všichni',        badge:'#C9943A', desc:'Mentální stránka tvorby. Jak pracovat s frustrací, budovat rutinu a vytrvat i když to jde pomalu.', courses:['Soustředění a flow','Práce s chybou','Trpělivost jako nástroj'], href:'#jak' },
+  { id:'atelier',      x:27, y:80, icon:'🏛️', name:'Ateliér Valiente',        forWho:'Zvídaví',        badge:'#C9943A', desc:'Zákulisí Valiente Project — jak tvoříme pomůcky, lekce a obsah, který každý den v akademii používáme.', courses:['Za kulisami tvorby','Naše metody','Jak testujeme projekty'], href:'#o-nas' },
+  { id:'vez-barev',    x:36, y:12, icon:'🎨', name:'Alchymistická věž barev', forWho:'Všechny úrovně', badge:'#C9943A', desc:'Vše o barvách — míchání, vrstvení, washes, glazury a pokročilé techniky malování miniatur.', courses:['Základy míchání barev','Glazury a washes','OSL efekty'], href:'#stezky' },
+  { id:'draci-kruh',   x:50, y:47, icon:'🐉', name:'Dračí kruh',              forWho:'Komunita',       badge:'#C9943A', desc:'Srdce kampusu. Místo kde se sbíhají stezky, sdílíme pokroky a slavíme chyby jako vítězství.', courses:['Komunitní výzvy','Sdílení projektů','Živé workshopy'], href:'#komunita', big:true },
+  { id:'hlavni-brana', x:50, y:88, icon:'🚪', name:'Hlavní brána',            forWho:'Nováčci',        badge:'#4ade80', desc:'Vstupní bod do celého kampusu. Přivítej se, zorientuj a vyber svůj první krok — bez spěchu.', courses:['Orientace v kampusu','Výběr stezky','Úvodní projekt'], href:'#zacni-tady', big:true },
+  { id:'knihovna',     x:68, y:10, icon:'📚', name:'Knihovna mistrů',         forWho:'Všichni',        badge:'#C9943A', desc:'Rozsáhlá sbírka technik, inspirace a příběhů od mistrů oboru. Videotéka, čítárna a archiv.', courses:['Techniky legend','Inspirační knihovna','Světy fantasy'], href:'#komunita' },
+  { id:'pavilon',      x:80, y:32, icon:'🏠', name:'Pavilon rodičů',          forWho:'Rodiče',         badge:'#60a5fa', desc:'Speciální sekce pro rodiče — jak podporovat tvůrce doma, co si připravit a jak fungují workshopy.', courses:['Průvodce pro rodiče','Podpora doma','Dětské projekty'], href:'#deti-rodice' },
+  { id:'ucitelska',    x:83, y:49, icon:'🎓', name:'Učitelská síň',           forWho:'Pedagogové',     badge:'#c084fc', desc:'Pro pedagogy a vedoucí kroužků. Metodiky, materiály a kurzy pro výuku kreativních dovedností.', courses:['Metodika výuky','Vedení workshopů','Stát se průvodcem'], href:'#skoly' },
+  { id:'trziste',      x:73, y:62, icon:'🛒', name:'Tržiště akademie',        forWho:'Všichni',        badge:'#C9943A', desc:'Akademický obchod — barvy, štětce, kity a pomůcky, které skutečně doporučujeme a sami používáme.', courses:['Barvy a štětce','Figurky a kity','Nástroje mistrů'], href:'#obchod' },
+  { id:'draci-posta',  x:79, y:77, icon:'📬', name:'Dračí pošta',             forWho:'Všichni',        badge:'#C9943A', desc:'Zůstaň v kontaktu. Newsletter s novinkami, výzvy, oznámení workshopů a zprávy z celé akademie.', courses:['Newsletter akademie','Měsíční výzvy','Oznámení workshopů'], href:'#kontakt' }
+];
+
+var kpinsEl = document.getElementById('kpins');
+KBUILDINGS.forEach(function(b) {
+  var pin = document.createElement('div');
+  pin.className = 'kpin' + (b.big ? ' big' : '');
+  pin.dataset.id = b.id;
+  pin.style.cssText = 'left:'+b.x+'%;top:'+b.y+'%;position:absolute;';
+  pin.innerHTML =
+    '<div class="kpin-ring"></div>' +
+    '<div class="kpin-body">' +
+      '<div class="kpin-diamond">' +
+        '<span class="kpin-icon">'+b.icon+'</span>' +
+      '</div>' +
+    '</div>';
+  pin.addEventListener('click', function(e){ e.stopPropagation(); kOpenPanel(b.id); });
+  kpinsEl.appendChild(pin);
+});
+
+var kpanel = document.getElementById('kpanel');
+var kActiveId = null;
+var kClosingTimeout = null;
+
+function kOpenPanel(id) {
+  var b = null;
+  for (var i = 0; i < KBUILDINGS.length; i++) { if (KBUILDINGS[i].id === id) { b = KBUILDINGS[i]; break; } }
+  if (!b) return;
+  document.querySelectorAll('#kmap-root .kpin').forEach(function(p){ p.classList.remove('active'); });
+  var activePin = document.querySelector('#kmap-root .kpin[data-id="'+id+'"]');
+  if (activePin) activePin.classList.add('active');
+  document.getElementById('kp-ico').textContent = b.icon;
+  document.getElementById('kp-name').textContent = b.name;
+  document.getElementById('kp-for').textContent = b.forWho;
+  document.getElementById('kp-desc').textContent = b.desc;
+  document.getElementById('kp-link').href = b.href || '#';
+  var courses = document.getElementById('kp-courses');
+  courses.innerHTML = b.courses.map(function(c){ return '<span class="kcourse-tag">'+c+'</span>'; }).join('');
+  document.getElementById('kp-badge').innerHTML =
+    '<span class="kbadge" style="background:'+b.badge+'22;color:'+b.badge+';border:1px solid '+b.badge+'44">'+b.forWho+'</span>';
+  if (kClosingTimeout) clearTimeout(kClosingTimeout);
+  kpanel.classList.remove('closing');
+  kpanel.classList.add('open');
+  kActiveId = id;
+}
+
+function kClosePanel() {
+  kpanel.classList.add('closing');
+  document.querySelectorAll('#kmap-root .kpin').forEach(function(p){ p.classList.remove('active'); });
+  kClosingTimeout = setTimeout(function(){
+    kpanel.classList.remove('open','closing');
+    kActiveId = null;
+  }, 260);
+}
+
+document.getElementById('kpanel-close').addEventListener('click', kClosePanel);
+document.querySelector('#kmap-root .map-wrap').addEventListener('click', function(e){
+  if (!e.target.closest('.kpin') && !e.target.closest('.kpanel')) kClosePanel();
+});
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') kClosePanel(); });
+
+document.querySelectorAll('#kmap-root .kpin').forEach(function(p, i){
+  p.style.opacity = '0';
+  p.style.transition = 'opacity .4s';
+  setTimeout(function(){ p.style.opacity = '1'; }, 300 + i * 60);
+});
+</script>
