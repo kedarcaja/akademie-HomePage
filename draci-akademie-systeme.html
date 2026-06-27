@@ -91,24 +91,29 @@
 #da-root .hmic{font-size:.75rem;color:var(--dim);font-style:italic;text-align:left}
 
 /* === CAMPUS BANNER === */
-#da-root .ch{display:grid;grid-template-columns:300px 1fr;min-height:400px;overflow:hidden;position:relative}
-#da-root .ch-left{padding:3rem 2rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;background:linear-gradient(to right,rgba(6,8,13,1) 55%,transparent);z-index:2;position:relative}
-#da-root .ch-title{font-family:var(--ff-serif);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:var(--parch);line-height:1.2}
-#da-root .ch-desc{font-size:.875rem;color:var(--muted);line-height:1.7;font-weight:300;max-width:240px}
-#da-root .ch-right{position:relative;overflow:hidden}
-#da-root .ch-right img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-#da-root .ch-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(6,8,13,.9) 0%,transparent 30%),linear-gradient(to top,rgba(6,8,13,.5) 0%,transparent 25%)}
+#da-root .ch{display:grid;grid-template-columns:clamp(220px,30%,320px) 1fr;min-height:420px;overflow:hidden;position:relative}
+#da-root .ch-left{padding:clamp(1.5rem,3vw,3rem) clamp(1.25rem,2.5vw,2rem);display:flex;flex-direction:column;justify-content:center;gap:1rem;background:linear-gradient(to right,rgba(6,8,13,1) 55%,transparent);z-index:2;position:relative}
+#da-root .ch-title{font-family:var(--ff-serif);font-size:clamp(1.25rem,2.5vw,2.25rem);font-weight:700;color:var(--parch);line-height:1.2}
+#da-root .ch-desc{font-size:clamp(.75rem,1.2vw,.875rem);color:var(--muted);line-height:1.7;font-weight:300}
+#da-root .ch-right{position:relative;overflow:hidden;min-height:260px}
+#da-root .ch-right img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+#da-root .ch-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(6,8,13,.95) 0%,rgba(6,8,13,.2) 35%,transparent 60%),linear-gradient(to top,rgba(6,8,13,.4) 0%,transparent 25%)}
 /* Map labels */
 #da-root .maplbl{position:absolute;z-index:3;display:flex;flex-direction:column;gap:.2rem;cursor:default}
 #da-root .maplbl-box{background:rgba(6,8,13,.82);border:1px solid rgba(201,148,58,.4);padding:.375rem .625rem;backdrop-filter:blur(4px)}
 #da-root .maplbl-name{font-family:var(--ff-serif);font-size:.625rem;font-weight:700;color:var(--gold);letter-spacing:.06em;text-transform:uppercase}
 #da-root .maplbl-desc{font-size:.5625rem;color:var(--muted)}
 #da-root .maplbl-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);border:2px solid rgba(201,148,58,.3);box-shadow:0 0 8px rgba(201,148,58,.6);align-self:flex-start;margin-left:.3rem}
-@media(max-width:768px){
+@media(max-width:860px){
   #da-root .ch{grid-template-columns:1fr;min-height:auto}
-  #da-root .ch-left{background:rgba(6,8,13,.9);padding:2rem 1.5rem}
-  #da-root .ch-right{height:260px}
+  #da-root .ch-left{background:rgba(6,8,13,.97);padding:2.25rem 1.75rem;border-bottom:1px solid var(--border)}
+  #da-root .ch-right{height:300px;min-height:0}
+  #da-root .ch-right::after{background:linear-gradient(to top,rgba(6,8,13,.6) 0%,transparent 40%)}
   #da-root .maplbl{display:none}
+}
+@media(max-width:480px){
+  #da-root .ch-right{height:220px}
+  #da-root .ch-left{padding:1.75rem 1.25rem}
 }
 
 /* === WAYPOINTS === */
