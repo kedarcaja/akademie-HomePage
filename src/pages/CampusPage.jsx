@@ -1,3 +1,4 @@
+import CampusMap from '../components/CampusMap'
 import { campusBuildings } from '../data/campusBuildings'
 
 const pageColors = {
@@ -16,12 +17,15 @@ export default function CampusPage() {
     <div className="space-y-6">
       <div className="border-b border-brand-border pb-4">
         <h1 className="font-cinzel text-2xl font-bold text-brand-parchment mb-1">
-          🗺️ Kampus – 17 budov
+          🗺️ Kampus Dračí akademie
         </h1>
         <p className="text-brand-text-muted text-sm">
-          Každá budova = disciplína nebo sekce. Mapuje se na Systeme.io stránku nebo kurz.
+          Klikni na waypoint pro detail. Každá budova = obor nebo sekce v Systeme.io.
         </p>
       </div>
+
+      {/* Interaktivní mapa */}
+      <CampusMap />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {campusBuildings.map((b) => (

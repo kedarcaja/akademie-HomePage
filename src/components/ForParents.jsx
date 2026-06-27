@@ -19,7 +19,7 @@ export default function ForParents() {
             <img
               src="/img/pro-rodice.jpg"
               alt="Rodič a dítě tvoří společně figurky u pracovního stolu"
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             {/* Corner ornaments */}
             <div className="absolute top-3 left-3 w-8 h-8 border-t-2 border-l-2 border-brand-gold/30" />

@@ -1,4 +1,5 @@
 <style>
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
 /* === RESET & ROOT === */
@@ -43,16 +44,30 @@
 #da-root .ebt{color:var(--gold);font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
 
 /* === BUTTONS === */
-#da-root .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--ff-sans);font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.875rem 1.75rem;cursor:pointer;border:none;transition:all .2s;text-decoration:none}
+#da-root .btn{display:inline-flex;align-items:center;justify-content:center;gap:.625rem;font-family:var(--ff-sans);font-weight:600;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1.875rem;cursor:pointer;border:none;transition:all .25s;text-decoration:none;position:relative}
 #da-root .btn:active{transform:scale(.97)}
-#da-root .bp{background:var(--gold);color:var(--darker)}
-#da-root .bp:hover{background:var(--gold-l);box-shadow:0 6px 28px rgba(201,148,58,.35)}
-#da-root .bo{background:transparent;color:var(--gold);border:1px solid var(--gold)}
-#da-root .bo:hover{background:rgba(201,148,58,.1)}
+#da-root .bp{background:var(--red);color:var(--parch);border:1px solid rgba(201,148,58,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 2px 12px rgba(125,33,40,.35)}
+#da-root .bp:hover{background:#9B2830;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 6px 28px rgba(125,33,40,.5);border-color:rgba(201,148,58,.45)}
+#da-root .bo{background:rgba(0,0,0,.25);color:var(--gold);border:1px solid var(--gold);box-shadow:inset 0 1px 0 rgba(201,148,58,.05)}
+#da-root .bo:hover{background:rgba(201,148,58,.1);box-shadow:inset 0 1px 0 rgba(201,148,58,.1),0 4px 20px rgba(201,148,58,.15)}
 
 /* === CARDS === */
 #da-root .cardp{background:linear-gradient(135deg,#1A1408 0%,#111620 100%);border:1px solid rgba(201,148,58,.2);transition:transform .3s,border-color .3s,box-shadow .3s}
 #da-root .cardp:hover{transform:translateY(-4px);border-color:rgba(201,148,58,.5);box-shadow:0 0 24px rgba(201,148,58,.08),0 20px 40px rgba(0,0,0,.4)}
+
+/* === NAV === */
+#da-root .nav{position:sticky;top:0;z-index:100;background:rgba(6,8,13,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+#da-root .nav-inner{display:flex;align-items:center;gap:2rem;height:4rem}
+#da-root .nav-logo{display:flex;align-items:center;gap:.625rem;flex-shrink:0;text-decoration:none}
+#da-root .nav-logo-ico{width:32px;height:32px;border-radius:50%;border:1px solid rgba(201,148,58,.4);overflow:hidden;flex-shrink:0}
+#da-root .nav-logo-ico img{width:100%;height:100%;object-fit:cover;display:block}
+#da-root .nav-logo-txt{font-family:var(--ff-serif);color:var(--gold);font-weight:700;font-size:.875rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+#da-root .nav-links{display:flex;align-items:center;gap:.25rem;margin-left:1rem;flex:1}
+#da-root .nav-links a{font-size:.75rem;font-weight:500;color:var(--muted);padding:.375rem .625rem;transition:color .2s;white-space:nowrap;text-decoration:none;letter-spacing:.03em}
+#da-root .nav-links a:hover{color:var(--parch)}
+#da-root .nav-cta{margin-left:auto;flex-shrink:0}
+@media(max-width:900px){#da-root .nav-links{display:none}}
+@media(max-width:600px){#da-root .nav-cta .btn{padding:.625rem 1rem;font-size:.6875rem}}
 
 /* === HERO === */
 #da-root .hero{min-height:96vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--darker)}
@@ -65,22 +80,36 @@
 #da-root .hill{position:absolute;right:0;top:0;bottom:0;width:55%;z-index:1}
 #da-root .hill img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.85;display:block}
 #da-root .hill-fade{position:absolute;inset:0;background:linear-gradient(to right,var(--darker) 0%,transparent 35%),linear-gradient(to top,var(--dark) 0%,transparent 20%)}
-#da-root .hcon{position:relative;z-index:10;padding:5rem 0;max-width:600px}
-#da-root .htit{font-family:var(--ff-serif);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:.5rem}
+#da-root .hcon{position:relative;z-index:10;padding:5rem 0;max-width:600px;text-align:left}
+#da-root .htit{font-family:var(--ff-serif);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:.5rem;text-align:left}
 #da-root .htit .lg{display:block;font-size:clamp(1.875rem,4.5vw,3rem)}
 #da-root .htit .xl{display:block;font-size:clamp(2.25rem,5.5vw,3.75rem);color:var(--gold)}
-#da-root .htag{font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:1.375rem}
-#da-root .hdesc{font-size:1rem;line-height:1.75;color:var(--text);margin-bottom:2.25rem;font-weight:300;max-width:480px}
+#da-root .htag{font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:1.375rem;text-align:left}
+#da-root .hdesc{font-size:1rem;line-height:1.75;color:var(--text);margin-bottom:2.25rem;font-weight:300;max-width:480px;text-align:left}
 #da-root .hdesc strong{font-weight:400;color:var(--parch)}
-#da-root .hbtns{display:flex;flex-wrap:wrap;gap:.875rem;margin-bottom:2rem}
-#da-root .hmic{font-size:.75rem;color:var(--dim);font-style:italic}
+#da-root .hbtns{display:flex;flex-wrap:wrap;gap:.875rem;margin-bottom:2rem;justify-content:flex-start}
+#da-root .hmic{font-size:.75rem;color:var(--dim);font-style:italic;text-align:left}
 
-/* === CAMPUS MAP === */
-#da-root .campus-map-outer{position:relative}
-#da-root .campus-img-wrap{position:relative;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(201,148,58,.2),0 24px 60px rgba(0,0,0,.8);aspect-ratio:4/3}
-#da-root .campus-img-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-#da-root .campus-img-wrap .map-fb{position:absolute;inset:0;display:none;background:linear-gradient(135deg,#050810,#0D1830);align-items:center;justify-content:center;flex-direction:column;gap:1rem}
-#da-root .campus-img-wrap .map-vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 55%,rgba(6,8,13,.65) 100%);pointer-events:none}
+/* === CAMPUS BANNER === */
+#da-root .ch{display:grid;grid-template-columns:300px 1fr;min-height:400px;overflow:hidden;position:relative}
+#da-root .ch-left{padding:3rem 2rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;background:linear-gradient(to right,rgba(6,8,13,1) 55%,transparent);z-index:2;position:relative}
+#da-root .ch-title{font-family:var(--ff-serif);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:var(--parch);line-height:1.2}
+#da-root .ch-desc{font-size:.875rem;color:var(--muted);line-height:1.7;font-weight:300;max-width:240px}
+#da-root .ch-right{position:relative;overflow:hidden}
+#da-root .ch-right img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+#da-root .ch-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(6,8,13,.9) 0%,transparent 30%),linear-gradient(to top,rgba(6,8,13,.5) 0%,transparent 25%)}
+/* Map labels */
+#da-root .maplbl{position:absolute;z-index:3;display:flex;flex-direction:column;gap:.2rem;cursor:default}
+#da-root .maplbl-box{background:rgba(6,8,13,.82);border:1px solid rgba(201,148,58,.4);padding:.375rem .625rem;backdrop-filter:blur(4px)}
+#da-root .maplbl-name{font-family:var(--ff-serif);font-size:.625rem;font-weight:700;color:var(--gold);letter-spacing:.06em;text-transform:uppercase}
+#da-root .maplbl-desc{font-size:.5625rem;color:var(--muted)}
+#da-root .maplbl-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);border:2px solid rgba(201,148,58,.3);box-shadow:0 0 8px rgba(201,148,58,.6);align-self:flex-start;margin-left:.3rem}
+@media(max-width:768px){
+  #da-root .ch{grid-template-columns:1fr;min-height:auto}
+  #da-root .ch-left{background:rgba(6,8,13,.9);padding:2rem 1.5rem}
+  #da-root .ch-right{height:260px}
+  #da-root .maplbl{display:none}
+}
 
 /* === WAYPOINTS === */
 @keyframes da-ping{75%,100%{transform:scale(2.2);opacity:0}}
@@ -188,15 +217,65 @@
 #da-root .ftb{display:flex;align-items:center;justify-content:space-between;padding:1.125rem 0;border-top:1px solid var(--border);flex-wrap:wrap;gap:.75rem}
 #da-root .fcp{font-size:.75rem;color:var(--dim)}
 
+/* === PROBLEMS BAR === */
+#da-root .prob-bar{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#da-root .prob-item{padding:1.625rem 1.5rem;display:flex;align-items:flex-start;gap:1rem;position:relative}
+#da-root .prob-item+.prob-item::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:1px;background:var(--border)}
+#da-root .prob-ico{width:40px;height:40px;flex-shrink:0;border-radius:50%;border:1px solid rgba(201,148,58,.35);background:rgba(201,148,58,.06);display:flex;align-items:center;justify-content:center}
+#da-root .prob-ico svg{width:18px;height:18px;stroke:#C9943A;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+#da-root .prob-t{font-family:var(--ff-serif);font-size:.8125rem;font-weight:700;color:var(--parch);letter-spacing:.04em;margin-bottom:.3rem}
+#da-root .prob-d{font-size:.75rem;color:var(--muted);line-height:1.6}
+
+/* === GATES (Vyber si bránu) === */
+#da-root .gate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid rgba(201,148,58,.18);overflow:hidden}
+#da-root .gate{padding:2rem 1.5rem;background:linear-gradient(160deg,#12190A 0%,#0D1520 100%);display:flex;flex-direction:column;gap:.875rem;cursor:pointer;transition:background .25s}
+#da-root .gate:hover{background:linear-gradient(160deg,#1A220E 0%,#111E30 100%)}
+#da-root .gate-ico{font-size:2rem;margin-bottom:.25rem;line-height:1}
+#da-root .gate-t{font-family:var(--ff-serif);font-size:.9375rem;font-weight:700;color:var(--parch);letter-spacing:.04em;line-height:1.25}
+#da-root .gate-d{font-size:.75rem;color:var(--muted);line-height:1.65;flex:1}
+#da-root .gate-arr{font-size:.6875rem;color:var(--gold);opacity:.7;margin-top:auto;transition:opacity .2s}
+#da-root .gate:hover .gate-arr{opacity:1}
+
+/* === PARCHMENT CARDS === */
+#da-root .pg5{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+#da-root .pc{background:linear-gradient(155deg,#EDD99A 0%,#C9A85C 100%);padding:1.875rem 1.125rem 1.625rem;text-align:center;position:relative;box-shadow:0 6px 30px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.35)}
+#da-root .pc::before,#da-root .pc::after{content:'';position:absolute;width:1rem;height:1rem;opacity:.55}
+#da-root .pc::before{top:.5rem;left:.5rem;border-top:1.5px solid #7A5010;border-left:1.5px solid #7A5010}
+#da-root .pc::after{bottom:.5rem;right:.5rem;border-bottom:1.5px solid #7A5010;border-right:1.5px solid #7A5010}
+#da-root .pci{width:64px;height:64px;border-radius:50%;background:#0A1220;border:1.5px solid rgba(201,148,58,.6);display:flex;align-items:center;justify-content:center;margin:0 auto 1.125rem;box-shadow:0 0 24px rgba(201,148,58,.2)}
+#da-root .pci svg{width:26px;height:26px;stroke:#C9943A;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+#da-root .pct{font-family:var(--ff-serif);font-size:.9375rem;font-weight:700;color:#18090A;margin-bottom:.5rem;line-height:1.3;letter-spacing:.02em}
+#da-root .pcd{font-size:.8125rem;color:#4A2E0A;line-height:1.65}
+
+/* === EMAIL STRIP === */
+#da-root .es{background:linear-gradient(135deg,#0D1808 0%,#080E18 50%,#0D1520 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#da-root .es-inner{display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem 0;gap:0}
+#da-root .es-kni{width:80px;height:80px;object-fit:contain;opacity:.7;flex-shrink:0}
+#da-root .es-ttl{font-family:var(--ff-serif);font-size:clamp(1.25rem,2.5vw,1.875rem);font-weight:700;color:var(--parch);line-height:1.15;margin-bottom:.25rem}
+#da-root .es-ttl em{font-style:normal;color:var(--gold)}
+#da-root .es-sub{font-size:.8125rem;color:var(--muted);line-height:1.6}
+#da-root .es-form{display:flex;gap:.625rem;flex-wrap:wrap}
+#da-root .es-inp{flex:1;min-width:220px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text);font-family:var(--ff-sans);font-size:.875rem;padding:.75rem 1rem;outline:none;transition:border-color .2s}
+#da-root .es-inp:focus{border-color:rgba(201,148,58,.5)}
+#da-root .es-inp::placeholder{color:var(--dim)}
+#da-root .es-note{font-size:.6875rem;color:var(--dim);margin-top:.5rem}
+
 /* === RESPONSIVE === */
 @media(max-width:1024px){
   #da-root .g5{grid-template-columns:repeat(3,1fr)}
   #da-root .stps{grid-template-columns:repeat(2,1fr)}
   #da-root .stpc{display:none}
   #da-root .cta-grid{grid-template-columns:1fr}
+  #da-root .gate-grid{grid-template-columns:repeat(2,1fr)}
+  #da-root .pg5{grid-template-columns:repeat(3,1fr)}
+  #da-root .es-inner{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   #da-root .g3,#da-root .g5{grid-template-columns:1fr}
+  #da-root .prob-bar{grid-template-columns:1fr}
+  #da-root .prob-item+.prob-item::before{display:none}
+  #da-root .gate-grid{grid-template-columns:1fr}
+  #da-root .pg5{grid-template-columns:repeat(2,1fr)}
   #da-root .hill{display:none}
   #da-root .hgl{width:100%;background:rgba(6,8,13,.7)}
   #da-root .hcon{max-width:100%}
@@ -208,10 +287,38 @@
 }
 @media(max-width:480px){
   #da-root .sp,#da-root .sp-lg{padding:4rem 0}
+  #da-root .pg5{grid-template-columns:1fr}
+  #da-root .es-form{flex-direction:column}
+  #da-root .es-form .btn{width:100%;justify-content:center}
 }
 </style>
 
 <div id="da-root">
+
+<!-- ==================== NAV ==================== -->
+<nav class="nav">
+  <div class="wrap" style="padding:0 1.5rem">
+    <div class="nav-inner">
+      <a href="#da-akademie" class="nav-logo">
+        <div class="nav-logo-ico">
+          <img src="https://kedarcaja.github.io/akademie-HomePage/img/dragon-emblem.png" alt="Dračí akademie">
+        </div>
+        <span class="nav-logo-txt">Dračí akademie</span>
+      </a>
+      <div class="nav-links">
+        <a href="#da-akademie">Akademie</a>
+        <a href="#da-jak">Začni tady</a>
+        <a href="#da-kampus">Stezky</a>
+        <a href="#da-komunita">Komunita</a>
+        <a href="#da-co-je">Členství</a>
+        <a href="#da-kontakt">Kontakt</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#da-zacni" class="btn bp" style="padding:.625rem 1.25rem;font-size:.6875rem"><img src="https://kedarcaja.github.io/akademie-HomePage/img/dragon-emblem.png" style="width:16px;height:16px;object-fit:cover;border-radius:50%;opacity:.9" alt="">Začni tady</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
 <!-- ==================== HERO ==================== -->
 <section id="da-akademie" class="hero">
@@ -234,171 +341,160 @@
       <p class="htag">Fantazie. Řemeslo. Soustředění.</p>
       <p class="hdesc">Kreativní svět, kde se děti i dospělí učí <strong>tvořit rukama</strong>, malovat figurky, pracovat s chybou a růst — krok za krokem.</p>
       <div class="hbtns">
-        <a href="#da-zacni" class="btn bp">🐉 Začni tady</a>
-        <a href="#da-kampus" class="btn bo">Prozkoumat kampus ›</a>
+        <a href="#da-zacni" class="btn bp"><img src="https://kedarcaja.github.io/akademie-HomePage/img/dragon-emblem.png" style="width:18px;height:18px;object-fit:cover;border-radius:50%;opacity:.9" alt="">Začni tady</a>
+        <a href="#da-kampus" class="btn bo">Prozkoumat kampus →</a>
       </div>
       <p class="hmic">Žádné soutěže ega, jen radost z tvorby. Chybám se u nás tleská. 🔥</p>
     </div>
   </div>
 </section>
 
-<!-- ==================== KAMPUS ==================== -->
-<section id="da-kampus" class="sp-lg" style="background:#080E18">
-  <div class="wrap-md">
-    <div class="sec-head">
-      <div class="line"></div>
-      <span class="diam">◆◆◆</span>
-      <h2 class="sec-title">Kampus Dračí akademie</h2>
-      <span class="diam">◆◆◆</span>
-      <div class="line r"></div>
-    </div>
-    <p class="sec-sub">13 budov · každá s vlastním oborem · klikni a prozkoumej</p>
 
-    <!-- Mapa kampusu -->
-    <div class="campus-map-outer">
-      <div class="campus-img-wrap campus-corners">
-        <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
-        <img src="https://kedarcaja.github.io/akademie-HomePage/img/kampus-mapa.png" alt="Mapa kampusu Dračí akademie" onerror="this.style.display='none';this.parentElement.querySelector('.map-fb').style.display='flex'">
-        <div class="map-fb"><span style="font-size:3rem">🐉</span><p style="font-family:'Cinzel',serif;color:rgba(201,148,58,.6);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase">Mapa kampusu</p></div>
-        <div class="map-vig"></div>
-      </div>
-      <!-- Waypoints overlay — outside overflow:hidden so popups aren't clipped -->
-      <div class="wpo" id="da-wpo">
-        <!-- sin-stezek -->
-        <div class="wp" onclick="daWpClick(this)" style="left:22%;top:28%"><div class="wpring"></div><div class="wpdot">🧭</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">🧭</span><span class="wphn">Síň stezek</span></div><div class="wpb"><div class="wpd">Vstupní bod pro volbu tvůrčí stezky. Každá stezka má vlastní milníky, projekty a komunitu.</div><div class="wpcs"><span class="wpc">Stezka malíře</span><span class="wpc">Stezka modeláře</span><span class="wpc">Stezka stavitele světů</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#stezky" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- dilna -->
-        <div class="wp" onclick="daWpClick(this)" style="left:13%;top:44%"><div class="wpring"></div><div class="wpdot">🏺</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">🏺</span><span class="wphn">Dílna první figurky</span></div><div class="wpb"><div class="wpd">Místo pro úplné začátečníky. Bojit se chybovat je tady zakázáno — chyba je součást procesu.</div><div class="wpcs"><span class="wpc">Figurka z nuly</span><span class="wpc">Základy malování</span><span class="wpc">Moje první armáda</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(22,101,52,.3);color:#4ade80;border:1px solid rgba(74,222,128,.3)">Začátečníci</span><a href="#da-zacni" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- kovarna -->
-        <div class="wp" onclick="daWpClick(this)" style="left:17%;top:57%"><div class="wpring"></div><div class="wpdot">⚒️</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">⚒️</span><span class="wphn">Kovárna modelářů</span></div><div class="wpb"><div class="wpd">Pokročilé techniky modelování a konverzí. Pro ty, kdo chtějí překročit hranice standardních kitů.</div><div class="wpcs"><span class="wpc">Konverze a kitbashing</span><span class="wpc">Scratch building</span><span class="wpc">Terén a dioramy</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(127,29,29,.3);color:#f87171;border:1px solid rgba(248,113,113,.3)">Pokročilí</span><a href="#stezky" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- nadvori -->
-        <div class="wp" onclick="daWpClick(this)" style="left:20%;top:67%"><div class="wpring"></div><div class="wpdot">🎯</div><div class="wppop" style="left:34px;bottom:-6px"><div class="wph"><span class="wphi">🎯</span><span class="wphn">Tréninkové nádvoří</span></div><div class="wpb"><div class="wpd">Mentální stránka tvorby. Jak pracovat s frustrací, budovat rutinu a vytrvat i když to jde pomalu.</div><div class="wpcs"><span class="wpc">Soustředění a flow</span><span class="wpc">Práce s chybou</span><span class="wpc">Trpělivost jako nástroj</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#da-jak" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- atelier -->
-        <div class="wp" onclick="daWpClick(this)" style="left:27%;top:80%"><div class="wpring"></div><div class="wpdot">🏛️</div><div class="wppop" style="left:34px;bottom:-6px"><div class="wph"><span class="wphi">🏛️</span><span class="wphn">Ateliér Valiente</span></div><div class="wpb"><div class="wpd">Zákulisí Valiente Project — jak tvoříme pomůcky, lekce a obsah, který každý den v akademii používáme.</div><div class="wpcs"><span class="wpc">Za kulisami tvorby</span><span class="wpc">Naše metody</span><span class="wpc">Jak testujeme projekty</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Zvídaví</span><a href="#da-co-je" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- vez-barev -->
-        <div class="wp" onclick="daWpClick(this)" style="left:36%;top:12%"><div class="wpring"></div><div class="wpdot">🎨</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">🎨</span><span class="wphn">Alchymistická věž barev</span></div><div class="wpb"><div class="wpd">Vše o barvách — míchání, vrstvení, washes, glazury a pokročilé techniky malování miniatur.</div><div class="wpcs"><span class="wpc">Základy míchání barev</span><span class="wpc">Glazury a washes</span><span class="wpc">OSL efekty</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všechny úrovně</span><a href="#stezky" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- draci-kruh (velký) -->
-        <div class="wp" onclick="daWpClick(this)" style="left:50%;top:47%"><div class="wpring"></div><div class="wpdot big">🐉</div><div class="wppop" style="left:34px;top:-6px"><div class="wph"><span class="wphi">🐉</span><span class="wphn">Dračí kruh</span></div><div class="wpb"><div class="wpd">Srdce kampusu. Místo kde se sbíhají stezky, sdílíme pokroky a slavíme chyby jako vítězství.</div><div class="wpcs"><span class="wpc">Komunitní výzvy</span><span class="wpc">Sdílení projektů</span><span class="wpc">Živé workshopy</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Komunita</span><a href="#da-komunita" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- hlavni-brana (velký) -->
-        <div class="wp" onclick="daWpClick(this)" style="left:50%;top:88%"><div class="wpring"></div><div class="wpdot big">🚪</div><div class="wppop" style="left:34px;bottom:-6px"><div class="wph"><span class="wphi">🚪</span><span class="wphn">Hlavní brána</span></div><div class="wpb"><div class="wpd">Vstupní bod do celého kampusu. Přivítej se, zorientuj a vyber svůj první krok — bez spěchu.</div><div class="wpcs"><span class="wpc">Orientace v kampusu</span><span class="wpc">Výběr stezky</span><span class="wpc">Úvodní projekt</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(22,101,52,.3);color:#4ade80;border:1px solid rgba(74,222,128,.3)">Nováčci</span><a href="#da-zacni" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- knihovna -->
-        <div class="wp" onclick="daWpClick(this)" style="left:68%;top:10%"><div class="wpring"></div><div class="wpdot">📚</div><div class="wppop" style="right:34px;top:-6px"><div class="wph"><span class="wphi">📚</span><span class="wphn">Knihovna mistrů</span></div><div class="wpb"><div class="wpd">Rozsáhlá sbírka technik, inspirace a příběhů od mistrů oboru. Videotéka, čítárna a archiv.</div><div class="wpcs"><span class="wpc">Techniky legend</span><span class="wpc">Inspirační knihovna</span><span class="wpc">Světy fantasy</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#da-komunita" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- pavilon -->
-        <div class="wp" onclick="daWpClick(this)" style="left:80%;top:32%"><div class="wpring"></div><div class="wpdot">🏠</div><div class="wppop" style="right:34px;top:-6px"><div class="wph"><span class="wphi">🏠</span><span class="wphn">Pavilon rodičů</span></div><div class="wpb"><div class="wpd">Speciální sekce pro rodiče — jak podporovat tvůrce doma, co si připravit a jak fungují workshopy.</div><div class="wpcs"><span class="wpc">Průvodce pro rodiče</span><span class="wpc">Podpora doma</span><span class="wpc">Dětské projekty</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(30,58,138,.3);color:#60a5fa;border:1px solid rgba(96,165,250,.3)">Rodiče</span><a href="#da-komunita" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- ucitelska -->
-        <div class="wp" onclick="daWpClick(this)" style="left:83%;top:49%"><div class="wpring"></div><div class="wpdot">🎓</div><div class="wppop" style="right:34px;top:-6px"><div class="wph"><span class="wphi">🎓</span><span class="wphn">Učitelská síň</span></div><div class="wpb"><div class="wpd">Pro pedagogy a vedoucí kroužků. Metodiky, materiály a kurzy pro výuku kreativních dovedností.</div><div class="wpcs"><span class="wpc">Metodika výuky</span><span class="wpc">Vedení workshopů</span><span class="wpc">Stát se průvodcem</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(88,28,135,.3);color:#c084fc;border:1px solid rgba(192,132,252,.3)">Pedagogové</span><a href="#da-co-je" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- trziste -->
-        <div class="wp" onclick="daWpClick(this)" style="left:73%;top:62%"><div class="wpring"></div><div class="wpdot">🛒</div><div class="wppop" style="right:34px;top:-6px"><div class="wph"><span class="wphi">🛒</span><span class="wphn">Tržiště akademie</span></div><div class="wpb"><div class="wpd">Akademický obchod — barvy, štětce, kity a pomůcky, které skutečně doporučujeme a sami používáme.</div><div class="wpcs"><span class="wpc">Barvy a štětce</span><span class="wpc">Figurky a kity</span><span class="wpc">Nástroje mistrů</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#da-komunita" class="wplnk">Vstoupit ›</a></div></div></div></div>
-        <!-- draci-posta -->
-        <div class="wp" onclick="daWpClick(this)" style="left:79%;top:77%"><div class="wpring"></div><div class="wpdot">📬</div><div class="wppop" style="right:34px;bottom:-6px"><div class="wph"><span class="wphi">📬</span><span class="wphn">Dračí pošta</span></div><div class="wpb"><div class="wpd">Zůstaň v kontaktu. Newsletter s novinkami, výzvy, oznámení workshopů a zprávy z celé akademie.</div><div class="wpcs"><span class="wpc">Newsletter akademie</span><span class="wpc">Měsíční výzvy</span><span class="wpc">Oznámení workshopů</span></div><div class="wpf"><span class="wpbdg" style="background:rgba(201,148,58,.1);color:#C9943A;border:1px solid rgba(201,148,58,.25)">Všichni</span><a href="#da-kontakt" class="wplnk">Vstoupit ›</a></div></div></div></div>
-      </div>
-    </div>
-
-    <!-- Grid budov -->
-    <div class="bldg-grid">
-      <div class="bldg"><span class="bldg-ico">🧭</span><div><div class="bldg-name">Síň stezek</div><div class="bldg-desc">Vyber si svou cestu a rozvíjej se po ní.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">🎨</span><div><div class="bldg-name">Alchymistická věž barev</div><div class="bldg-desc">Místo, kde vznikají kouzelné kombinace.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">🏺</span><div><div class="bldg-name">Dílna první figurky</div><div class="bldg-desc">První vlastnoruční výtvor oživá právě tady.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">📚</span><div><div class="bldg-name">Knihovna mistrů</div><div class="bldg-desc">Příběhy, techniky a znalosti generací.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">⚒️</span><div><div class="bldg-name">Kovárna modelářů</div><div class="bldg-desc">Stavíme, lepíme, zkoušíme. Z pevného nápadu model.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">🏠</span><div><div class="bldg-name">Pavilon rodičů</div><div class="bldg-desc">Zázemí, kde rodiče najdou odpovědi.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">🎯</span><div><div class="bldg-name">Tréninkové nádvoří</div><div class="bldg-desc">Místo tréninku trpělivosti, soustředění a odvahy.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">🎓</span><div><div class="bldg-name">Učitelská síň</div><div class="bldg-desc">Naši průvodci a stráž cti akademie.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">🏛️</span><div><div class="bldg-name">Ateliér Valiente</div><div class="bldg-desc">Kde vznikají pomůcky, které sami používáme.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">🛒</span><div><div class="bldg-name">Tržiště akademie</div><div class="bldg-desc">Potřebuješ vybavení, inspiraci nebo jen svačinu.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">🐉</span><div><div class="bldg-name">Dračí kruh</div><div class="bldg-desc">Sdílíme, inspirujeme a rosteme spolu.</div></div></div>
-      <div class="bldg"><span class="bldg-ico">📬</span><div><div class="bldg-name">Dračí pošta</div><div class="bldg-desc">Zprávy, dopisy a překvapení.</div></div></div>
-      <div class="bldg" style="grid-column:span 2;border-color:rgba(201,148,58,.3)"><span class="bldg-ico">🚪</span><div><div class="bldg-name" style="color:var(--gold)">Hlavní brána</div><div class="bldg-desc">Každá cesta začíná tímto krokem. Vstup do kampusu pro každého.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== ABOUT (5 karet) ==================== -->
-<section id="da-co-je" class="sp" style="background:var(--dark)">
+<!-- ==================== CO JE DRAČÍ AKADEMIE ==================== -->
+<section id="da-co-je" class="sp" style="background:#080E18">
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:.5rem">
       <div class="line"></div>
-      <span class="diam">◆◆◆</span>
+      <span class="diam">◈</span>
       <h2 class="sec-title">Co je Dračí akademie?</h2>
-      <span class="diam">◆◆◆</span>
+      <span class="diam">◈</span>
       <div class="line r"></div>
     </div>
-    <p class="sec-sub" style="margin-bottom:2rem"></p>
-    <div class="g5">
-      <div class="cardp ac">
-        <div class="ai">✋</div>
-        <h3 class="ct">Tvoření rukama</h3>
-        <p class="cd">Práce rukama rozvíjí zručnost, představivost a přináší pohodu.</p>
+    <p class="sec-sub" style="margin-bottom:2rem">Kreativní svět, kde tvoření rukama potkává fantazii, řemeslo a komunitu.</p>
+    <div class="pg5">
+      <div class="pc">
+        <div class="pci">
+          <svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0v0M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+        </div>
+        <div class="pct">Tvoření rukama</div>
+        <div class="pcd">Práce rukama rozvíjí zručnost, představivost a přináší pohodu.</div>
       </div>
-      <div class="cardp ac">
-        <div class="ai">🎨</div>
-        <h3 class="ct">Malování a modely</h3>
-        <p class="cd">Barvy, detaily a příběhy. Z obyčejného modelu vzniká svět.</p>
+      <div class="pc">
+        <div class="pci">
+          <svg viewBox="0 0 24 24"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1 1 2.48 1.02 3.5 1.02 1.66 0 3-1.34 3-3.01 0-1.67-1.34-3.05-3-3.05z"/></svg>
+        </div>
+        <div class="pct">Malování a modely</div>
+        <div class="pcd">Barvy, detaily a příběhy. Z obyčejného modelu vzniká svět.</div>
       </div>
-      <div class="cardp ac">
-        <div class="ai">🧭</div>
-        <h3 class="ct">Motivace a práce s chybou</h3>
-        <p class="cd">Chyby jsou součástí cesty. Učí nás více než dokonalost.</p>
+      <div class="pc">
+        <div class="pci">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        </div>
+        <div class="pct">Motivace a práce s chybou</div>
+        <div class="pcd">Chyby jsou součástí cesty. Učí nás víc než dokonalost.</div>
       </div>
-      <div class="cardp ac">
-        <div class="ai">⚙️</div>
-        <h3 class="ct">3D tisk a technologie</h3>
-        <p class="cd">Moderní nástroje otevírají nové možnosti. Používáme je chytře.</p>
+      <div class="pc">
+        <div class="pci">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <div class="pct">3D tisk a technologie</div>
+        <div class="pcd">Moderní nástroje otevírají nové možnosti. Používáme je chytře.</div>
       </div>
-      <div class="cardp ac">
-        <div class="ai">🤝</div>
-        <h3 class="ct">Komunita a výzvy</h3>
-        <p class="cd">Spolu to má větší sílu. Výzvy, projekty a přátelství, která vydrží.</p>
+      <div class="pc">
+        <div class="pci">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="pct">Komunita a výzvy</div>
+        <div class="pcd">Spolu to má větší sílu. Výzvy, projekty a přátelství, která vydrží.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== JAK PROJÍT KAMPUSEM ==================== -->
-<section id="da-jak" class="sp" style="background:#080E18">
-  <div class="wrap">
-    <div class="sec-head" style="margin-bottom:.5rem">
-      <div class="line"></div>
-      <span class="diam">◆◆◆</span>
-      <h2 class="sec-title">Jak projít kampusem</h2>
-      <span class="diam">◆◆◆</span>
-      <div class="line r"></div>
+<!-- ==================== KAMPUS ==================== -->
+<section id="da-kampus" style="background:var(--darker);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="ch">
+    <!-- Left text panel -->
+    <div class="ch-left">
+      <div class="eb"><span class="ebt">Dračí akademie</span></div>
+      <h2 class="ch-title">Kampus<br>Dračí&nbsp;akademie</h2>
+      <p class="ch-desc">Místo, kde se učíme, tvoříme a inspirujeme. Všechny cesty vedou do dílny.</p>
+      <a href="/kampus-mapa.html" class="btn bp" style="align-self:flex-start;margin-top:.5rem">Prozkoumat kampus →</a>
     </div>
-    <p class="sec-sub"></p>
-    <div class="stps">
-      <div class="stp">
-        <div class="stpc"></div>
-        <div class="stpci"><span class="stpn">1</span><span class="stpio">🚪</span></div>
-        <div class="stpb">
-          <div class="stpt">Začni Hlavní branou</div>
-          <div class="stpd">Přivítej se, prozkoumej kampus a vyber si první krůček.</div>
+    <!-- Right map -->
+    <div class="ch-right">
+      <img src="https://kedarcaja.github.io/akademie-HomePage/img/kampus-mapa.png" alt="Mapa kampusu Dračí akademie">
+      <!-- 3 floating labels -->
+      <div class="maplbl" style="left:22%;top:44%">
+        <div class="maplbl-dot"></div>
+        <div class="maplbl-box">
+          <div class="maplbl-name">Ateliér</div>
+          <div class="maplbl-desc">Malba a modely</div>
         </div>
       </div>
-      <div class="stp">
-        <div class="stpc"></div>
-        <div class="stpci"><span class="stpn">2</span><span class="stpio">🧭</span></div>
-        <div class="stpb">
-          <div class="stpt">Vyber si stezku</div>
-          <div class="stpd">Objev cestu, která tě baví, a rozvíjej se vlastním tempem.</div>
+      <div class="maplbl" style="left:60%;top:14%">
+        <div class="maplbl-dot"></div>
+        <div class="maplbl-box">
+          <div class="maplbl-name">Knihovna</div>
+          <div class="maplbl-desc">Návody a inspirace</div>
         </div>
       </div>
-      <div class="stp">
-        <div class="stpc"></div>
-        <div class="stpci"><span class="stpn">3</span><span class="stpio">🎨</span></div>
-        <div class="stpb">
-          <div class="stpt">Tvoř a trénuj</div>
-          <div class="stpd">Praktikuj, zkoušej, maluj, stavěj a posouvej se.</div>
-        </div>
-      </div>
-      <div class="stp">
-        <div class="stpci"><span class="stpn">4</span><span class="stpio">🤝</span></div>
-        <div class="stpb">
-          <div class="stpt">Sdílej a roste</div>
-          <div class="stpd">Zapoj se do komunity, projektů a výzev.</div>
+      <div class="maplbl" style="left:68%;top:60%">
+        <div class="maplbl-dot"></div>
+        <div class="maplbl-box">
+          <div class="maplbl-name">Dračí kruh</div>
+          <div class="maplbl-desc">Komunita a akce</div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ==================== VYBER SI BRÁNU ==================== -->
+<section id="da-jak" class="sp" style="background:var(--dark)">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:.5rem">
+      <div class="line"></div>
+      <span class="diam">◆◆◆</span>
+      <h2 class="sec-title">Vyber si bránu</h2>
+      <span class="diam">◆◆◆</span>
+      <div class="line r"></div>
+    </div>
+    <p class="sec-sub" style="margin-bottom:2rem">Čtyři vstupní cesty. Vyber tu, která tě popisuje nejvíc.</p>
+    <div class="gate-grid">
+      <a href="#da-zacni" class="gate">
+        <span class="gate-ico">🧭</span>
+        <div class="gate-t">Začínám od nuly</div>
+        <div class="gate-d">Nevíš, kde začít? Provedeme tě prvními kroky krok za krokem.</div>
+        <div class="gate-arr">Vstoupit →</div>
+      </a>
+      <a href="#da-komunita" class="gate">
+        <span class="gate-ico">👨‍👧</span>
+        <div class="gate-t">Chci tvořit s dítětem</div>
+        <div class="gate-d">Společný čas, který baví a spojuje. Tvoříme spolu.</div>
+        <div class="gate-arr">Vstoupit →</div>
+      </a>
+      <a href="#da-kampus" class="gate">
+        <span class="gate-ico">⚒️</span>
+        <div class="gate-t">Chci posunout modely</div>
+        <div class="gate-d">Nové techniky, triky a profesionálnější výsledek pro pokročilé.</div>
+        <div class="gate-arr">Vstoupit →</div>
+      </a>
+      <a href="#da-komunita" class="gate">
+        <span class="gate-ico">🤝</span>
+        <div class="gate-t">Chci tvořit s partou</div>
+        <div class="gate-d">Najdi parťáky, sdílej a inspiruj se s ostatními.</div>
+        <div class="gate-arr">Vstoupit →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EMAIL STRIP ==================== -->
+<div class="es">
+  <div class="wrap">
+    <div class="es-inner">
+      <div>
+        <div class="eb"><span class="ebt">7 dní u štětce</span></div>
+        <div class="es-ttl">Tvoř. Zpomal. <em>Užij si 10 minut denně.</em></div>
+        <div class="es-sub" style="margin:.5rem 0 1.5rem;max-width:520px">7 krátkých lekcí e-mailem, které tě provedou malováním od prvního tahu po hotovou figurku.</div>
+        <div style="margin-top:.5rem">
+          <a href="#" class="btn bp">Chci 7 dní u štětce →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ==================== KOMUNITA (testimonials) ==================== -->
 <section id="da-komunita" class="sp" style="background:var(--dark)">
@@ -449,38 +545,6 @@
   </div>
 </section>
 
-<!-- ==================== FINAL CTA ==================== -->
-<section id="da-zacni" class="scta sp-lg">
-  <div class="cg1"></div><div class="cg2"></div><div class="cgrid"></div>
-  <div class="ccorn tl"></div><div class="ccorn tr"></div><div class="ccorn bl"></div><div class="ccorn br"></div>
-  <div class="wrap">
-    <div class="cta-grid">
-      <!-- Left: text -->
-      <div>
-        <div class="eb"><span class="ebt">Vstupní brána</span></div>
-        <h2 class="cttl">
-          Nevíš, kde začít?<br>
-          <span class="acc">Vstup hlavní branou.</span>
-        </h2>
-        <p style="font-size:1rem;color:var(--text);line-height:1.75;margin:1.25rem 0 2rem;font-weight:300;max-width:440px">Každá cesta v akademii začíná na stejném místě — u Hlavní brány. Prozkoumej kampus, vyber si první krok a začni tvořit.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:.875rem">
-          <a href="#da-akademie" class="btn bp">🚪 Vstoupit hlavní branou</a>
-          <a href="#da-kampus" class="btn bo">Prozkoumat kampus ›</a>
-        </div>
-        <p style="margin-top:1.25rem;font-size:.75rem;color:var(--dim);font-style:italic">Bez závazků · Začni hned · Valiente Project</p>
-      </div>
-      <!-- Right: image -->
-      <div class="cta-img" style="position:relative">
-        <img src="https://kedarcaja.github.io/akademie-HomePage/img/hero.jpg" alt="Hlavní brána do Dračí akademie">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.4),transparent)"></div>
-        <div class="cta-img-lbl">
-          <p>Hlavní brána</p>
-          <span>Každá velká cesta začíná prvním krokem.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ==================== FOOTER ==================== -->
 <footer class="ft" id="da-kontakt">
