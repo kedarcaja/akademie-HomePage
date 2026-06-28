@@ -223,6 +223,9 @@
 #da-root .gate-illo{width:100%;line-height:0;margin:.25rem 0 .375rem;overflow:visible}
 #da-root .sec-drak{display:flex;justify-content:center;margin:0 auto 2rem;max-width:560px}
 #da-root .sec-drak img,#da-root .sec-drak svg{width:100%;height:auto;display:block;opacity:.9}
+#da-root .sec-side{display:flex;align-items:center;gap:3rem;margin-bottom:2.5rem}
+#da-root .sec-side-txt{flex:1;min-width:0}
+#da-root .sec-side .sec-drak{flex-shrink:0;width:310px;margin:0}
 
 /* === PARCHMENT CARDS === */
 #da-root .pg5{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
@@ -282,6 +285,8 @@
   #da-root .sp{padding:3rem 0}
   #da-root .sp-lg{padding:4rem 0}
   #da-root .wrap{padding:0 1.25rem}
+  #da-root .sec-side{flex-direction:column;align-items:center}
+  #da-root .sec-side .sec-drak{width:280px}
 }
 @media(max-width:480px){
   #da-root .sp{padding:2.5rem 0}
@@ -340,16 +345,20 @@
 <!-- ==================== CO JE DRAČÍ AKADEMIE ==================== -->
 <section id="da-co-je" class="sp" style="background:#080E18">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:.5rem">
-      <div class="line"></div>
-      <span class="diam">◈</span>
-      <h2 class="sec-title">Co je Dračí akademie?</h2>
-      <span class="diam">◈</span>
-      <div class="line r"></div>
-    </div>
-    <p class="sec-sub" style="margin-bottom:1.5rem">Kreativní svět, kde tvoření rukama potkává fantazii, řemeslo a komunitu.</p>
-    <div class="sec-drak">
-      <img src="https://kedarcaja.github.io/akademie-HomePage/img/sec-akademie.svg" alt="" loading="lazy">
+    <div class="sec-side">
+      <div class="sec-side-txt">
+        <div class="sec-head" style="margin-bottom:.5rem">
+          <div class="line"></div>
+          <span class="diam">◈</span>
+          <h2 class="sec-title">Co je Dračí akademie?</h2>
+          <span class="diam">◈</span>
+          <div class="line r"></div>
+        </div>
+        <p class="sec-sub" style="margin-bottom:0">Kreativní svět, kde tvoření rukama potkává fantazii, řemeslo a komunitu.</p>
+      </div>
+      <div class="sec-drak">
+        <img src="https://kedarcaja.github.io/akademie-HomePage/img/sec-akademie.svg" alt="" loading="lazy">
+      </div>
     </div>
     <div class="pg5">
       <div class="pc">
@@ -408,16 +417,20 @@
 <!-- ==================== VYBER SI BRÁNU ==================== -->
 <section id="da-jak" class="sp" style="background:var(--dark)">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:.5rem">
-      <div class="line"></div>
-      <span class="diam">◆◆◆</span>
-      <h2 class="sec-title">Vyber si bránu</h2>
-      <span class="diam">◆◆◆</span>
-      <div class="line r"></div>
-    </div>
-    <p class="sec-sub" style="margin-bottom:1.5rem">Čtyři vstupní cesty. Vyber tu, která tě popisuje nejvíc.</p>
-    <div class="sec-drak">
-      <img src="https://kedarcaja.github.io/akademie-HomePage/img/sec-brana.svg" alt="" loading="lazy">
+    <div class="sec-side">
+      <div class="sec-side-txt">
+        <div class="sec-head" style="margin-bottom:.5rem">
+          <div class="line"></div>
+          <span class="diam">◆◆◆</span>
+          <h2 class="sec-title">Vyber si bránu</h2>
+          <span class="diam">◆◆◆</span>
+          <div class="line r"></div>
+        </div>
+        <p class="sec-sub" style="margin-bottom:0">Čtyři vstupní cesty. Vyber tu, která tě popisuje nejvíc.</p>
+      </div>
+      <div class="sec-drak">
+        <img src="https://kedarcaja.github.io/akademie-HomePage/img/sec-brana.svg" alt="" loading="lazy">
+      </div>
     </div>
     <div class="gate-grid">
       <a href="#da-zacni" class="gate gv1">
@@ -474,14 +487,17 @@
 <!-- ==================== KOMUNITA (testimonials) ==================== -->
 <section id="da-komunita" class="sp" style="background:var(--dark)">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:.5rem">
-      <div class="line"></div>
-      <h2 class="sec-title" style="font-size:clamp(.875rem,2vw,1rem)">Součást komunity Valiente Project</h2>
-      <div class="line r"></div>
-    </div>
-    <p class="sec-sub"></p>
-    <div class="sec-drak">
-      <img src="https://kedarcaja.github.io/akademie-HomePage/img/sec-komunita.svg" alt="" loading="lazy">
+    <div class="sec-side">
+      <div class="sec-side-txt">
+        <div class="sec-head" style="margin-bottom:.5rem">
+          <div class="line"></div>
+          <h2 class="sec-title" style="font-size:clamp(.875rem,2vw,1rem)">Součást komunity Valiente Project</h2>
+          <div class="line r"></div>
+        </div>
+      </div>
+      <div class="sec-drak">
+        <img src="https://kedarcaja.github.io/akademie-HomePage/img/sec-komunita.svg" alt="" loading="lazy">
+      </div>
     </div>
     <div class="g3">
       <div class="cardp tcard">

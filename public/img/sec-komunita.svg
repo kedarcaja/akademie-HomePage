@@ -1,141 +1,159 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
-      <stop offset="0%" stop-color="#14100a"/>
-      <stop offset="100%" stop-color="#06080D"/>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#141008"/>
+      <stop offset="100%" stop-color="#05070C"/>
     </radialGradient>
-    <radialGradient id="gl1" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#C9943A" stop-opacity="0.2"/>
+    <radialGradient id="ga" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C9943A" stop-opacity="0.22"/>
       <stop offset="100%" stop-color="#C9943A" stop-opacity="0"/>
     </radialGradient>
-    <filter id="blur1"><feGaussianBlur stdDeviation="32"/></filter>
-    <filter id="blur2"><feGaussianBlur stdDeviation="16"/></filter>
-    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="f1"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="f2"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="f3"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="fg"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
 
   <rect width="600" height="400" fill="url(#bg)"/>
-  <ellipse cx="300" cy="165" rx="265" ry="185" fill="url(#gl1)" filter="url(#blur1)"/>
+  <ellipse cx="300" cy="180" rx="270" ry="200" fill="url(#ga)" filter="url(#f1)"/>
 
-  <!-- Display case back wall -->
-  <rect x="96" y="56" width="408" height="294" rx="6" fill="#0e0c07"/>
-  <rect x="98" y="58" width="404" height="290" rx="5" fill="none" stroke="#2a2010" stroke-width="1" opacity="0.6"/>
+  <!-- Display case frame -->
+  <rect x="82" y="48" width="436" height="306" rx="6" fill="#0c0a06"/>
+  <rect x="84" y="50" width="432" height="302" rx="5" fill="none" stroke="#221a08" stroke-width="1.5" opacity="0.7"/>
 
-  <!-- Display shelf unit frame -->
-  <rect x="96" y="56" width="408" height="14" rx="4" fill="#2a1e0a"/>
-  <rect x="96" y="330" width="408" height="18" rx="4" fill="#2a1e0a"/>
-  <rect x="96" y="56" width="16" height="294" rx="3" fill="#2a1e0a"/>
-  <rect x="488" y="56" width="16" height="294" rx="3" fill="#2a1e0a"/>
+  <!-- Frame top/bottom/sides -->
+  <rect x="82" y="48" width="436" height="16" rx="4" fill="#221a08"/>
+  <rect x="82" y="338" width="436" height="16" rx="4" fill="#221a08"/>
+  <rect x="82" y="48" width="18" height="306" rx="3" fill="#221a08"/>
+  <rect x="500" y="48" width="18" height="306" rx="3" fill="#221a08"/>
 
   <!-- Shelf dividers -->
-  <rect x="96" y="162" width="408" height="10" rx="2" fill="#2a1e0a"/>
-  <rect x="96" y="262" width="408" height="10" rx="2" fill="#2a1e0a"/>
+  <rect x="82" y="170" width="436" height="10" rx="2" fill="#221a08"/>
+  <rect x="82" y="268" width="436" height="10" rx="2" fill="#221a08"/>
 
-  <!-- Spotlight glow on top shelf figurines -->
-  <ellipse cx="204" cy="70" rx="18" ry="6" fill="#E8B84B" opacity="0.22"/>
-  <ellipse cx="300" cy="70" rx="18" ry="6" fill="#E8B84B" opacity="0.2"/>
-  <ellipse cx="396" cy="70" rx="18" ry="6" fill="#E8B84B" opacity="0.22"/>
+  <!-- SPOTLIGHT CONES (top shelf) -->
+  <path d="M178 64 L155 172 L200 172 L200 64 Z" fill="#E8B84B" fill-opacity="0.04"/>
+  <path d="M292 64 L268 172 L316 172 L316 64 Z" fill="#E8B84B" fill-opacity="0.04"/>
+  <path d="M406 64 L382 172 L428 172 L428 64 Z" fill="#E8B84B" fill-opacity="0.04"/>
+  <!-- Spotlight ceiling fixtures -->
+  <ellipse cx="190" cy="62" rx="16" ry="5" fill="#E8B84B" opacity="0.25"/>
+  <ellipse cx="300" cy="62" rx="16" ry="5" fill="#E8B84B" opacity="0.22"/>
+  <ellipse cx="410" cy="62" rx="16" ry="5" fill="#E8B84B" opacity="0.25"/>
 
-  <!-- Light cones -->
-  <path d="M188 76 L168 164 L220 164 L200 76 Z" fill="#E8B84B" fill-opacity="0.03"/>
-  <path d="M284 76 L264 164 L316 164 L296 76 Z" fill="#E8B84B" fill-opacity="0.03"/>
-  <path d="M380 76 L360 164 L412 164 L392 76 Z" fill="#E8B84B" fill-opacity="0.03"/>
+  <!-- FIGURINE 1: KNIGHT with RED cape (left, top shelf) -->
+  <ellipse cx="190" cy="168" rx="22" ry="6" fill="#2a1e08" opacity="0.9"/>
+  <!-- Body -->
+  <path d="M172 168 L170 116 L210 116 L208 168 Z" fill="#3a2c12"/>
+  <!-- Chest -->
+  <path d="M178 160 L177 128 L203 128 L202 160 Z" fill="#4a3818" opacity="0.8"/>
+  <rect x="170" y="142" width="40" height="5" rx="2" fill="#C9943A" opacity="0.5"/>
+  <!-- Cape left -->
+  <path d="M172 128 C162 136 160 154 164 168 L172 168 L172 128 Z" fill="#7D2128" opacity="0.9"/>
+  <!-- Cape right -->
+  <path d="M208 128 C218 136 220 154 216 168 L208 168 L208 128 Z" fill="#7D2128" opacity="0.9"/>
+  <!-- Shoulders -->
+  <ellipse cx="171" cy="120" rx="15" ry="9" fill="#3a2c12"/>
+  <ellipse cx="209" cy="120" rx="15" ry="9" fill="#3a2c12"/>
+  <!-- Helmet -->
+  <ellipse cx="190" cy="102" rx="20" ry="22" fill="#3a2c12"/>
+  <rect x="178" y="98" width="22" height="8" rx="2" fill="#080604" opacity="0.95"/>
+  <path d="M182 90 C183 80 187 74 190 72 C193 74 197 80 198 90 Z" fill="#7D2128" opacity="0.85"/>
+  <!-- Sword -->
+  <rect x="214" y="72" width="7" height="88" rx="2" fill="#8a7868" opacity="0.8"/>
+  <rect x="207" y="100" width="20" height="6" rx="2" fill="#C9943A" opacity="0.75"/>
+  <!-- Figurine glow -->
+  <ellipse cx="190" cy="170" rx="28" ry="8" fill="#E8B84B" fill-opacity="0.12" filter="url(#f3)"/>
 
-  <!-- FIGURINE 1: KNIGHT (left, top shelf) – red cape -->
-  <ellipse cx="200" cy="160" rx="18" ry="5" fill="#3a2a10"/>
-  <path d="M184 120 C184 104 191 90 200 86 C209 90 216 104 216 120 L214 160 L186 160 Z" fill="#4a3820" opacity="0.95"/>
-  <path d="M187 132 L213 132" stroke="#C9943A" stroke-width="1.8" opacity="0.7"/>
-  <path d="M185 108 C179 116 177 138 179 160 L187 160 L187 120 Z" fill="#8B1A1A" opacity="0.85"/>
-  <path d="M215 108 C221 116 223 138 221 160 L213 160 L213 120 Z" fill="#8B1A1A" opacity="0.85"/>
-  <ellipse cx="200" cy="82" rx="13" ry="15" fill="#5a4820"/>
-  <rect x="192" y="79" width="16" height="7" rx="2" fill="#2a2010" opacity="0.9"/>
-  <line x1="192" y1="83" x2="208" y2="83" stroke="#C9943A" stroke-opacity="0.4" stroke-width="1"/>
-  <rect x="213" y="64" width="5" height="72" rx="2" fill="#8a8070" opacity="0.85"/>
-  <rect x="208" y="96" width="12" height="4" rx="1" fill="#C9943A" opacity="0.8"/>
-  <circle cx="197" cy="122" r="2.5" fill="#E8D5A3" opacity="0.6" filter="url(#glow)"/>
+  <!-- FIGURINE 2: MAGE with PURPLE robe (center, top shelf) -->
+  <ellipse cx="300" cy="168" rx="20" ry="6" fill="#2a1e08" opacity="0.9"/>
+  <!-- Robe body (wider at base) -->
+  <path d="M282 168 L279 120 L321 120 L318 168 Z" fill="#2a2050"/>
+  <path d="M285 158 L284 132 L316 132 L315 158 Z" fill="#3a3060" opacity="0.8"/>
+  <!-- Robe accents -->
+  <rect x="281" y="140" width="38" height="4" rx="2" fill="#7A5A9A" opacity="0.6"/>
+  <!-- Wide sleeves -->
+  <path d="M279 132 C268 140 266 156 270 168 L280 168 L280 132 Z" fill="#3a2060" opacity="0.8"/>
+  <path d="M321 132 C332 140 334 156 330 168 L320 168 L320 132 Z" fill="#3a2060" opacity="0.8"/>
+  <!-- Neck + head -->
+  <rect x="292" y="112" width="16" height="10" rx="2" fill="#2a2050"/>
+  <ellipse cx="300" cy="100" rx="18" ry="20" fill="#1e1a40"/>
+  <!-- Pointed hat -->
+  <path d="M286 94 L300 58 L314 94 Z" fill="#2a2050"/>
+  <rect x="283" y="92" width="34" height="5" rx="2" fill="#3a2060"/>
+  <!-- Staff -->
+  <rect x="278" y="60" width="5" height="108" rx="2" fill="#5a4a14" opacity="0.82"/>
+  <!-- Crystal -->
+  <circle cx="280" cy="60" r="8" fill="#7A5A9A" opacity="0.85" filter="url(#fg)"/>
+  <!-- Figurine glow -->
+  <ellipse cx="300" cy="170" rx="26" ry="7" fill="#7A5A9A" fill-opacity="0.14" filter="url(#f3)"/>
 
-  <!-- FIGURINE 2: MAGE (center, top shelf) – purple robe -->
-  <ellipse cx="300" cy="160" rx="14" ry="4" fill="#3a2a10"/>
-  <path d="M288 126 C288 112 294 102 300 98 C306 102 312 112 312 126 L310 160 L290 160 Z" fill="#2a2050" opacity="0.95"/>
-  <path d="M290 137 L310 137" stroke="#7A5A9A" stroke-width="1.5" opacity="0.7"/>
-  <path d="M288 114 C283 122 282 140 284 160 L290 160 L290 124 Z" fill="#4a1a6a" opacity="0.75"/>
-  <path d="M312 114 C317 122 318 140 316 160 L310 160 L310 124 Z" fill="#4a1a6a" opacity="0.75"/>
-  <ellipse cx="300" cy="95" rx="12" ry="14" fill="#2a1a4a"/>
-  <path d="M291 84 L300 56 L309 84 Z" fill="#2a1a4a"/>
-  <rect x="288" y="82" width="24" height="4" rx="2" fill="#3a2a5a"/>
-  <line x1="288" y1="62" x2="282" y2="160" stroke="#5a4a1a" stroke-width="3" opacity="0.8"/>
-  <circle cx="283" cy="60" r="5" fill="#7A5A9A" opacity="0.8" filter="url(#glow)"/>
+  <!-- FIGURINE 3: KNIGHT with GREEN cape (right, top shelf) -->
+  <ellipse cx="410" cy="168" rx="22" ry="6" fill="#2a1e08" opacity="0.9"/>
+  <!-- Body -->
+  <path d="M392 168 L390 116 L430 116 L428 168 Z" fill="#3a4020"/>
+  <path d="M398 160 L397 128 L423 128 L422 160 Z" fill="#4a5028" opacity="0.8"/>
+  <rect x="390" y="142" width="40" height="5" rx="2" fill="#C9943A" opacity="0.5"/>
+  <!-- Green cape -->
+  <path d="M392 128 C382 136 380 154 384 168 L392 168 L392 128 Z" fill="#1a4a2a" opacity="0.9"/>
+  <path d="M428 128 C438 136 440 154 436 168 L428 168 L428 128 Z" fill="#1a4a2a" opacity="0.9"/>
+  <!-- Shoulders -->
+  <ellipse cx="391" cy="120" rx="15" ry="9" fill="#3a4020"/>
+  <ellipse cx="429" cy="120" rx="15" ry="9" fill="#3a4020"/>
+  <!-- Helmet -->
+  <ellipse cx="410" cy="102" rx="20" ry="22" fill="#3a4020"/>
+  <rect x="398" y="98" width="22" height="8" rx="2" fill="#080604" opacity="0.95"/>
+  <path d="M402 90 C403 80 407 74 410 72 C413 74 417 80 418 90 Z" fill="#1a4a2a" opacity="0.85"/>
+  <!-- Sword -->
+  <rect x="433" y="72" width="7" height="88" rx="2" fill="#8a7868" opacity="0.8"/>
+  <rect x="426" y="100" width="20" height="6" rx="2" fill="#C9943A" opacity="0.75"/>
+  <!-- Figurine glow -->
+  <ellipse cx="410" cy="170" rx="28" ry="8" fill="#E8B84B" fill-opacity="0.12" filter="url(#f3)"/>
 
-  <!-- FIGURINE 3: KNIGHT v2 (right, top shelf) – green cape -->
-  <ellipse cx="400" cy="160" rx="18" ry="5" fill="#3a2a10"/>
-  <path d="M384 120 C384 104 391 90 400 86 C409 90 416 104 416 120 L414 160 L386 160 Z" fill="#3a4830" opacity="0.95"/>
-  <path d="M387 132 L413 132" stroke="#C9943A" stroke-width="1.8" opacity="0.7"/>
-  <path d="M385 108 C379 116 377 138 379 160 L387 160 L387 120 Z" fill="#1a4a2a" opacity="0.85"/>
-  <path d="M415 108 C421 116 423 138 421 160 L413 160 L413 120 Z" fill="#1a4a2a" opacity="0.85"/>
-  <ellipse cx="400" cy="82" rx="13" ry="15" fill="#3a4820"/>
-  <rect x="392" y="79" width="16" height="7" rx="2" fill="#2a2010" opacity="0.9"/>
-  <rect x="413" y="64" width="5" height="72" rx="2" fill="#8a8070" opacity="0.85"/>
-  <rect x="408" y="96" width="12" height="4" rx="1" fill="#C9943A" opacity="0.8"/>
+  <!-- MIDDLE SHELF: Dragon companion + paint supplies -->
+  <!-- Dragon (small, watching middle shelf WIP) -->
+  <path d="M168 238 C163 224 166 214 175 210 C184 206 192 211 193 220 C194 229 190 237 182 240 C176 242 168 239 168 238 Z" fill="#1a4a2a" opacity="0.9"/>
+  <path d="M192 220 C200 213 212 211 215 218 C207 224 196 223 193 221 Z" fill="#153a20" opacity="0.7"/>
+  <path d="M168 223 C160 216 150 215 147 222 C155 228 165 227 167 224 Z" fill="#153a20" opacity="0.7"/>
+  <path d="M165 210 C162 202 165 196 173 194 C181 192 187 197 186 206 C185 212 179 215 174 214 Z" fill="#246030" opacity="0.9"/>
+  <ellipse cx="177" cy="201" rx="5" ry="4" fill="#E8B84B" opacity="0.96" filter="url(#fg)"/>
+  <ellipse cx="177" cy="201" rx="2" ry="3" fill="#080506"/>
+  <circle cx="177" cy="201" r="9" fill="#E8B84B" opacity="0.2" filter="url(#f2)"/>
 
-  <!-- Glow under top shelf figurines -->
-  <ellipse cx="200" cy="162" rx="30" ry="8" fill="#E8B84B" fill-opacity="0.1" filter="url(#blur2)"/>
-  <ellipse cx="300" cy="162" rx="28" ry="8" fill="#E8B84B" fill-opacity="0.08" filter="url(#blur2)"/>
-  <ellipse cx="400" cy="162" rx="30" ry="8" fill="#E8B84B" fill-opacity="0.1" filter="url(#blur2)"/>
+  <!-- Paint jars on middle shelf -->
+  <rect x="350" y="224" width="14" height="38" rx="4" fill="#8B1A1A" opacity="0.82"/>
+  <rect x="372" y="228" width="12" height="34" rx="4" fill="#1a3a6a" opacity="0.82"/>
+  <rect x="392" y="220" width="14" height="42" rx="4" fill="#2d6a2d" opacity="0.82"/>
+  <rect x="414" y="226" width="12" height="36" rx="4" fill="#C9943A" opacity="0.75"/>
+  <!-- Brush jar -->
+  <ellipse cx="320" cy="261" rx="14" ry="5" fill="#1e1608" opacity="0.9"/>
+  <rect x="307" y="228" width="26" height="33" rx="4" fill="#2a1e10" opacity="0.85"/>
+  <line x1="314" y1="228" x2="310" y2="200" stroke="#8B6010" stroke-width="3" opacity="0.85"/>
+  <line x1="320" y1="228" x2="320" y2="198" stroke="#a08020" stroke-width="3" opacity="0.8"/>
+  <line x1="327" y1="228" x2="331" y2="202" stroke="#6a5010" stroke-width="3" opacity="0.8"/>
+  <ellipse cx="310" cy="199" rx="5" ry="9" fill="#C9943A" opacity="0.65"/>
+  <ellipse cx="320" cy="197" rx="5" ry="9" fill="#8B4513" opacity="0.6"/>
+  <ellipse cx="331" cy="201" rx="5" ry="9" fill="#C9943A" opacity="0.5"/>
 
-  <!-- Middle shelf spotlight -->
-  <ellipse cx="225" cy="172" rx="16" ry="5" fill="#E8B84B" opacity="0.18"/>
-  <ellipse cx="370" cy="172" rx="16" ry="5" fill="#E8B84B" opacity="0.18"/>
-
-  <!-- MIDDLE SHELF: Paint supplies + small WIP figurine -->
-  <!-- Jar of brushes center-right -->
-  <ellipse cx="370" cy="260" rx="13" ry="5" fill="#2a1a0a" opacity="0.8"/>
-  <rect x="357" y="228" width="26" height="32" rx="4" fill="#3a2a10" opacity="0.8"/>
-  <line x1="364" y1="228" x2="360" y2="196" stroke="#8B6914" stroke-width="2" opacity="0.85"/>
-  <line x1="370" y1="228" x2="370" y2="194" stroke="#a08020" stroke-width="2" opacity="0.85"/>
-  <line x1="376" y1="228" x2="380" y2="197" stroke="#6a5010" stroke-width="2" opacity="0.85"/>
-  <ellipse cx="360" cy="196" rx="4" ry="7" fill="#C9943A" opacity="0.65"/>
-  <ellipse cx="370" cy="194" rx="4" ry="7" fill="#8B4513" opacity="0.65"/>
-  <ellipse cx="380" cy="197" rx="4" ry="7" fill="#C9943A" opacity="0.5"/>
-
-  <!-- Paint bottles on middle shelf -->
-  <rect x="130" y="224" width="10" height="34" rx="3" fill="#8B1A1A" opacity="0.8"/>
-  <rect x="148" y="228" width="9" height="30" rx="3" fill="#1a3a6a" opacity="0.8"/>
-  <rect x="164" y="222" width="11" height="36" rx="3" fill="#2d6a2d" opacity="0.8"/>
-  <rect x="184" y="226" width="8" height="32" rx="3" fill="#C9943A" opacity="0.7"/>
-
-  <!-- WIP figurine on middle shelf (unpainted) -->
-  <ellipse cx="248" cy="260" rx="13" ry="4" fill="#3a2a10" opacity="0.7"/>
-  <rect x="240" y="240" width="16" height="20" rx="2" fill="#5a4a30" opacity="0.7"/>
-  <ellipse cx="248" cy="238" rx="10" ry="11" fill="#4a3a20" opacity="0.7"/>
-
-  <!-- DRAGON COMPANION on middle shelf (small, watching WIP figurine) -->
-  <path d="M188 246 C183 234 186 224 194 221 C202 218 210 223 211 232 C212 241 207 250 198 253 C192 255 188 251 188 246 Z" fill="#1a4a2a" opacity="0.9"/>
-  <path d="M210 231 C220 223 232 221 236 229 C226 236 214 234 212 232 Z" fill="#1a3a20" opacity="0.7"/>
-  <path d="M188 229 C178 222 166 221 162 229 C172 236 184 234 186 230 Z" fill="#1a3a20" opacity="0.7"/>
-  <path d="M184 222 C180 214 183 208 192 206 C200 204 206 209 205 218 C204 224 197 227 192 226 Z" fill="#246030" opacity="0.9"/>
-  <ellipse cx="196" cy="212" rx="4" ry="3" fill="#E8B84B" opacity="0.9" filter="url(#glow)"/>
-  <ellipse cx="196" cy="212" rx="2" ry="2.5" fill="#0a0a0a"/>
-  <circle cx="196" cy="212" r="7" fill="#E8B84B" opacity="0.14" filter="url(#blur2)"/>
-
-  <!-- Bottom shelf: reference books + paint palette -->
-  <ellipse cx="280" cy="326" rx="55" ry="22" fill="#2a1f0a"/>
-  <ellipse cx="280" cy="324" rx="52" ry="20" fill="#1a1405"/>
-  <circle cx="256" cy="316" r="6" fill="#8B1A1A" opacity="0.9"/>
-  <circle cx="272" cy="314" r="6" fill="#1a3a6a" opacity="0.9"/>
-  <circle cx="288" cy="314" r="6" fill="#2d6a2d" opacity="0.9"/>
-  <circle cx="302" cy="318" r="6" fill="#C9943A" opacity="0.9"/>
-  <circle cx="294" cy="330" r="6" fill="#4a1a6a" opacity="0.9"/>
-  <!-- Books stacked -->
-  <rect x="380" y="272" width="60" height="54" rx="3" fill="#1a1208"/>
-  <rect x="380" y="272" width="60" height="8" rx="2" fill="#2a1f0a"/>
-  <rect x="380" y="276" width="60" height="3" rx="1" fill="#C9943A" opacity="0.25"/>
-  <rect x="384" y="284" width="60" height="42" rx="3" fill="#141008"/>
-  <rect x="384" y="288" width="60" height="3" rx="1" fill="#8B1A1A" opacity="0.3"/>
+  <!-- BOTTOM SHELF: Paint palette + books -->
+  <ellipse cx="240" cy="316" rx="60" ry="22" fill="#1a1205"/>
+  <ellipse cx="240" cy="314" rx="56" ry="18" fill="#221808"/>
+  <circle cx="210" cy="305" r="10" fill="#8B1A1A" opacity="0.9"/>
+  <circle cx="228" cy="301" r="10" fill="#1a3a6a" opacity="0.9"/>
+  <circle cx="246" cy="301" r="10" fill="#2d6a2d" opacity="0.9"/>
+  <circle cx="263" cy="305" r="10" fill="#C9943A" opacity="0.9"/>
+  <circle cx="270" cy="318" r="10" fill="#4a1a6a" opacity="0.85"/>
+  <!-- Books -->
+  <rect x="360" y="278" width="68" height="56" rx="3" fill="#14100a"/>
+  <rect x="360" y="278" width="68" height="9" rx="2" fill="#1e1608"/>
+  <rect x="360" y="282" width="68" height="3" rx="1" fill="#C9943A" opacity="0.28"/>
+  <rect x="365" y="290" width="68" height="44" rx="3" fill="#100c08"/>
+  <rect x="365" y="294" width="68" height="3" rx="1" fill="#8B1A1A" opacity="0.3"/>
 
   <!-- Floating particles -->
-  <circle cx="240" cy="104" r="1.5" fill="#E8B84B" opacity="0.5"/>
-  <circle cx="280" cy="82" r="1" fill="#E8B84B" opacity="0.4"/>
-  <circle cx="340" cy="112" r="1.5" fill="#E8B84B" opacity="0.35"/>
-  <circle cx="360" cy="90" r="1" fill="#C9943A" opacity="0.4"/>
-  <circle cx="218" cy="134" r="1" fill="#E8B84B" opacity="0.3"/>
-  <circle cx="455" cy="118" r="1.5" fill="#E8B84B" opacity="0.3"/>
+  <circle cx="220" cy="96" r="1.5" fill="#E8B84B" opacity="0.5"/>
+  <circle cx="270" cy="76" r="1" fill="#E8B84B" opacity="0.4"/>
+  <circle cx="340" cy="88" r="1.5" fill="#E8B84B" opacity="0.35"/>
+  <circle cx="380" cy="108" r="1" fill="#C9943A" opacity="0.4"/>
+  <circle cx="450" cy="96" r="1.5" fill="#E8B84B" opacity="0.3"/>
+  <circle cx="140" cy="116" r="1" fill="#C9943A" opacity="0.3"/>
 </svg>

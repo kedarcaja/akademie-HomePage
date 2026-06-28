@@ -1,141 +1,145 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
   <defs>
-    <radialGradient id="bg" cx="48%" cy="45%" r="72%">
+    <radialGradient id="bg" cx="48%" cy="46%" r="72%">
       <stop offset="0%" stop-color="#1a1208"/>
-      <stop offset="100%" stop-color="#06080D"/>
+      <stop offset="100%" stop-color="#05070C"/>
     </radialGradient>
-    <radialGradient id="gl1" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#C9943A" stop-opacity="0.32"/>
+    <radialGradient id="candle-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E8B84B" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#C9943A" stop-opacity="0.2"/>
       <stop offset="100%" stop-color="#C9943A" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="gl2" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#4a7c59" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#4a7c59" stop-opacity="0"/>
+    <radialGradient id="gg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3D7A4A" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3D7A4A" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="candle" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#E8B84B" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#E8B84B" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="blur1"><feGaussianBlur stdDeviation="32"/></filter>
-    <filter id="blur2"><feGaussianBlur stdDeviation="18"/></filter>
-    <filter id="blur3"><feGaussianBlur stdDeviation="8"/></filter>
-    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="f1"><feGaussianBlur stdDeviation="42"/></filter>
+    <filter id="f2"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="f3"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="fg"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
 
   <rect width="600" height="400" fill="url(#bg)"/>
-  <ellipse cx="290" cy="220" rx="240" ry="195" fill="url(#gl1)" filter="url(#blur1)"/>
-  <ellipse cx="150" cy="310" rx="150" ry="110" fill="url(#gl2)" filter="url(#blur2)"/>
+  <!-- Main candle atmosphere glow -->
+  <ellipse cx="440" cy="188" rx="180" ry="200" fill="url(#candle-glow)" filter="url(#f1)"/>
+  <!-- Dragon-side cool glow -->
+  <ellipse cx="150" cy="290" rx="140" ry="120" fill="url(#gg)" filter="url(#f2)"/>
 
-  <!-- CANDLE (right side) -->
+  <!-- WRITING DESK surface -->
+  <rect x="80" y="284" width="440" height="18" rx="3" fill="#1e1608"/>
+  <rect x="80" y="300" width="440" height="7" rx="2" fill="#120e04"/>
+  <rect x="108" y="307" width="12" height="65" rx="2" fill="#1e1608"/>
+  <rect x="480" y="307" width="12" height="65" rx="2" fill="#1e1608"/>
+  <!-- Warm candle pool on desk surface -->
+  <ellipse cx="440" cy="288" rx="160" ry="14" fill="#E8B84B" fill-opacity="0.1" filter="url(#f2)"/>
+
+  <!-- CANDLE STICK BASE -->
+  <ellipse cx="442" cy="282" rx="20" ry="6" fill="#2a1a08"/>
+  <rect x="430" y="254" width="24" height="30" rx="4" fill="#221408"/>
+  <ellipse cx="442" cy="253" rx="22" ry="7" fill="#2a1a08"/>
   <!-- Candle body -->
-  <rect x="470" y="195" width="20" height="74" rx="4" fill="#DEC991" opacity="0.8"/>
-  <!-- Wax drips -->
-  <path d="M472 200 C470 210 468 215 470 220 L472 220 Z" fill="#E8D5A0" opacity="0.5"/>
-  <path d="M486 205 C488 215 490 220 488 226 L486 226 Z" fill="#E8D5A0" opacity="0.4"/>
+  <rect x="432" y="176" width="20" height="80" rx="5" fill="#DEC991" opacity="0.85"/>
+  <!-- Wax drip left -->
+  <path d="M434 190 C431 202 429 210 432 218 L434 218 Z" fill="#E8D5A0" opacity="0.5"/>
+  <!-- Wax drip right -->
+  <path d="M450 196 C453 208 455 216 452 224 L450 224 Z" fill="#E8D5A0" opacity="0.45"/>
   <!-- Wick -->
-  <line x1="480" y1="195" x2="480" y2="183" stroke="#2a1a0a" stroke-width="2"/>
-  <!-- Flame outer -->
-  <path d="M474 183 C472 172 476 162 480 158 C484 162 488 172 486 183 Z" fill="#E8B84B" opacity="0.6" filter="url(#blur3)"/>
-  <!-- Flame inner -->
-  <path d="M477 183 C476 175 478 168 480 164 C482 168 484 175 483 183 Z" fill="#fff5d0" opacity="0.9"/>
-  <!-- Flame glow -->
-  <circle cx="480" cy="172" r="28" fill="url(#candle)" filter="url(#blur1)"/>
-  <circle cx="480" cy="172" r="14" fill="#E8B84B" opacity="0.2" filter="url(#blur3)"/>
+  <line x1="442" y1="176" x2="442" y2="163" stroke="#1a1008" stroke-width="2.5"/>
+  <!-- Flame outer (blurred) -->
+  <path d="M434 162 C431 148 436 136 442 130 C448 136 453 148 450 162 Z" fill="#E8B84B" opacity="0.65" filter="url(#f3)"/>
+  <!-- Flame inner (sharp) -->
+  <path d="M437 162 C436 151 439 142 442 137 C445 142 448 151 447 162 Z" fill="#FFF5CC" opacity="0.92"/>
+  <!-- Flame core -->
+  <ellipse cx="442" cy="155" rx="3" ry="5" fill="#fff" opacity="0.7"/>
+  <!-- Large candle glow (atmosphere) -->
+  <circle cx="442" cy="148" rx="75" ry="75" fill="#E8B84B" opacity="0.18" filter="url(#f2)"/>
 
-  <!-- Candlestick base -->
-  <ellipse cx="480" cy="270" rx="18" ry="6" fill="#3a2a10"/>
-  <rect x="472" y="248" width="16" height="22" rx="3" fill="#2a1a08"/>
-  <ellipse cx="480" cy="248" rx="20" ry="7" fill="#3a2a10"/>
+  <!-- STACKED BOOKS (left side) -->
+  <!-- Book 1 (bottom, largest, dark teal) -->
+  <rect x="106" y="228" width="76" height="56" rx="3" fill="#0e1410"/>
+  <rect x="106" y="228" width="76" height="9" rx="2" fill="#162010"/>
+  <rect x="106" y="232" width="76" height="3" rx="1" fill="#2d6a2d" opacity="0.45"/>
+  <!-- Book 2 (middle, dark red) -->
+  <rect x="110" y="184" width="70" height="46" rx="3" fill="#140a08"/>
+  <rect x="110" y="184" width="70" height="8" rx="2" fill="#1e0e0a"/>
+  <rect x="110" y="188" width="70" height="3" rx="1" fill="#8B1A1A" opacity="0.45"/>
+  <!-- Bookmark ribbon -->
+  <rect x="162" y="184" width="4" height="34" rx="1" fill="#8B1A1A" opacity="0.75"/>
+  <!-- Book 3 (top, thin, navy) -->
+  <rect x="114" y="162" width="66" height="24" rx="2" fill="#0a0e18"/>
+  <rect x="114" y="162" width="66" height="6" rx="2" fill="#0e1428"/>
+  <rect x="114" y="165" width="66" height="2" rx="1" fill="#1a3a6a" opacity="0.5"/>
 
-  <!-- WRITING DESK -->
-  <rect x="110" y="268" width="480" height="14" rx="3" fill="#2a1f0a"/>
-  <rect x="110" y="276" width="480" height="8" rx="2" fill="#1a1205" opacity="0.8"/>
-  <rect x="138" y="284" width="10" height="70" rx="2" fill="#2a1f0a"/>
-  <rect x="548" y="284" width="10" height="70" rx="2" fill="#2a1f0a"/>
-  <!-- Warm light pool on desk -->
-  <ellipse cx="350" cy="272" rx="200" ry="18" fill="#E8B84B" fill-opacity="0.07" filter="url(#blur2)"/>
-
-  <!-- BOOKS stacked (left side) -->
-  <!-- Book 1 (bottom, largest) -->
-  <rect x="120" y="222" width="70" height="46" rx="3" fill="#1a1208"/>
-  <rect x="120" y="222" width="70" height="6" rx="3" fill="#2a1f0a"/>
-  <rect x="120" y="226" width="70" height="2" rx="1" fill="#C9943A" opacity="0.3"/>
-  <!-- Book 2 -->
-  <rect x="124" y="184" width="66" height="40" rx="3" fill="#14100a"/>
-  <rect x="124" y="184" width="66" height="6" rx="2" fill="#241a0c"/>
-  <rect x="124" y="188" width="66" height="2" rx="1" fill="#8B1A1A" opacity="0.4"/>
-  <!-- Book 3 (top, thin) -->
-  <rect x="128" y="166" width="60" height="20" rx="2" fill="#10140a"/>
-  <rect x="128" y="166" width="60" height="4" rx="2" fill="#1a2010"/>
-  <rect x="128" y="169" width="60" height="1.5" rx="1" fill="#2d6a2d" opacity="0.5"/>
-  <!-- Bookmarker ribbon -->
-  <rect x="172" y="166" width="3" height="28" rx="1" fill="#8B1A1A" opacity="0.7"/>
-
-  <!-- INK BOTTLE -->
-  <ellipse cx="224" cy="266" rx="12" ry="5" fill="#2a1a0a" opacity="0.9"/>
-  <rect x="213" y="236" width="22" height="30" rx="5" fill="#1a1408" opacity="0.9"/>
-  <rect x="216" y="232" width="16" height="8" rx="3" fill="#2a1e0a" opacity="0.9"/>
-  <ellipse cx="224" cy="238" rx="8" ry="4" fill="#1a1408" opacity="0.7"/>
-  <!-- Ink surface reflection -->
-  <ellipse cx="224" cy="246" rx="7" ry="3" fill="#C9943A" opacity="0.12"/>
-
-  <!-- SCROLL / LETTER (center, on desk) -->
+  <!-- SCROLL (center, main focal element) -->
   <!-- Scroll shadow -->
-  <ellipse cx="330" cy="268" rx="90" ry="10" fill="#000" opacity="0.25"/>
-  <!-- Scroll body (unrolled parchment) -->
-  <rect x="248" y="168" width="168" height="100" rx="4" fill="#EDD99A"/>
-  <!-- Parchment texture shadow/age -->
-  <rect x="248" y="168" width="168" height="100" rx="4" fill="#8B6914" opacity="0.08"/>
-  <!-- Scroll ends (rolled) -->
-  <ellipse cx="248" cy="218" rx="8" ry="50" fill="#D4C07A"/>
-  <ellipse cx="416" cy="218" rx="8" ry="50" fill="#D4C07A"/>
-  <!-- Scroll inner shadow -->
-  <rect x="256" y="170" width="152" height="96" rx="2" fill="#C9A85C" opacity="0.08"/>
-  <!-- Writing lines on scroll -->
-  <line x1="266" y1="188" x2="398" y2="188" stroke="#8B6914" stroke-width="1" opacity="0.35"/>
-  <line x1="266" y1="200" x2="398" y2="200" stroke="#8B6914" stroke-width="1" opacity="0.3"/>
-  <line x1="266" y1="212" x2="398" y2="212" stroke="#8B6914" stroke-width="1" opacity="0.3"/>
-  <line x1="266" y1="224" x2="398" y2="224" stroke="#8B6914" stroke-width="1" opacity="0.3"/>
-  <line x1="266" y1="236" x2="360" y2="236" stroke="#8B6914" stroke-width="1" opacity="0.25"/>
-  <!-- Title on scroll -->
-  <text x="332" y="183" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#5a3808" opacity="0.7" letter-spacing="1">7 DNÍ U ŠTĚTCE</text>
-  <!-- Wax seal on scroll -->
-  <circle cx="358" cy="248" r="10" fill="#8B1A1A" opacity="0.8"/>
-  <circle cx="358" cy="248" r="7" fill="none" stroke="#C9943A" stroke-width="0.8" opacity="0.6"/>
-  <path d="M354 248 L358 242 L362 248 L358 254 Z" fill="#C9943A" opacity="0.5"/>
+  <ellipse cx="308" cy="282" rx="98" ry="10" fill="#000" opacity="0.3"/>
+  <!-- Scroll body (parchment) -->
+  <rect x="220" y="168" width="176" height="116" rx="5" fill="#EDD99A"/>
+  <!-- Parchment age tint -->
+  <rect x="220" y="168" width="176" height="116" rx="5" fill="#8B6914" opacity="0.1"/>
+  <!-- Rolled scroll ends -->
+  <ellipse cx="220" cy="226" rx="10" ry="58" fill="#D4C07A"/>
+  <ellipse cx="396" cy="226" rx="10" ry="58" fill="#D4C07A"/>
+  <!-- Inner shadow (depth) -->
+  <rect x="230" y="170" width="156" height="112" rx="3" fill="#C9A85C" opacity="0.1"/>
+  <!-- Horizontal guide lines on scroll -->
+  <line x1="240" y1="190" x2="376" y2="190" stroke="#8B6914" stroke-width="1" opacity="0.3"/>
+  <line x1="240" y1="206" x2="376" y2="206" stroke="#8B6914" stroke-width="1" opacity="0.25"/>
+  <line x1="240" y1="222" x2="376" y2="222" stroke="#8B6914" stroke-width="1" opacity="0.25"/>
+  <line x1="240" y1="238" x2="376" y2="238" stroke="#8B6914" stroke-width="1" opacity="0.25"/>
+  <line x1="240" y1="254" x2="340" y2="254" stroke="#8B6914" stroke-width="1" opacity="0.2"/>
+  <!-- Title text on scroll -->
+  <text x="308" y="187" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#4a2a08" opacity="0.75" letter-spacing="2" font-weight="bold">7 DNÍ U ŠTĚTCE</text>
+  <!-- Subtitle hint -->
+  <text x="308" y="203" text-anchor="middle" font-family="Georgia,serif" font-size="7.5" fill="#6a4010" opacity="0.5" letter-spacing="1">každý den jeden krok</text>
+  <!-- Decorative line under title -->
+  <line x1="258" y1="193" x2="358" y2="193" stroke="#8B6914" stroke-width="1" opacity="0.4"/>
+  <!-- Wavy writing (3 lines) -->
+  <path d="M248 214 C260 212 272 216 284 213 C296 210 308 214 320 212 C332 210 344 213 358 211" stroke="#8B6914" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.35"/>
+  <path d="M248 228 C262 226 274 230 286 227 C298 224 310 228 322 226 C334 224 346 227 358 225" stroke="#8B6914" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.3"/>
+  <path d="M248 242 C264 240 276 244 288 241 C300 238 312 242 324 240 C336 238 346 241 358 239" stroke="#8B6914" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.25"/>
+  <!-- Wax seal -->
+  <circle cx="360" cy="262" r="13" fill="#7D2128" opacity="0.85"/>
+  <circle cx="360" cy="262" r="9" fill="none" stroke="#C9943A" stroke-width="1" opacity="0.65"/>
+  <path d="M355 262 L360 254 L365 262 L360 270 Z" fill="#C9943A" opacity="0.55"/>
 
   <!-- QUILL PEN (diagonal on scroll) -->
-  <g transform="rotate(-28 300 232)">
-    <path d="M268 232 C285 220 308 218 320 228 C310 240 288 242 272 238 Z" fill="#E8D5A0" opacity="0.85"/>
-    <line x1="320" y1="228" x2="268" y2="235" stroke="#8B6914" stroke-width="1.5" opacity="0.7"/>
-    <path d="M268 233 L256 237 L263 245 Z" fill="#6a5010" opacity="0.75"/>
-    <line x1="256" y1="237" x2="263" y2="244" stroke="#C9943A" stroke-width="0.8" opacity="0.5"/>
+  <g transform="rotate(-32 308 240)">
+    <path d="M266 240 C285 226 312 224 325 236 C312 250 286 252 270 246 Z" fill="#E8D5A0" opacity="0.88"/>
+    <line x1="325" y1="236" x2="268" y2="244" stroke="#8B6914" stroke-width="1.5" opacity="0.65"/>
+    <path d="M268 244 L253 249 L261 259 Z" fill="#6a5010" opacity="0.78"/>
+    <line x1="253" y1="249" x2="261" y2="258" stroke="#C9943A" stroke-width="1" opacity="0.5"/>
   </g>
 
-  <!-- GREEN DRAGON COMPANION (right of scroll, watching) -->
-  <path d="M434 240 C428 224 431 212 441 208 C451 204 461 210 462 222 C463 234 458 244 447 248 C440 250 434 246 434 240 Z" fill="#1a4a2a" opacity="0.9"/>
-  <path d="M461 222 C474 213 490 210 495 220 C484 228 466 226 463 223 Z" fill="#1a3a20" opacity="0.7"/>
-  <path d="M434 220 C420 212 404 210 399 220 C410 227 428 225 432 222 Z" fill="#1a3a20" opacity="0.7"/>
-  <path d="M430 209 C426 200 430 192 439 190 C448 188 455 194 453 203 C451 211 444 213 439 212 Z" fill="#246030" opacity="0.9"/>
-  <!-- Dragon eye (gleaming, looking at scroll) -->
-  <ellipse cx="443" cy="198" rx="5" ry="4" fill="#E8B84B" opacity="0.9"/>
-  <ellipse cx="443" cy="198" rx="2" ry="3" fill="#0a0a0a"/>
-  <circle cx="443" cy="198" r="8" fill="#E8B84B" opacity="0.16" filter="url(#blur2)"/>
+  <!-- INK BOTTLE (right of books) -->
+  <ellipse cx="202" cy="280" rx="14" ry="5" fill="#1a1008" opacity="0.9"/>
+  <rect x="188" y="244" width="28" height="36" rx="6" fill="#12100a" opacity="0.92"/>
+  <rect x="192" y="238" width="20" height="10" rx="4" fill="#1a1808" opacity="0.9"/>
+  <ellipse cx="202" cy="248" rx="10" ry="4" fill="#12100a" opacity="0.8"/>
+  <ellipse cx="202" cy="254" rx="8" ry="3" fill="#C9943A" opacity="0.1"/>
+
+  <!-- DRAGON (small, upper left, watching scroll) -->
+  <path d="M156 228 C149 210 153 196 164 192 C175 188 186 196 187 209 C188 222 182 233 170 237 C163 239 156 234 156 228 Z" fill="#1a4a2a" opacity="0.9"/>
+  <path d="M186 209 C197 200 212 198 216 208 C205 215 190 213 187 211 Z" fill="#153a20" opacity="0.7"/>
+  <path d="M156 212 C145 204 130 203 126 212 C137 219 153 217 155 214 Z" fill="#153a20" opacity="0.7"/>
+  <path d="M152 192 C148 182 152 174 162 172 C172 170 179 176 178 186 C177 193 170 196 164 195 Z" fill="#246030" opacity="0.9"/>
+  <!-- Dragon eye (looking at scroll) -->
+  <ellipse cx="166" cy="180" rx="6" ry="5" fill="#E8B84B" opacity="0.96" filter="url(#fg)"/>
+  <ellipse cx="166" cy="180" rx="2.5" ry="3.5" fill="#080506"/>
+  <circle cx="166" cy="180" r="11" fill="#E8B84B" opacity="0.22" filter="url(#f2)"/>
   <!-- Dragon tail -->
-  <path d="M445 248 C449 258 443 268 436 270 C432 262 434 252 440 247 Z" fill="#1a4a2a" opacity="0.8"/>
-  <!-- Dragon claws on desk -->
-  <path d="M434 240 C430 244 426 246 424 241" stroke="#3a6a3a" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M163 233 C168 247 161 260 153 261 C149 251 152 240 158 235 Z" fill="#1a4a2a" opacity="0.8"/>
 
   <!-- Scattered ink drops -->
-  <circle cx="234" cy="263" r="2" fill="#1a1408" opacity="0.8"/>
-  <circle cx="242" cy="260" r="1.5" fill="#1a1408" opacity="0.6"/>
-  <circle cx="230" cy="267" r="1" fill="#C9943A" opacity="0.4"/>
+  <circle cx="214" cy="278" r="2.5" fill="#12100a" opacity="0.85"/>
+  <circle cx="222" cy="274" r="2" fill="#12100a" opacity="0.65"/>
+  <circle cx="209" cy="272" r="1.5" fill="#C9943A" opacity="0.35"/>
 
-  <!-- Floating particles / dust in candle light -->
-  <circle cx="390" cy="178" r="1.5" fill="#E8B84B" opacity="0.6"/>
-  <circle cx="425" cy="155" r="1" fill="#E8B84B" opacity="0.45"/>
-  <circle cx="460" cy="190" r="1.5" fill="#E8B84B" opacity="0.4"/>
-  <circle cx="410" cy="210" r="1" fill="#C9943A" opacity="0.4"/>
-  <circle cx="350" cy="145" r="1.5" fill="#E8B84B" opacity="0.3"/>
-  <circle cx="310" cy="162" r="1" fill="#E8B84B" opacity="0.35"/>
+  <!-- Floating particles (in candle light) -->
+  <circle cx="378" cy="168" r="1.5" fill="#E8B84B" opacity="0.6"/>
+  <circle cx="416" cy="140" r="1" fill="#E8B84B" opacity="0.5"/>
+  <circle cx="462" cy="172" r="1.5" fill="#E8B84B" opacity="0.42"/>
+  <circle cx="400" cy="204" r="1" fill="#C9943A" opacity="0.4"/>
+  <circle cx="340" cy="138" r="1.5" fill="#E8B84B" opacity="0.32"/>
+  <circle cx="300" cy="156" r="1" fill="#E8B84B" opacity="0.3"/>
 </svg>

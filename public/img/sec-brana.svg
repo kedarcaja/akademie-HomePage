@@ -1,128 +1,129 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="55%" r="70%">
+    <radialGradient id="bg" cx="50%" cy="52%" r="72%">
       <stop offset="0%" stop-color="#0e1208"/>
-      <stop offset="100%" stop-color="#060808"/>
+      <stop offset="100%" stop-color="#050708"/>
     </radialGradient>
-    <radialGradient id="gl" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#C9943A" stop-opacity="0.3"/>
+    <radialGradient id="arch-glow" cx="50%" cy="60%" r="55%">
+      <stop offset="0%" stop-color="#C9943A" stop-opacity="0.38"/>
+      <stop offset="60%" stop-color="#C9943A" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#C9943A" stop-opacity="0"/>
     </radialGradient>
-    <filter id="blur1"><feGaussianBlur stdDeviation="35"/></filter>
-    <filter id="blur2"><feGaussianBlur stdDeviation="16"/></filter>
-    <filter id="blur3"><feGaussianBlur stdDeviation="8"/></filter>
-    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="f1"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="f2"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="f3"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="fg"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
 
   <rect width="600" height="400" fill="url(#bg)"/>
-  <ellipse cx="300" cy="220" rx="155" ry="210" fill="url(#gl)" filter="url(#blur1)"/>
+
+  <!-- Arch glow (interior) -->
+  <ellipse cx="300" cy="250" rx="120" ry="190" fill="url(#arch-glow)" filter="url(#f1)"/>
 
   <!-- LEFT PILLAR -->
-  <rect x="186" y="80" width="64" height="290" rx="4" fill="#24200e"/>
-  <line x1="188" y1="106" x2="248" y2="106" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="188" y1="132" x2="248" y2="132" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="188" y1="158" x2="248" y2="158" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="188" y1="184" x2="248" y2="184" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="188" y1="210" x2="248" y2="210" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="188" y1="236" x2="248" y2="236" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="188" y1="262" x2="248" y2="262" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="188" y1="288" x2="248" y2="288" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="188" y1="314" x2="248" y2="314" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="188" y1="340" x2="248" y2="340" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="249" y1="80" x2="249" y2="370" stroke="#C9943A" stroke-opacity="0.14" stroke-width="2"/>
-  <!-- Left rune marks -->
-  <rect x="205" y="136" width="18" height="2" rx="1" fill="#C9943A" opacity="0.25"/>
-  <rect x="201" y="142" width="26" height="1.5" rx="1" fill="#C9943A" opacity="0.18"/>
-  <rect x="205" y="240" width="18" height="2" rx="1" fill="#C9943A" opacity="0.22"/>
-  <rect x="201" y="246" width="26" height="1.5" rx="1" fill="#C9943A" opacity="0.16"/>
+  <rect x="168" y="70" width="78" height="310" rx="4" fill="#20180a"/>
+  <!-- Pillar stone lines -->
+  <line x1="170" y1="100" x2="244" y2="100" stroke="#160e04" stroke-width="2" opacity="0.9"/>
+  <line x1="170" y1="132" x2="244" y2="132" stroke="#2c2010" stroke-width="1" opacity="0.7"/>
+  <line x1="170" y1="164" x2="244" y2="164" stroke="#160e04" stroke-width="2" opacity="0.9"/>
+  <line x1="170" y1="196" x2="244" y2="196" stroke="#2c2010" stroke-width="1" opacity="0.7"/>
+  <line x1="170" y1="228" x2="244" y2="228" stroke="#160e04" stroke-width="2" opacity="0.9"/>
+  <line x1="170" y1="260" x2="244" y2="260" stroke="#2c2010" stroke-width="1" opacity="0.7"/>
+  <line x1="170" y1="292" x2="244" y2="292" stroke="#160e04" stroke-width="2" opacity="0.9"/>
+  <line x1="170" y1="324" x2="244" y2="324" stroke="#2c2010" stroke-width="1" opacity="0.7"/>
+  <!-- Left gold edge -->
+  <rect x="244" y="70" width="2" height="310" rx="1" fill="#C9943A" fill-opacity="0.18"/>
+  <!-- Left runes -->
+  <rect x="190" y="130" width="22" height="3" rx="1" fill="#C9943A" opacity="0.3"/>
+  <rect x="186" y="137" width="30" height="2" rx="1" fill="#C9943A" opacity="0.22"/>
+  <rect x="190" y="248" width="22" height="3" rx="1" fill="#C9943A" opacity="0.28"/>
+  <rect x="186" y="255" width="30" height="2" rx="1" fill="#C9943A" opacity="0.2"/>
 
   <!-- RIGHT PILLAR -->
-  <rect x="350" y="80" width="64" height="290" rx="4" fill="#24200e"/>
-  <line x1="352" y1="106" x2="412" y2="106" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="352" y1="132" x2="412" y2="132" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="352" y1="158" x2="412" y2="158" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="352" y1="184" x2="412" y2="184" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="352" y1="210" x2="412" y2="210" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="352" y1="236" x2="412" y2="236" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="352" y1="262" x2="412" y2="262" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="352" y1="288" x2="412" y2="288" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="352" y1="314" x2="412" y2="314" stroke="#181408" stroke-width="1" opacity="0.8"/>
-  <line x1="352" y1="340" x2="412" y2="340" stroke="#2e2a14" stroke-width="1" opacity="0.8"/>
-  <line x1="351" y1="80" x2="351" y2="370" stroke="#C9943A" stroke-opacity="0.14" stroke-width="2"/>
-  <rect x="377" y="136" width="18" height="2" rx="1" fill="#C9943A" opacity="0.22"/>
-  <rect x="373" y="142" width="26" height="1.5" rx="1" fill="#C9943A" opacity="0.16"/>
-  <rect x="377" y="240" width="18" height="2" rx="1" fill="#C9943A" opacity="0.25"/>
-  <rect x="373" y="246" width="26" height="1.5" rx="1" fill="#C9943A" opacity="0.18"/>
+  <rect x="354" y="70" width="78" height="310" rx="4" fill="#20180a"/>
+  <line x1="356" y1="100" x2="430" y2="100" stroke="#160e04" stroke-width="2" opacity="0.9"/>
+  <line x1="356" y1="132" x2="430" y2="132" stroke="#2c2010" stroke-width="1" opacity="0.7"/>
+  <line x1="356" y1="164" x2="430" y2="164" stroke="#160e04" stroke-width="2" opacity="0.9"/>
+  <line x1="356" y1="196" x2="430" y2="196" stroke="#2c2010" stroke-width="1" opacity="0.7"/>
+  <line x1="356" y1="228" x2="430" y2="228" stroke="#160e04" stroke-width="2" opacity="0.9"/>
+  <line x1="356" y1="260" x2="430" y2="260" stroke="#2c2010" stroke-width="1" opacity="0.7"/>
+  <line x1="356" y1="292" x2="430" y2="292" stroke="#160e04" stroke-width="2" opacity="0.9"/>
+  <line x1="356" y1="324" x2="430" y2="324" stroke="#2c2010" stroke-width="1" opacity="0.7"/>
+  <rect x="354" y="70" width="2" height="310" rx="1" fill="#C9943A" fill-opacity="0.18"/>
+  <rect x="378" y="130" width="22" height="3" rx="1" fill="#C9943A" opacity="0.28"/>
+  <rect x="374" y="137" width="30" height="2" rx="1" fill="#C9943A" opacity="0.2"/>
+  <rect x="378" y="248" width="22" height="3" rx="1" fill="#C9943A" opacity="0.3"/>
+  <rect x="374" y="255" width="30" height="2" rx="1" fill="#C9943A" opacity="0.22"/>
 
-  <!-- GOTHIC ARCH CROWN - left stone -->
-  <path d="M186 80 Q 246 36 300 30 L 300 52 Q 258 58 222 80 Z" fill="#24200e"/>
-  <!-- Right stone -->
-  <path d="M414 80 Q 354 36 300 30 L 300 52 Q 342 58 378 80 Z" fill="#24200e"/>
-  <!-- Keystone at peak -->
-  <path d="M288 32 L300 18 L312 32 L306 46 L300 38 L294 46 Z" fill="#2e2810"/>
-  <!-- Inner arch curve highlight -->
-  <path d="M254 80 Q 278 54 300 46 Q 322 54 346 80" fill="none" stroke="#C9943A" stroke-opacity="0.18" stroke-width="1.5"/>
+  <!-- ARCH CROWN (gothic pointed) -->
+  <!-- Left arch stone -->
+  <path d="M168 70 Q 240 24 300 18 L300 44 Q 252 50 216 70 Z" fill="#20180a"/>
+  <!-- Right arch stone -->
+  <path d="M432 70 Q 360 24 300 18 L300 44 Q 348 50 384 70 Z" fill="#20180a"/>
+  <!-- Keystone -->
+  <path d="M287 20 L300 6 L313 20 L307 36 L300 28 L293 36 Z" fill="#2a2010"/>
+  <!-- Inner arch edge -->
+  <path d="M248 70 Q 272 48 300 40 Q 328 48 352 70" fill="none" stroke="#C9943A" stroke-opacity="0.22" stroke-width="2"/>
 
-  <!-- Arch interior -->
-  <path d="M254 80 L254 370 L346 370 L346 80 Q 322 60 300 52 Q 278 60 254 80 Z" fill="#0a0c08" opacity="0.45"/>
-  <ellipse cx="300" cy="230" rx="62" ry="165" fill="#C9943A" opacity="0.07"/>
+  <!-- Arch interior (dark passage) -->
+  <path d="M246 70 L246 380 L354 380 L354 70 Q 328 52 300 44 Q 272 52 246 70 Z" fill="#08090C" opacity="0.55"/>
 
-  <!-- Light rays through arch -->
-  <path d="M274 50 L240 280 L360 280 L326 50" fill="#E8B84B" fill-opacity="0.025"/>
+  <!-- Interior warm light rays -->
+  <path d="M272 42 L236 300 L364 300 L328 42" fill="#E8B84B" fill-opacity="0.03"/>
+  <ellipse cx="300" cy="240" rx="55" ry="150" fill="#C9943A" fill-opacity="0.08"/>
 
   <!-- Ground mist -->
-  <ellipse cx="300" cy="368" rx="95" ry="15" fill="#C9943A" fill-opacity="0.12" filter="url(#blur3)"/>
+  <ellipse cx="300" cy="378" rx="92" ry="14" fill="#C9943A" fill-opacity="0.14" filter="url(#f3)"/>
 
-  <!-- DRAGON on arch peak (sitting, looking down) -->
-  <!-- Wings spread behind body -->
-  <path d="M310 38 C326 26 352 22 358 34 C346 42 324 40 312 36 Z" fill="#1a3a20" opacity="0.75"/>
-  <path d="M290 38 C274 26 248 22 242 34 C254 42 276 40 288 36 Z" fill="#1a3a20" opacity="0.75"/>
-  <line x1="312" y1="36" x2="354" y2="24" stroke="#2a5a30" stroke-opacity="0.5" stroke-width="1"/>
-  <line x1="288" y1="36" x2="246" y2="24" stroke="#2a5a30" stroke-opacity="0.5" stroke-width="1"/>
-  <!-- Body (sitting on keystone) -->
-  <path d="M282 42 C276 30 280 20 290 17 C300 14 312 18 313 30 C314 42 308 52 298 55 C290 57 283 50 282 42 Z" fill="#1a4a2a" opacity="0.9"/>
-  <!-- Head (looking toward viewer) -->
-  <path d="M280 18 C276 10 281 4 291 2 C301 0 307 6 305 16 C303 22 296 24 290 23 C285 22 280 20 280 18 Z" fill="#246030" opacity="0.9"/>
-  <!-- Dragon eye -->
-  <ellipse cx="294" cy="10" rx="5" ry="4" fill="#E8B84B" opacity="0.9" filter="url(#glow)"/>
-  <ellipse cx="294" cy="10" rx="2" ry="3" fill="#0a0a0a"/>
-  <!-- Tail curling down -->
-  <path d="M296 55 C300 65 294 75 286 76 C283 68 285 58 290 53 Z" fill="#1a4a2a" opacity="0.8"/>
+  <!-- DRAGON on arch peak -->
+  <!-- Wings -->
+  <path d="M312 40 C330 27 356 24 361 36 C348 44 325 42 314 38 Z" fill="#1a3a20" opacity="0.78"/>
+  <path d="M288 40 C270 27 244 24 239 36 C252 44 275 42 286 38 Z" fill="#1a3a20" opacity="0.78"/>
+  <!-- Body on keystone -->
+  <path d="M282 44 C276 32 280 22 290 19 C300 16 312 20 313 32 C314 44 308 54 298 57 C290 59 283 51 282 44 Z" fill="#1a4a2a" opacity="0.92"/>
+  <!-- Head -->
+  <path d="M280 20 C276 12 281 5 291 3 C301 1 308 7 306 17 C304 23 297 26 291 25 Z" fill="#246030" opacity="0.92"/>
+  <!-- Eye -->
+  <ellipse cx="294" cy="11" rx="6" ry="5" fill="#E8B84B" opacity="0.96" filter="url(#fg)"/>
+  <ellipse cx="294" cy="11" rx="2.5" ry="3.5" fill="#080506"/>
+  <circle cx="294" cy="11" r="11" fill="#E8B84B" opacity="0.22" filter="url(#f2)"/>
+  <!-- Tail -->
+  <path d="M296 57 C301 68 294 79 286 80 C283 71 286 60 291 55 Z" fill="#1a4a2a" opacity="0.82"/>
 
-  <!-- 4 Gateway orbs -->
-  <!-- Brána I – Green -->
-  <circle cx="162" cy="342" r="20" fill="#3D7A4A" opacity="0.12" filter="url(#blur3)"/>
-  <circle cx="162" cy="342" r="11" fill="#3D7A4A" opacity="0.8"/>
-  <circle cx="162" cy="342" r="14" fill="none" stroke="#5aaa6a" stroke-width="1.2" opacity="0.5"/>
-  <circle cx="158" cy="338" r="5" fill="#80e894" opacity="0.5"/>
-  <text x="162" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#5aaa6a" opacity="0.7" letter-spacing="1">I</text>
+  <!-- FOUR GATEWAY ORBS at base -->
+  <!-- I – Green -->
+  <circle cx="148" cy="348" r="22" fill="#3D7A4A" opacity="0.12" filter="url(#f3)"/>
+  <circle cx="148" cy="348" r="14" fill="#3D7A4A" opacity="0.82"/>
+  <circle cx="148" cy="348" r="18" fill="none" stroke="#5aaa6a" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="144" cy="344" r="6" fill="#80e894" opacity="0.45"/>
+  <text x="148" y="376" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#5aaa6a" opacity="0.75" letter-spacing="1">I</text>
 
-  <!-- Brána II – Gold -->
-  <circle cx="246" cy="358" r="20" fill="#C9943A" opacity="0.12" filter="url(#blur3)"/>
-  <circle cx="246" cy="358" r="11" fill="#C9943A" opacity="0.8"/>
-  <circle cx="246" cy="358" r="14" fill="none" stroke="#e8b840" stroke-width="1.2" opacity="0.5"/>
-  <circle cx="242" cy="354" r="5" fill="#ffe080" opacity="0.5"/>
-  <text x="246" y="386" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#e8b840" opacity="0.7" letter-spacing="1">II</text>
+  <!-- II – Gold -->
+  <circle cx="238" cy="364" r="22" fill="#C9943A" opacity="0.12" filter="url(#f3)"/>
+  <circle cx="238" cy="364" r="14" fill="#C9943A" opacity="0.82"/>
+  <circle cx="238" cy="364" r="18" fill="none" stroke="#e8b840" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="234" cy="360" r="6" fill="#ffe080" opacity="0.45"/>
+  <text x="238" y="392" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#e8b840" opacity="0.75" letter-spacing="1">II</text>
 
-  <!-- Brána III – Blue -->
-  <circle cx="354" cy="358" r="20" fill="#3A6B9A" opacity="0.12" filter="url(#blur3)"/>
-  <circle cx="354" cy="358" r="11" fill="#3A6B9A" opacity="0.8"/>
-  <circle cx="354" cy="358" r="14" fill="none" stroke="#5a9aca" stroke-width="1.2" opacity="0.5"/>
-  <circle cx="350" cy="354" r="5" fill="#90c8ff" opacity="0.5"/>
-  <text x="354" y="386" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#5a9aca" opacity="0.7" letter-spacing="1">III</text>
+  <!-- III – Blue -->
+  <circle cx="362" cy="364" r="22" fill="#3A6B9A" opacity="0.12" filter="url(#f3)"/>
+  <circle cx="362" cy="364" r="14" fill="#3A6B9A" opacity="0.82"/>
+  <circle cx="362" cy="364" r="18" fill="none" stroke="#5a9aca" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="358" cy="360" r="6" fill="#90c8ff" opacity="0.45"/>
+  <text x="362" y="392" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#5a9aca" opacity="0.75" letter-spacing="1">III</text>
 
-  <!-- Brána IV – Purple -->
-  <circle cx="438" cy="342" r="20" fill="#7A5A9A" opacity="0.12" filter="url(#blur3)"/>
-  <circle cx="438" cy="342" r="11" fill="#7A5A9A" opacity="0.8"/>
-  <circle cx="438" cy="342" r="14" fill="none" stroke="#9a7aca" stroke-width="1.2" opacity="0.5"/>
-  <circle cx="434" cy="338" r="5" fill="#d0a0ff" opacity="0.5"/>
-  <text x="438" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#9a7aca" opacity="0.7" letter-spacing="1">IV</text>
+  <!-- IV – Purple -->
+  <circle cx="452" cy="348" r="22" fill="#7A5A9A" opacity="0.12" filter="url(#f3)"/>
+  <circle cx="452" cy="348" r="14" fill="#7A5A9A" opacity="0.82"/>
+  <circle cx="452" cy="348" r="18" fill="none" stroke="#9a7aca" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="448" cy="344" r="6" fill="#d0a0ff" opacity="0.45"/>
+  <text x="452" y="376" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#9a7aca" opacity="0.75" letter-spacing="1">IV</text>
 
   <!-- Floating particles -->
-  <circle cx="278" cy="128" r="1.5" fill="#E8B84B" opacity="0.55"/>
-  <circle cx="319" cy="108" r="1" fill="#E8B84B" opacity="0.45"/>
-  <circle cx="344" cy="172" r="1.5" fill="#E8B84B" opacity="0.35"/>
-  <circle cx="263" cy="185" r="1" fill="#C9943A" opacity="0.4"/>
-  <circle cx="300" cy="295" r="1.5" fill="#E8B84B" opacity="0.3"/>
-  <circle cx="312" cy="322" r="1" fill="#C9943A" opacity="0.3"/>
+  <circle cx="276" cy="122" r="1.5" fill="#E8B84B" opacity="0.55"/>
+  <circle cx="320" cy="102" r="1" fill="#E8B84B" opacity="0.45"/>
+  <circle cx="346" cy="168" r="1.5" fill="#E8B84B" opacity="0.35"/>
+  <circle cx="262" cy="180" r="1" fill="#C9943A" opacity="0.4"/>
+  <circle cx="300" cy="292" r="1.5" fill="#E8B84B" opacity="0.3"/>
+  <circle cx="315" cy="320" r="1" fill="#C9943A" opacity="0.3"/>
 </svg>
