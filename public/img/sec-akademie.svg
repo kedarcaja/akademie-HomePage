@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <radialGradient id="bg" cx="52%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#1a1005"/>
+      <stop offset="100%" stop-color="#06080D"/>
+    </radialGradient>
+    <radialGradient id="gl1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C9943A" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#C9943A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gl2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4a7c59" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#4a7c59" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="32"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <ellipse cx="330" cy="190" rx="250" ry="200" fill="url(#gl1)" filter="url(#blur1)"/>
+  <ellipse cx="145" cy="315" rx="160" ry="125" fill="url(#gl2)" filter="url(#blur2)"/>
+
+  <!-- Lamp -->
+  <line x1="370" y1="0" x2="370" y2="112" stroke="#2a1a0a" stroke-width="2.5"/>
+  <path d="M340 112 L400 112 L388 146 L352 146 Z" fill="#2a1a0a"/>
+  <path d="M346 146 L200 262 L544 262 L556 146 Z" fill="#E8B84B" fill-opacity="0.04"/>
+  <ellipse cx="370" cy="146" rx="38" ry="7" fill="#E8B84B" fill-opacity="0.18"/>
+
+  <!-- Background shelf -->
+  <rect x="382" y="40" width="196" height="6" rx="2" fill="#2a1f0a" opacity="0.7"/>
+  <rect x="382" y="98" width="196" height="6" rx="2" fill="#2a1f0a" opacity="0.7"/>
+  <rect x="396" y="48" width="10" height="46" rx="3" fill="#8B1A1A" opacity="0.8"/>
+  <rect x="414" y="54" width="9" height="39" rx="3" fill="#1a3a6a" opacity="0.8"/>
+  <rect x="430" y="46" width="12" height="47" rx="3" fill="#2d6a2d" opacity="0.8"/>
+  <rect x="450" y="52" width="8" height="41" rx="3" fill="#C9943A" opacity="0.7"/>
+  <rect x="466" y="44" width="10" height="49" rx="3" fill="#4a1a6a" opacity="0.8"/>
+  <ellipse cx="512" cy="97" rx="8" ry="3" fill="#3a2a10" opacity="0.6"/>
+  <rect x="506" y="76" width="12" height="21" rx="2" fill="#5a3a1a" opacity="0.8"/>
+  <ellipse cx="512" cy="74" rx="7" ry="8" fill="#4a3020" opacity="0.8"/>
+
+  <!-- Workbench -->
+  <rect x="118" y="262" width="464" height="14" rx="3" fill="#2a1f0a"/>
+  <rect x="118" y="270" width="464" height="8" rx="2" fill="#1a1205" opacity="0.8"/>
+  <rect x="146" y="278" width="10" height="66" rx="2" fill="#2a1f0a"/>
+  <rect x="540" y="278" width="10" height="66" rx="2" fill="#2a1f0a"/>
+  <ellipse cx="350" cy="266" rx="185" ry="16" fill="#E8B84B" fill-opacity="0.06" filter="url(#blur2)"/>
+
+  <!-- Brushes jar -->
+  <ellipse cx="178" cy="260" rx="13" ry="5" fill="#2a1a0a" opacity="0.8"/>
+  <rect x="165" y="230" width="26" height="30" rx="4" fill="#3a2a10" opacity="0.8"/>
+  <line x1="172" y1="230" x2="168" y2="198" stroke="#8B6914" stroke-width="2.5" opacity="0.85"/>
+  <line x1="178" y1="230" x2="178" y2="196" stroke="#a08020" stroke-width="2.5" opacity="0.85"/>
+  <line x1="184" y1="230" x2="188" y2="199" stroke="#6a5010" stroke-width="2.5" opacity="0.85"/>
+  <ellipse cx="168" cy="198" rx="4" ry="7" fill="#C9943A" opacity="0.65"/>
+  <ellipse cx="178" cy="196" rx="4" ry="7" fill="#8B4513" opacity="0.65"/>
+  <ellipse cx="188" cy="199" rx="4" ry="7" fill="#C9943A" opacity="0.5"/>
+
+  <!-- Paint palette -->
+  <ellipse cx="248" cy="254" rx="50" ry="22" fill="#2a1f0a"/>
+  <ellipse cx="248" cy="252" rx="47" ry="20" fill="#1a1405"/>
+  <circle cx="224" cy="244" r="6" fill="#8B1A1A" opacity="0.9"/>
+  <circle cx="240" cy="242" r="6" fill="#1a3a6a" opacity="0.9"/>
+  <circle cx="256" cy="242" r="6" fill="#2d6a2d" opacity="0.9"/>
+  <circle cx="270" cy="246" r="6" fill="#C9943A" opacity="0.9"/>
+  <circle cx="262" cy="258" r="6" fill="#4a1a6a" opacity="0.9"/>
+
+  <!-- Paint tubes -->
+  <rect x="140" y="250" width="28" height="10" rx="4" fill="#8B1A1A" opacity="0.8"/>
+  <rect x="140" y="247" width="7" height="5" rx="1" fill="#5a0a0a" opacity="0.9"/>
+
+  <!-- MAIN KNIGHT FIGURINE on stand -->
+  <ellipse cx="390" cy="258" rx="22" ry="7" fill="#3a2a10"/>
+  <rect x="383" y="238" width="14" height="22" rx="2" fill="#2a1a08"/>
+  <path d="M372 220 C372 202 378 188 390 184 C402 188 408 202 408 220 L406 258 L374 258 Z" fill="#4a3820" opacity="0.95"/>
+  <path d="M382 228 C382 218 386 212 390 210 C394 212 398 218 398 228 L396 250 L384 250 Z" fill="#6a5430" opacity="0.8"/>
+  <path d="M372 224 L408 224" stroke="#C9943A" stroke-width="2" opacity="0.7"/>
+  <path d="M374 236 L406 236" stroke="#C9943A" stroke-width="1.5" opacity="0.5"/>
+  <path d="M372 204 C365 214 360 234 364 258 L374 258 L375 220 Z" fill="#8B1A1A" opacity="0.85"/>
+  <path d="M408 204 C415 214 420 234 416 258 L406 258 L405 220 Z" fill="#8B1A1A" opacity="0.85"/>
+  <ellipse cx="390" cy="180" rx="15" ry="17" fill="#5a4820"/>
+  <rect x="381" y="176" width="18" height="8" rx="2" fill="#2a2010" opacity="0.9"/>
+  <line x1="382" y1="180" x2="398" y2="180" stroke="#C9943A" stroke-opacity="0.4" stroke-width="1"/>
+  <rect x="408" y="158" width="6" height="82" rx="2" fill="#8a8070" opacity="0.85"/>
+  <rect x="403" y="194" width="16" height="5" rx="1" fill="#C9943A" opacity="0.8"/>
+  <circle cx="386" cy="222" r="3" fill="#E8D5A3" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="396" cy="215" r="2" fill="#E8D5A3" opacity="0.4"/>
+
+  <!-- Green dragon companion watching from right -->
+  <path d="M474 240 C468 224 471 210 482 206 C493 202 504 208 506 220 C508 232 502 244 490 248 C482 250 476 246 474 240 Z" fill="#1a4a2a" opacity="0.9"/>
+  <path d="M504 220 C518 210 535 207 541 217 C530 225 513 223 506 221 Z" fill="#1a3a20" opacity="0.75"/>
+  <path d="M474 218 C458 209 441 208 436 218 C447 224 466 223 472 220 Z" fill="#1a3a20" opacity="0.75"/>
+  <line x1="506" y1="221" x2="538" y2="209" stroke="#2a5a30" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="472" y1="220" x2="440" y2="210" stroke="#2a5a30" stroke-opacity="0.5" stroke-width="1"/>
+  <path d="M469 206 C464 196 469 189 478 187 C488 185 495 191 494 201 C492 209 484 211 478 211 C473 211 469 209 469 206 Z" fill="#246030" opacity="0.9"/>
+  <ellipse cx="482" cy="196" rx="5" ry="4" fill="#E8B84B" opacity="0.9"/>
+  <ellipse cx="482" cy="196" rx="2" ry="3" fill="#0a0a0a"/>
+  <circle cx="482" cy="196" r="8" fill="#E8B84B" opacity="0.14" filter="url(#blur2)"/>
+  <path d="M480 244 C484 255 477 265 470 266 C466 258 469 246 475 242 Z" fill="#1a4a2a" opacity="0.8"/>
+  <path d="M473 239 C469 243 465 245 463 240" stroke="#3a6a3a" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Scattered paint drops -->
+  <circle cx="330" cy="257" r="3" fill="#8B1A1A" opacity="0.6"/>
+  <circle cx="345" cy="252" r="2" fill="#C9943A" opacity="0.7"/>
+  <circle cx="358" cy="259" r="2" fill="#1a3a6a" opacity="0.5"/>
+  <circle cx="432" cy="254" r="2" fill="#2d6a2d" opacity="0.6"/>
+  <circle cx="445" cy="260" r="3" fill="#8B1A1A" opacity="0.4"/>
+
+  <!-- Floating particles -->
+  <circle cx="312" cy="177" r="1.5" fill="#E8B84B" opacity="0.6"/>
+  <circle cx="348" cy="157" r="1" fill="#E8B84B" opacity="0.4"/>
+  <circle cx="398" cy="170" r="1.5" fill="#E8B84B" opacity="0.35"/>
+  <circle cx="430" cy="198" r="1" fill="#C9943A" opacity="0.4"/>
+  <circle cx="280" cy="213" r="1.5" fill="#E8B84B" opacity="0.3"/>
+</svg>
